@@ -1,0 +1,1120 @@
+à chier		12
+a de la peine		12
+à jeter		12
+à me taper	isPrecededBySpecificTerm///encore+++isImmediatelyFollowedBySpecificTerm///sur	if(A || B) {12} else {10}
+à vomir		12
+au bout de ma vie		12
+abattu		12
+abattue		12
+abattues		12
+abattus		12
+aberrant		12
+abominable		12
+abominablement		12
+abominables		12
+abomination		12
+abruti		12
+abrutie		12
+abrutis		12
+absurde		12
+absurdes		12
+absurdité		12
+absurdités		12
+abusé		12
+abusée		12
+abusées		12
+abusés		12
+abuser	isPrecededBySpecificTerm///c|cest|c'est	12:10
+accablaient		12
+accablais		12
+accablait		12
+accable		12
+accablé		12
+accablée		12
+accablement		12
+accablent		12
+accablera		12
+accablerai		12
+accableraient		12
+accablerais		12
+accablerait		12
+accableras		12
+accablerez		12
+accableriez		12
+accablerions		12
+accablerons		12
+accableront		12
+accables		12
+accablés		12
+accablés		12
+accablez		12
+accabliez		12
+accablions		12
+accablons		12
+affabulateur		12
+affabulation		12
+affliction		12
+afflige		12
+affligé		12
+affligeant		12
+affligée		12
+affligées		12
+affligés		12
+affreux		12
+agaçaient		12
+agaçais		12
+agaçait		12
+agaçant		12
+agace		12
+agacé		12
+agacée		12
+agacées		12
+agacement		12
+agacent		12
+agacer		12
+agacera		12
+agacerai		12
+agaceraient		12
+agacerais		12
+agacerait		12
+agaceras		12
+agacerez		12
+agaceriez		12
+agacerions		12
+agacerons		12
+agaceront		12
+agaces		12
+agacés		12
+agacez		12
+agaciez		12
+agacions		12
+agaçons		12
+agression		12
+agressivité		12
+ai de la peine		12
+aigreur		12
+alarmant		12
+alarmé		12
+alarmée		12
+amer		12
+amertume		12
+angoisse		12
+angoissé		12
+angoissée		12
+animosité		12
+anxiété		12
+anxieuse		12
+anxieuses		12
+anxieux		12
+arnaqueur		12
+arnaqueurs		12
+arracher la	isImmediatelyFollowedBySpecificTerm///gueule|tête|tete|tronche	12:10
+as de la peine		12
+atroce		12
+atrocement		12
+atroces		12
+attristait		12
+attriste		12
+attristé		12
+attristée		12
+attristées		12
+attristera		12
+attristerait		12
+attristés		12
+bagatelle	isImmediatelyPrecededBySpecificTerm///une	12:10
+bagatelles	isImmediatelyPrecededBySpecificTerm///des	12:10
+baiser leur		12
+ballec		12
+balec		12
+baltringue		12
+bancal		12
+bancal		12
+bancale		12
+bancales		12
+bancals		12
+bébelle		12
+beauf		12
+beaufs		12
+bloqué	isAllCaps	12
+bloquée	isAllCaps	12
+bobo		12
+bobos		12
+boloss		12
+boloss		12
+bon à rien		12
+bons à rien		12
+bonne à rien		12
+bonnes à rien		12
+bordel	isImmediatelyPrecededBySpecificTerm///le|ce|un|quel+++!isImmediatelyFollowedBySpecificTerm///de|pas	if(A || B){12} else {10}
+bouffon		12
+bouffons		12
+bouffonne		12
+bouffonnes		12
+boulechite		12
+bousiller		12
+bousille		12
+bousillait		12
+bousillais		12
+bousilles		12
+bousillez		12
+bousillerai		12
+bousillerais		12
+bousillerait		12
+bozo		12
+branleux		12
+broche à foin		12
+broyer du noir		12
+bullshit		12
+burnes	isPrecededBySpecificTerm///il y a des|il y a de|c'est des|ce sont des|ce sont de|vous �tes|vous etes	12
+burne	isImmediatelyPrecededBySpecificTerm///est une|es une	12
+bz leur		12
+ca craint		12
+ça craint		12
+ca fait beaucoup		12
+calomnie		12
+calomnieux 		12
+capable	isImmediatelyPrecededBySpecificTerm///pas	12:10
+casser les c.		12
+cassez les c.		12
+cassent les c.		12
+c est n importe quoi		12
+chagrin		12
+chagrinait		12
+chagrinant		12
+chagriné		12
+chagrinée		12
+chagrinées		12
+chagrinerait		12
+chagrinés		12
+chiant		12
+chiants		12
+chiante		12
+chiantes		12
+chié	!isImmediatelyPrecededBySpecificTerm///ca va	12:10
+chiez	!isImmediatelyPrecededBySpecificTerm///ca va	12:10
+chier	!isImmediatelyPrecededBySpecificTerm///ca va	12:10
+chiâleux		12
+chiante		12
+choqué		12
+choquée		12
+chragrine		12
+chragrinera		12
+clc	isImmediatelyPrecededBySpecificTerm///me|nous	12:10
+coeur brisé		12
+coeur gros		12
+coeur lourd		12
+coeur serré		12
+colère		12
+colères		12
+coléreuse		12
+coléreuses		12
+coléreux		12
+colérique		12
+colérques		12
+comprend	isImmediatelyFollowedByANegation	12:10
+comprends	isImmediatelyFollowedByANegation	12:10
+commence à bien faire		12
+con		12
+cons		12
+condamné	isImmediatelyPrecededBySpecificTerm///je suis|on est|chui|jsui	12:10
+condamnée	isImmediatelyPrecededBySpecificTerm///je suis|on est|chui|jsui	12:10
+connard		12
+connards		12
+connasse		12
+connasses		12
+conne		12
+connes		12
+connerie		12
+consterné		12
+consternés		12
+consternées		12
+consternant		12
+consternation		12
+consterne		12
+consterné		12
+consternées		12
+consternerait		12
+consternés		12
+contrariant		12
+contrarié		12
+contrariée		12
+contrariées		12
+contrariés		12
+contrariété		12
+contrit		12
+contrite		12
+contrites		12
+contrits		12
+covidiot		12
+couille	!isImmediatelyPrecededBySpecificTerm///des	12:11
+couilles	!isImmediatelyPrecededBySpecificTerm///des	12:11
+les c*		12
+les c**		12
+les c***		12
+couillon		12
+couillons		12
+couillonne		12
+couillonnes		12
+coup de gueule		12
+coupable		12
+coupables		12
+courroucé		12
+courroucée		12
+courroucées		12
+courroucés		12
+courroux		12
+crainte		12
+craintes		12
+craintif		12
+craintifs		12
+craintive		12
+craintives		12
+crétin		12
+crétins		12
+crevard		12
+crevarde		12
+crevardes		12
+crevards		12
+crever	isImmediatelyPrecededBySpecificTerm///je vais|tu vas|on va|vous allez	12:10
+criarde			12
+criminel		12
+criminelle		12
+criminelles		12
+criminels		12
+cruauté		12
+cruautés		12
+cruel		12
+cruelle		12
+cruelles		12
+cruels		12
+cul	!isImmediatelyPrecededBySpecificTerm///ras le|plein le	12:10
+culpabilité		12
+d humeur chagrine		12
+d humeur massacrante		12
+d humeur mélancolique		12
+d humeur noire		12
+déblatérer		12
+déblatéres		12
+déblatérent		12
+déblatére		12
+décalisser		12
+décalisse		12
+décède	isImmediatelyPrecededBySpecificTerm///je	12:10
+de la peine		12
+de mauvais poil		12
+de mauvaise humeur		12
+débile		12
+débiles		12
+débilos		12
+débilité		12
+déception		12
+déception		12
+décevaient		12
+décevais		12
+décevait		12
+décevant		12
+décevante		12
+décevantes		12
+décevants		12
+décevez		12
+déceviez		12
+décevions		12
+décevons		12
+décevra		12
+décevrai		12
+décevraient		12
+décevrais		12
+décevrait		12
+décevras		12
+décevrez		12
+décevriez		12
+décevrions		12
+décevrons		12
+décevront		12
+déçois		12
+déçoit		12
+déçoivent		12
+décourage		12
+décourage		12
+découragé		12
+découragé		12
+décourageant		12
+décourageant		12
+décourageante		12
+décourageantes		12
+décourageants		12
+découragée		12
+découragée		12
+découragées		12
+découragées		12
+découragement		12
+découragés		12
+découragés		12
+décrisser		12
+décrisse		12
+déçu		12
+déçue		12
+déçues		12
+déçus		12
+dédaigneuse		12
+dédaigneuses		12
+dédaigneux		12
+dédain		12
+dédains		12
+défaite		12
+défaite		12
+défaitisme		12
+défaitiste		12
+défaitistes		12
+deg		12
+dégueulasse		!isImmediatelyPrecededByNegative	12:11
+dégeulasse		!isImmediatelyPrecededByNegative	12:11
+dégeu		!isImmediatelyPrecededByNegative	12:11
+dégueu		!isImmediatelyPrecededByNegative	12:11
+dégout		12
+dégoutant		12
+dégoutante		12
+dégoutantes		12
+dégoutants		12
+degoute		12
+dégouté		12
+dégoûté		12
+dégoutée		12
+dégoutées		12
+dégoutés		12
+dégoutez		12
+dégueulasse		12
+dégueulasses		12
+déguelasse		12
+déguelasses		12
+dépité		12
+dépitée		12
+dépitées		12
+dépités		12
+déprime		12
+désabusé		12
+désabusée		12
+désabusées		12
+désabusement		12
+désabusés		12
+désastreux		12
+désastreuse		12
+désenchanté		12
+désenchantée		12
+désenchantées		12
+désenchantement		12
+désenchantés		12
+desepère		12
+desepèrer		12
+désespéré		12
+désespéré		12
+désespérée		12
+désespèrent		12
+desespérés		12
+désespères		12
+desespérez		12
+desespérons		12
+désespoir		12
+désillusion		12
+désillusionné		12
+désillusionnée		12
+désolation		12
+désolé		12
+désolée		12
+désolées		12
+désolés		12
+désopilant		12
+désopilé		12
+désopilée		12
+détestable		12
+déteste		12
+d incapable		12
+d incapables		12
+dois me taper		12
+dois encore me taper		12
+dois encore te taper		12
+doit encore te taper		12
+dommage		12
+ducon		12
+dur à	isPrecededByStrongWord	12:10
+dure à	isPrecededByStrongWord	12:10
+effarant		12
+effaré		12
+effarée		12
+embarras		12
+embarrassé		12
+embarrassée		12
+embarrassées		12
+embarrassés		12
+emmerde		12
+emmerdez		12
+emmerder		12
+emmerdement		12
+emmerdements		12
+emmerdes		12
+en dépit du		12
+en peux plus		12
+en peux pls		12
+en peuvent plus		12
+en peuvent pls		12
+en peut plus		12
+en peut pls		12
+en pls		12
+énculé		12
+énculés		12
+énculez		12
+énerve		12
+énervé		12
+enlaidi		12
+enlaidie		12
+enlaidies		12
+enlaidir		12
+enlaidis		12
+enlaidis		12
+enlaidissent		12
+enlaidissez		12
+enlaidissons		12
+enlaidit		12
+enervé		12
+enervée		12
+enervés		12
+enervées		12
+ennemie		12
+ennemies		12
+ennemis		12
+ennueyeuses		12
+ennui		12
+ennuie		12
+ennuiez		12
+ennuies		12
+ennuis		12
+ennuyant		12
+ennuyant		12
+ennuyante		12
+ennuyantes		12
+ennuyants		12
+ennuyeuse		12
+ennuyeux		12
+ennuyeux		12
+enragé		12
+enragée		12
+enragées		12
+enragés		12
+entubé		12
+entubée		12
+entubées		12
+entuber		12
+entubés		12
+est une blague		12
+étron		12
+étronc		12
+exagéré		12
+exagérée		12
+exagérant		12
+exagérante		12
+exaspérant		12
+exaspérante		12
+exaspérantes		12
+exaspérantion		12
+exaspérants		12
+exaspéré		12
+exaspère		12
+exaspérée		12
+exaspérées		12
+exaspèrent		12
+exaspérés		12
+exaspères		12
+exaspérez 		12
+exaspérons		12
+exécrable		12
+exècre		12
+exècrent		12
+exècrer		12
+exècres		12
+exècrez		12
+exécrons		12
+fâcher		12
+fâcheuse		12
+fâcheux		12
+fainéant		12
+fainéante		12
+faire souffrir		12
+fanatique		12
+fanatisé		12
+fatigue	isImmediatelyPrecededBySpecificTerm///me	12:10
+fatigué de		12
+fatiguée de		12
+faudra pas pleurer		12
+faut pas exagerer		12
+fdp		12
+fermez la		12
+fermez-la		12
+folle		12
+fou		12
+fourbe		12
+fourberie		12
+fourbes		12
+foutisme		12
+fous	isImmediatelyFollowedBySpecificTerm///de|quoi	12:10
+fout	isImmediatelyFollowedBySpecificTerm///de|quoi	12:10
+foutage		12
+foutre		12
+foutu		12
+foutue		12
+foutues		12
+frileux		12
+frileuse		12
+frileuses		12
+froussard		12
+froussarde		12
+froussardes		12
+froussards		12
+frousse		12
+frustrant		12
+frustrants		12
+frustrante		12
+frustrantes		12
+fucké		12
+fulminaient		12
+fulminais		12
+fulminait		12
+fulmine		12
+fulminent		12
+fulminer		12
+fulminera		12
+fulminerai		12
+fulmineraient		12
+fulminerais		12
+fulminerais		12
+fulminerait		12
+fulmineras		12
+fulminerez		12
+fulmineriez		12
+fulminerions		12
+fulminerons		12
+fulmineront		12
+fulmines		12
+fulminez		12
+fulminiez		12
+fulminions		12
+fulminons		12
+fumeux		12
+fumiste		12
+fureur		12
+furie		12
+furies		12
+furieuse		12
+furieuses		12
+furieux		12
+furieux		12
+galérer	!isImmediatelyPrecededByANegation	12:10
+galére		12
+galéres		12
+galérez		12
+galérien		12
+galériens		12
+galérienne		12
+galériennes		12
+gavant		12
+gigon		12
+gros colon		12
+grotesque		12
+gueule		12
+gueuler		12
+haine		12
+haineuse		12
+haineuses		12
+haineux		12
+hais		12
+haïs		12
+harassant		12
+harassé		12
+hater		12
+haters		12
+hélas		12
+hitler		12
+honte		12
+honte		12
+hontes		12
+honteuse		12
+honteuse		12
+honteusement		12
+honteuses		12
+honteuses		12
+honteux		12
+honteux		12
+horreur		12
+horrible		12
+horriblement		12
+horribles		12
+hostile		12
+hostiles		12
+hotilité		12
+humiliant		12
+humiliante		12
+humiliantes		12
+humiliants		12
+humiliation		12
+humiliations		12
+humilié		12
+humiliée		12
+humiliées		12
+humiliés		12
+hurle		12
+idée noire		12
+idées noires		12
+idiot		12
+idiots		12
+idiote		12
+idiotes		12
+idiotie		12
+idioties		12
+idiotique		12
+ignare		12
+ignares		12
+ignoble		12
+ignoblement		12
+ignobles		12
+ignominie		12
+inacceptable		12
+inaceptable		12
+incapable	isImmediatelyPrecededBySpecificTerm///sont|est|es|un	12:10
+incapables	isImmediatelyPrecededBySpecificTerm///sont|est|es|des	12:10
+incompréhensible		12
+incompréhensibles		12
+inadmissible		12
+inadmissibles		12
+inconscient	isImmediatelyPrecededBySpecificTerm///sont|est|es|des	12:10
+inconscients	isImmediatelyPrecededBySpecificTerm///sont|est|es|des|êtes|etes	12:10
+inconsidéré		12
+inconsidérés		12
+inconsidérée		12
+indignation		12
+indignations		12
+indigne		12
+indigné		12
+indignée		12
+indignées		12
+indignes		12
+indignés		12
+indignez		12
+indignons		12
+infernal		12
+infernals		12
+infernale		12
+infernales		12
+infernaux		12
+inhumain		12
+inhumaine		12
+injoignable		12
+injoignables		12
+injuste		12
+injustes		12
+ineptie		12
+inquiet		12
+inquiètant		12
+inquiètante		12
+inquiètants		12
+inquiètants		12
+inquiète		12
+inquiètes		12
+inquiets		12
+inquiétude		12
+inquiétudes		12
+insultant	isImmediatelyPrecededBySpecificTerm///c'est|c est	12:10
+insupportable		12
+insupportables		12
+inutile	isPrecededByStrongWord	12:10
+inutiles	isPrecededByStrongWord	12:10
+irascibilité		12
+irascibilités		12
+irascible		12
+irascibles		12
+ire		12
+ires		12
+irrespectueux		12
+irrespectueuse		12
+irrespectueuses		12
+irresponsable		12
+irresponsables		12
+jdeteste		12
+lâche	!isImmediatelyPrecededBySpecificTerm///je|il	12:10
+lâches	!isImmediatelyPrecededBySpecificTerm///tu	12:10
+lâcheté		12
+laid		12
+laide		12
+laideron		12
+laiderons		12
+laides		12
+laideur		12
+laids		12
+lassant		12
+lassante		12
+lassantes		12
+lassants		12
+lasse		12
+lassé		12
+lassée		12
+lassées		12
+lasses		12
+lassés		12
+lassitude		12
+lassitudes		12
+laxisme		12
+laxiste		12
+laxistes		12
+lette		12
+long		12
+loose		12
+loser		12
+looser		12
+louseur		12
+looser		12
+looseuse		12
+loosers		12
+lourd	!isImmediatelyPrecededBySpecificTerm///c'est du|c est du	12:11
+lourdingue		12
+lourdingues		12
+lourdot		12
+lourdots		12
+lourdeau		12
+lourdeaux		12
+mal		12
+mal à l aise		12
+maladresse		12
+maladresses		12
+maladroit		12
+maladroite		12
+maladroites		12
+maladroits		12
+malaise		12
+malaisé		12
+malaisée		12
+malaisées		12
+malaises		12
+malaisés		12
+malheur		12
+malheureuse		12
+malheureusement		12
+malheureuses		12
+malheureux		12
+malhonnête		12
+marde		12
+faites marrer		12
+faite marrer		12
+marre	isImmediatelyPrecededBySpecificTerm///ai|a|ont|trop|avoir+++isImmediatelyFollowedBySpecificTerm///toi|de	if (A || B) {12} else {10}
+marrez		12
+maussade		12
+maussaderie		12
+maussaderies		12
+maussades		12
+mauvais		12
+mauvais		12
+mauvaise		12
+mauvaise		12
+mauvaises		12
+mauvaises		12
+m'énerver		12
+m énerver		12
+méchanceté		12
+méchant		12
+méchante		12
+méchantes		12
+méchants		12
+mécontent		12
+mécontente		12
+mécontente		12
+mécontenté		12
+mécontentée		12
+mécontentées		12
+mécontentement		12
+mécontentements		12
+mécontentes		12
+mécontentés		12
+mécontents		12
+mécréant		12
+mécréante		12
+mécréantes		12
+mécréants		12
+méfiant		12
+méfiante		12
+méfiantes		12
+méfiants		12
+mélancolie		12
+mélancolique		12
+mélancoliques		12
+mélancolies		12
+mépris		12
+merde		12
+merdes		12
+merdique		12
+méritez des	isImmediatelyFollowedBySpecificTerm///claques|baffes|gifles|patates|droites|tartes	12:10
+méritez des grosses		12
+méritez des bonnes		12
+mesquin		12
+mesquine		12
+meurs	isImmediatelyPrecededBySpecificTerm///je	12:10
+miskine		12
+moche		12
+moches		12
+mocheté		12
+mochetés		12
+molesse		12
+mollesse		12
+mongolien		12
+mongoliens		12
+monstre		12
+monstres		12
+moque	isImmediatelyPrecededBySpecificTerm///se|me	12:10
+a la mord moi		12
+a la mords moi		12
+morose		12
+moroses		12
+morosité		12
+morosités		12
+mort	isImmediatelyPrecededBySpecificTerm///je suis|c'est|c'est la|race de|races de+++isPrecededByStrongWord	if(A || B){12} else {10}
+morte	isImmediatelyPrecededBySpecificTerm///je suis|c'est|c'est la|race de|races de+++isPrecededByStrongWord	if(A || B){12} else {10}
+mortes	isImmediatelyPrecededBySpecificTerm///vous êtes|c'est|c'est la|race de|races de+++isPrecededByStrongWord	if(A || B){12} else {10}
+morts	isImmediatelyPrecededBySpecificTerm///vous êtes|c'est|c'est la|race de|races de+++isPrecededByStrongWord	if(A || B){12} else {10}
+mourir	isImmediatelyPrecededBySpecificTerm///tu vas|on va|vous allez	12:10
+mourrir	isImmediatelyPrecededBySpecificTerm///je vais|tu vas|on va|vous allez	12:10
+navrant		12
+navrante		12
+nausée		12
+naz		12
+naze		12
+nazes		12
+nerfs vont		12
+niaiseux		12
+nimp		12
+nique	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
+niques	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
+niquez	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
+nprtk		12
+nul		12
+nul		12
+nulle		12
+nulle		12
+nulles		12
+nulles		12
+nullissime		12
+nullissimes		12
+nuls		12
+nuls		12
+ont de la peine		12
+oppressé		12
+oppressée		12
+oppressées		12
+oppressés		12
+ou va le monde		12
+paient		12
+parasite		12
+parasites		12
+pas se plaindre		12
+pas normal		12
+pathétique		12
+pd		12
+pénible		12
+pénibles		12
+perd		12
+perdaient		12
+perdaient		12
+perdais		12
+perdait		12
+perde		12
+perdent		12
+perdes		12
+perdez		12
+perdiez		12
+perdions		12
+perdons		12
+perdra		12
+perdrai		12
+perdras		12
+perdre		12
+perdrez		12
+perdrons		12
+perdront		12
+perds		12
+perte		12
+péter	isImmediatelyFollowedBySpecificTerm///des cables|un cable|les cables|quelques cables|les plombs|un plomb|des plombs|quelques plombs|une durite|quelques durites|les durites|des durites	12:10
+pété	isImmediatelyFollowedBySpecificTerm///des cables|un cable|les cables|quelques cables|les plombs|un plomb|des plombs|quelques plombs|une durite|quelques durites|les durites|des durites	12:10
+péteux		12
+peur		12
+peureux		12
+pire		12
+pitoune		12
+platitude		12
+pleuré	isImmediatelyPrecededBySpecificTerm///envie de|j'ai|je	12:10
+pleurer	isImmediatelyPrecededBySpecificTerm///a|envie de|faudra pas|faudra pas venir|j'ai	12:10
+pour etre poli		12
+pourri		12
+prise de tête	!isImmediatelyPrecededByANegation	12:10
+puais		12
+puait		12
+puant		12
+pue		12
+pu	isImmediatelyPrecededBySpecificTerm///ca|tu|elle|il|ils|elles	12:10
+puent		12
+puer		12
+pues		12
+puez		12
+puiez		12
+puions		12
+puons		12
+ptn de		12
+ptain de		12
+putain de		12
+putains de		12
+putain mais	!isFollowedByAPositiveOpinion	12
+ptn mais	!isFollowedByAPositiveOpinion	12
+ptain mais	!isFollowedByAPositiveOpinion	12
+pute		12
+putes		12
+pitoyable		12
+pitoyables		12
+propagande		12
+ptn de		12
+radin		12
+radins		12
+radine		12
+radines		12
+rage		12
+rageuse		12
+rageuses		12
+rageux		12
+rageux		12
+ras le bol		12
+regrette		12
+relou		12
+rendu ouf		12
+repoussant		12
+repoussante		12
+repoussantes		12
+repoussants		12
+répugnant		12
+répugnante		12
+répugnantes		12
+répugnants		12
+répulsif		12
+répulsifs		12
+répulsive		12
+répulsives		12
+ressentiment		12
+ressentimets		12
+retard		12
+révoltant		12
+révolté		12
+révoltée		12
+ridicule		12
+rien à espérer		12
+ripou		12
+ripoux		12
+salop		12
+salops		12
+salopard		12
+salopards		12
+salope		12
+salopes		12
+saloperie		12
+saloperies		12
+saoulant		12
+saoulante		12
+saoulantes		12
+saoulants		12
+seum		12
+soule		12
+soulent		12
+soules		12
+saoule		12
+saoulé		12
+saoulée		12
+saoulées		12
+saoulés		12
+scandaleux		12
+scandaleuse		12
+se gavent		12
+se gaver		12
+séparés		12
+sérieux	isImmediatelyPrecededBySpecificTerm///êtes|etes|mais+++isImmediatelyFollowedBySpecificTerm///les|là|la|le|?	if (A || B) {12} else {10}
+sert à rien		12
+seum		12
+socialos		12
+sottise		12
+sottises		12
+soudard		12
+soudards		12
+souffrance		12
+souffrances		12
+souffrant		12
+souffre		12
+souffrent		12
+souffres		12
+souffrez		12
+souffrir		12
+souffrons		12
+soulant		12
+soulante		12
+soulantes		12
+soulants		12
+soulé		12
+soulée		12
+soulées		12
+soulés		12
+spleen		12
+stupide		12
+stupide		12
+stupides		12
+stupidité		12
+suis au bout		12
+taponneux		12
+tarla		12
+tarlais		12
+tendancieux		12
+terrible		12
+téteux		12
+tire une balle		12
+tiré une balle		12
+tirée une balle		12
+tirées une balle		12
+tirés une balle		12
+tirer une balle		12
+touristata		12
+tout croche		12
+toutou		12
+traître		12
+traîtres		12
+traîtresse		12
+traîtresses		12
+traîtreux		12
+traîtreuse		12
+traîtreuses		12
+triste		12
+tristement		12
+tristes		12
+tristesse		12
+tromperie		12
+usant	isPrecededByStrongWord	12
+vache à lait	isImmediatelyPrecededBySpecificTerm///suis une|prend pour une|prends pour une|prennent pour une	12:10
+vaches à lait	isImmediatelyPrecededBySpecificTerm///est des|sommes des|prend pour des|prends pour des|prennent pour des	12:10
+vandale		12
+vandalisme		12
+vdm		12
+venere	isImmediatelyPrecededBySpecificTerm///suis|étais|m'a|ma	12:10
+vermine		12
+vermines		12
+violation		12
+violence		12
+violent		12
+violente		12
+violentes		12
+violents		12
+voleur		12
+voleurs		12
+voleuse		12
+voleuses		12
+votre faute	!isImmediatelyPrecededByANegation	12:10
+vulgaire		12
+vulgaires		12
+zigonner		12
+zouf		12
