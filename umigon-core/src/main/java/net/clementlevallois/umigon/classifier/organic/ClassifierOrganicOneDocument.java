@@ -59,7 +59,6 @@ public class ClassifierOrganicOneDocument {
 
         Set<NGram> alreadyExaminedNGramInPositive = new HashSet();
 
-
         Text text = new Text();
 
         text.setOriginalForm(document.getText());
@@ -150,13 +149,15 @@ public class ClassifierOrganicOneDocument {
 //            if (ngram.getCleanedAndStrippedNgram().equals("burnes")) {
 //                System.out.println("stop for word before checking positive heuristics");
 //            }
+                boolean stripped = false;
                 termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH9().get(ngram.getCleanedNgram().toLowerCase());
                 if (termAndItsConditionalExpressions == null) {
                     termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH9().get(ngram.getCleanedAndStrippedNgram().toLowerCase());
+                    stripped = true;
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }

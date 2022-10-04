@@ -43,7 +43,7 @@ public class ControllerForTestsSentiment {
         ClassifierSentimentOneDocument classifierOneDocumentEN = new ClassifierSentimentOneDocument(semanticsEN);
 
         docFR = new Document();
-        docFR.setText("D’habitude je n’aime pas trop les randonnées mais j’ai beaucoup apprécié celle d’hier 😊");
+        docFR.setText("D’habitude je n’aime pas trop la charcuterie mais j’ai beaucoup apprécie la cuisine des bouchons lyonnais 😊");
         resultFR = classifierOneDocumentFR.call(docFR);
         System.out.println("test: " + docFR.getText());
         System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultFR, "fr"));

@@ -152,13 +152,15 @@ public class ClassifierSentimentOneDocument {
 //            if (ngram.getCleanedAndStrippedNgram().equals("burnes")) {
 //                System.out.println("stop for word before checking positive heuristics");
 //            }
+                boolean stripped = false;
                 termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH1().get(ngram.getCleanedNgram().toLowerCase());
                 if (termAndItsConditionalExpressions == null) {
                     termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH1().get(ngram.getCleanedAndStrippedNgram().toLowerCase());
+                    stripped = true;
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }
@@ -176,14 +178,16 @@ public class ClassifierSentimentOneDocument {
                 if (alreadyExaminedNGramInNegative.contains(ngram)) {
                     continue;
                 }
+                stripped = false;
 
                 termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH2().get(ngram.getCleanedNgram().toLowerCase());
                 if (termAndItsConditionalExpressions == null) {
                     termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH2().get(ngram.getCleanedAndStrippedNgram().toLowerCase());
+                    stripped = true;
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }

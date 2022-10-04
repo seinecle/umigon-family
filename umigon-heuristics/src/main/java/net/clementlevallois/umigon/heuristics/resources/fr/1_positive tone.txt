@@ -115,7 +115,6 @@ appréciâmes	!isImmediatelyFollowedByANegation	11:12
 apprécias	!isImmediatelyFollowedByANegation	11:12
 appréciâtes	!isImmediatelyFollowedByANegation	11:12
 apprécie	!isImmediatelyFollowedByANegation	11:12
-apprécie	!isImmediatelyFollowedByANegation	11:12
 apprécient	!isImmediatelyFollowedByANegation	11:12
 apprécient	!isImmediatelyFollowedByANegation	11:12
 apprécier	!isImmediatelyFollowedByANegation	11:12
