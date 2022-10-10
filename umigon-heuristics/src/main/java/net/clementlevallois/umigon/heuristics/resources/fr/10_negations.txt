@@ -9,9 +9,14 @@ fausses
 faux	
 jamais	
 loin d'être	
+manque	
+manque de	
+non	
 pas	
 pas de	
 pas du tout
 pas si	
 plus	
-sans    
+rien	
+rien de	
+sans	

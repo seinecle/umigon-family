@@ -2,6 +2,7 @@
 a de la peine		12
 à jeter		12
 à me taper	isPrecededBySpecificTerm///encore+++isImmediatelyFollowedBySpecificTerm///sur	if(A || B) {12} else {10}
+à moitié vide		12
 à vomir		12
 au bout de ma vie		12
 abattu		12
@@ -98,6 +99,7 @@ alarmé		12
 alarmée		12
 amer		12
 amertume		12
+anémique		12
 angoisse		12
 angoissé		12
 angoissée		12
@@ -132,6 +134,9 @@ bancal		12
 bancale		12
 bancales		12
 bancals		12
+bandit		12
+bandits		12
+bassine	isImmediatelyPrecededBySpecificTerm///nous|me	12:10
 bébelle		12
 beauf		12
 beaufs		12
@@ -151,6 +156,8 @@ bouffons		12
 bouffonne		12
 bouffonnes		12
 boulechite		12
+bourde		12
+bourdes		12
 bousiller		12
 bousille		12
 bousillait		12
@@ -165,7 +172,7 @@ branleux		12
 broche à foin		12
 broyer du noir		12
 bullshit		12
-burnes	isPrecededBySpecificTerm///il y a des|il y a de|c'est des|ce sont des|ce sont de|vous �tes|vous etes	12
+burnes	isPrecededBySpecificTerm///il y a des|il y a de|c'est des|ce sont des|ce sont de|vous êtes|vous etes	12
 burne	isImmediatelyPrecededBySpecificTerm///est une|es une	12
 bz leur		12
 ca craint		12
@@ -177,7 +184,11 @@ capable	isImmediatelyPrecededBySpecificTerm///pas	12:10
 casser les c.		12
 cassez les c.		12
 cassent les c.		12
+cata		12
+cautionne		12
+cautionnes		12
 c est n importe quoi		12
+c est quoi ce		12
 chagrin		12
 chagrinait		12
 chagrinant		12
@@ -197,6 +208,8 @@ chiâleux		12
 chiante		12
 choqué		12
 choquée		12
+choque personne		12
+choquent personne		12
 chragrine		12
 chragrinera		12
 clc	isImmediatelyPrecededBySpecificTerm///me|nous	12:10
@@ -210,11 +223,13 @@ coléreuse		12
 coléreuses		12
 coléreux		12
 colérique		12
-colérques		12
+colériques		12
+compliqué	isImmediatelyPrecededBySpecificTerm///ca va être	12:10
 comprend	isImmediatelyFollowedByANegation	12:10
 comprends	isImmediatelyFollowedByANegation	12:10
 commence à bien faire		12
 con		12
+concept	isImmediatelyPrecededBySpecificTerm///leur	12:10
 cons		12
 condamné	isImmediatelyPrecededBySpecificTerm///je suis|on est|chui|jsui	12:10
 condamnée	isImmediatelyPrecededBySpecificTerm///je suis|on est|chui|jsui	12:10
@@ -269,6 +284,8 @@ craintif		12
 craintifs		12
 craintive		12
 craintives		12
+crash	isImmediatelyPrecededBySpecificTerm///se|te	12:10
+crashé	isImmediatelyPrecededBySpecificTerm///se|te	12:10
 crétin		12
 crétins		12
 crevard		12
@@ -289,6 +306,9 @@ cruelles		12
 cruels		12
 cul	!isImmediatelyPrecededBySpecificTerm///ras le|plein le	12:10
 culpabilité		12
+cynique		12
+cyniques		12
+cynisme		12
 d humeur chagrine		12
 d humeur massacrante		12
 d humeur mélancolique		12
@@ -366,6 +386,8 @@ défaite		12
 défaitisme		12
 défaitiste		12
 défaitistes		12
+défonce		12
+défoncent		12
 deg		12
 dégueulasse		!isImmediatelyPrecededByNegative	12:11
 dégeulasse		!isImmediatelyPrecededByNegative	12:11
@@ -387,6 +409,7 @@ dégueulasse		12
 dégueulasses		12
 déguelasse		12
 déguelasses		12
+dépit		12
 dépité		12
 dépitée		12
 dépitées		12
@@ -399,6 +422,7 @@ désabusement		12
 désabusés		12
 désastreux		12
 désastreuse		12
+désaveu		12
 désenchanté		12
 désenchantée		12
 désenchantées		12
@@ -505,7 +529,12 @@ entubée		12
 entubées		12
 entuber		12
 entubés		12
+escroquerie	isPrecededByStrongWord	12
+escroqueries	isPrecededByStrongWord	12
 est une blague		12
+état d'âme		12
+états d'âme		12
+états d'âmes		12
 étron		12
 étronc		12
 exagéré		12
@@ -550,6 +579,8 @@ fdp		12
 fermez la		12
 fermez-la		12
 folle		12
+flippé		12
+flipper		12
 fou		12
 fourbe		12
 fourberie		12
@@ -565,6 +596,7 @@ foutues		12
 frileux		12
 frileuse		12
 frileuses		12
+froid	isImmediatelyFollowedBySpecificTerm///dans le dos|dans ldos|dans l dos	12:10
 froussard		12
 froussarde		12
 froussardes		12
@@ -615,6 +647,8 @@ galérien		12
 galériens		12
 galérienne		12
 galériennes		12
+galopante		12
+gaspillage		12
 gavant		12
 gigon		12
 gros colon		12
@@ -644,12 +678,13 @@ honteuses		12
 honteux		12
 honteux		12
 horreur		12
+horreurs		12
 horrible		12
-horriblement		12
 horribles		12
+horriblement		12
 hostile		12
 hostiles		12
-hotilité		12
+hostilité		12
 humiliant		12
 humiliante		12
 humiliantes		12
@@ -661,6 +696,7 @@ humiliée		12
 humiliées		12
 humiliés		12
 hurle		12
+hurlent		12
 idée noire		12
 idées noires		12
 idiot		12
@@ -689,6 +725,8 @@ inconscients	isImmediatelyPrecededBySpecificTerm///sont|est|es|des|êtes|etes	12
 inconsidéré		12
 inconsidérés		12
 inconsidérée		12
+indifférence		12
+indifférences		12
 indignation		12
 indignations		12
 indigne		12
@@ -721,7 +759,14 @@ inquiètes		12
 inquiets		12
 inquiétude		12
 inquiétudes		12
-insultant	isImmediatelyPrecededBySpecificTerm///c'est|c est	12:10
+insuffisant		12
+insuffisants		12
+insuffisante		12
+insuffisantes		12
+insultant		12:10
+insultants		12:10
+insultante		12:10
+insultantes		12:10
 insupportable		12
 insupportables		12
 inutile	isPrecededByStrongWord	12:10
@@ -738,6 +783,7 @@ irrespectueuses		12
 irresponsable		12
 irresponsables		12
 jdeteste		12
+j en doute		12
 lâche	!isImmediatelyPrecededBySpecificTerm///je|il	12:10
 lâches	!isImmediatelyPrecededBySpecificTerm///tu	12:10
 lâcheté		12
@@ -748,6 +794,8 @@ laiderons		12
 laides		12
 laideur		12
 laids		12
+lamentable		12
+lamentables		12
 lassant		12
 lassante		12
 lassantes		12
@@ -848,11 +896,14 @@ mépris		12
 merde		12
 merdes		12
 merdique		12
-méritez des	isImmediatelyFollowedBySpecificTerm///claques|baffes|gifles|patates|droites|tartes	12:10
-méritez des grosses		12
-méritez des bonnes		12
+méritez des	isImmediatelyFollowedBySpecificTerm///claques|baffes|gifles|patates|droites|tartes|des grosses|des bonnes	12:10
+méritent mieux		12
+mérite mieux		12
+mérites mieux		12
 mesquin		12
+mesquins		12
 mesquine		12
+mesquines		12
 meurs	isImmediatelyPrecededBySpecificTerm///je	12:10
 miskine		12
 moche		12
@@ -890,6 +941,7 @@ nimp		12
 nique	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
 niques	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
 niquez	isImmediatelyFollowedBySpecificTerm///les|ton|ta|leur|leurs|vous|te|vos+++!isImmediatelyPrecededBySpecificTerm///pique	if(A && B){12} else {10}
+non à 		12
 nprtk		12
 nul		12
 nul		12
@@ -901,6 +953,7 @@ nullissime		12
 nullissimes		12
 nuls		12
 nuls		12
+obscure raison		12
 ont de la peine		12
 oppressé		12
 oppressée		12
@@ -910,8 +963,11 @@ ou va le monde		12
 paient		12
 parasite		12
 parasites		12
+pas l air de		12
 pas se plaindre		12
 pas normal		12
+pas vraiment		12
+pas pour tout de suite		12
 pathétique		12
 pd		12
 pénible		12
@@ -942,13 +998,18 @@ pété	isImmediatelyFollowedBySpecificTerm///des cables|un cable|les cables|quel
 péteux		12
 peur		12
 peureux		12
+peureuse		12
 pire		12
 pitoune		12
+plantage		12
+plantages		12
 platitude		12
 pleuré	isImmediatelyPrecededBySpecificTerm///envie de|j'ai|je	12:10
 pleurer	isImmediatelyPrecededBySpecificTerm///a|envie de|faudra pas|faudra pas venir|j'ai	12:10
 pour etre poli		12
+pour en arriver là		12
 pourri		12
+prétexte	isImmediatelyPrecededBySpecificTerm///sous|par+++isPrecededByStrongWord	if (A || B) {12} else {10}
 prise de tête	!isImmediatelyPrecededByANegation	12:10
 puais		12
 puait		12
@@ -1068,6 +1129,7 @@ stupides		12
 stupidité		12
 suis au bout		12
 taponneux		12
+tard	isPrecededByStrongWord	12
 tarla		12
 tarlais		12
 tendancieux		12
@@ -1081,6 +1143,7 @@ tirés une balle		12
 tirer une balle		12
 touristata		12
 tout croche		12
+tout faux		12
 toutou		12
 traître		12
 traîtres		12
@@ -1113,6 +1176,7 @@ voleur		12
 voleurs		12
 voleuse		12
 voleuses		12
+volonté	!isImmediatelyPrecededByANegation	12:10
 votre faute	!isImmediatelyPrecededByANegation	12:10
 vulgaire		12
 vulgaires		12

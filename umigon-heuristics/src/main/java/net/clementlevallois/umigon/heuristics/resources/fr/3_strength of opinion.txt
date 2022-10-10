@@ -5,6 +5,7 @@ bougrement
 carément	
 carrément	
 considérable	
+énorme	
 énormément	
 exagérément	
 exceptionnel	
@@ -33,6 +34,7 @@ plein
 putain	
 ptn	
 quel	
+ridiculement	
 sacrément	
 sérieusement
 si		
