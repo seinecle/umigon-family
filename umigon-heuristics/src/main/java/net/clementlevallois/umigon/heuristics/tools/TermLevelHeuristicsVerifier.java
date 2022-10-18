@@ -27,8 +27,10 @@ import net.clementlevallois.umigon.heuristics.catalog.IsHashtagStart;
 import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByANegativeOpinion;
 import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByAPositiveOpinion;
 import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyPrecededByPositive;
-import net.clementlevallois.umigon.heuristics.catalog.IsInATextWithOneOfTheseSpecificTerms;
+import net.clementlevallois.umigon.heuristics.catalog.IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms;
 import net.clementlevallois.umigon.heuristics.catalog.IsInHashtag;
+import net.clementlevallois.umigon.heuristics.catalog.IsInSegmentEndingInExclamation;
+import net.clementlevallois.umigon.heuristics.catalog.IsLastNGramOfSegment;
 import net.clementlevallois.umigon.heuristics.catalog.IsPrecededByOpinion;
 import net.clementlevallois.umigon.heuristics.catalog.IsPrecededByPositive;
 import net.clementlevallois.umigon.heuristics.catalog.IsPrecededBySpecificTerm;
@@ -38,6 +40,8 @@ import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.SentenceLike;
+import net.clementlevallois.umigon.model.TextFragment;
 
 /*
  Copyright 2008-2013 Clement Levallois
@@ -80,11 +84,14 @@ import net.clementlevallois.umigon.model.ResultOneHeuristics;
  */
 public class TermLevelHeuristicsVerifier {
 
-    public static ResultOneHeuristics checkHeuristicsOnOneNGram(NGram ngramParam, List<NGram> nGramsInSentence, TermWithConditionalExpressions termWithConditionalExpressions, LoaderOfLexiconsAndConditionalExpressions lexiconsAndConditionalExpressions, boolean stripped) {
+    public static ResultOneHeuristics checkHeuristicsOnOneNGram(NGram ngramParam, SentenceLike sentenceLike, TermWithConditionalExpressions termWithConditionalExpressions, LoaderOfLexiconsAndConditionalExpressions lexiconsAndConditionalExpressions, boolean stripped) {
         String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String termFromLexicon = termWithConditionalExpressions.getTerm();
         List<BooleanCondition> booleanConditions = termWithConditionalExpressions.getMapFeatures();
         String rule = termWithConditionalExpressions.getRule();
+        
+        List<NGram> nGramsInSentence = sentenceLike.getNgrams();
+        List<TextFragment> textFragmentsInSentence = sentenceLike.getTextFragments();
 
 //        if (termFromLexicon.equals("like")) {
 //            System.out.println("like has been found");
@@ -178,8 +185,14 @@ public class TermLevelHeuristicsVerifier {
                     case isFollowedBySpecificTerm ->
                         booleanCondition = IsFollowedBySpecificTerm.check(stripped, nGramsInSentence, ngramParam, associatedKeywords);
 
-                    case isInATextWithOneOfTheseSpecificTerms ->
-                        booleanCondition = IsInATextWithOneOfTheseSpecificTerms.check(stripped, ngramParam, nGramsInSentence, associatedKeywords);
+                    case isLastNGramOfSegment ->
+                        booleanCondition = IsLastNGramOfSegment.check(stripped, nGramsInSentence, ngramParam);
+
+                    case isInSegmentEndingWithExclamation ->
+                        booleanCondition = IsInSegmentEndingInExclamation.check(stripped, textFragmentsInSentence, ngramParam);
+
+                    case isInASentenceLikeFragmentWithOneOfTheseSpecificTerms ->
+                        booleanCondition = IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms.check(stripped, ngramParam, nGramsInSentence, associatedKeywords);
 
                     case isHashtagStart ->
                         booleanCondition = IsHashtagStart.check(stripped, ngramParam, termFromLexicon);

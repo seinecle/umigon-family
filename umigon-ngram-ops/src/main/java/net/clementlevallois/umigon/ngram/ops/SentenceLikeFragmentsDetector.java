@@ -14,21 +14,20 @@ import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.TextFragment;
 import net.clementlevallois.umigon.model.TypeOfTextFragment;
-import static net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEnum.TEXTO_SPEAK;
 import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 
 /**
  *
  * @author LEVALLOIS
  */
-public class FragmentSelectorForNGramOps {
+public class SentenceLikeFragmentsDetector {
 
     public static void main(String args[]) throws IOException {
         String example = "La meuf qui hurle dans le bus parce qu' on s' est assis à côté d' elle... 😒";
 //        String example = "Je vais super bien :-), vraiment vous êtes des champions (même toi!)";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
-        List<SentenceLike> sentenceLikeFragments = new FragmentSelectorForNGramOps().returnSentenceLikeFragmentsWithTermsOnly(allTextFragments);
+        List<SentenceLike> sentenceLikeFragments = returnSentenceLikeFragments(allTextFragments);
         for (SentenceLike sentenceLike : sentenceLikeFragments) {
             for (TextFragment textFragment : sentenceLike.getNgrams()) {
                 System.out.print(textFragment.getOriginalForm());
@@ -38,7 +37,7 @@ public class FragmentSelectorForNGramOps {
         }
     }
 
-    public List<SentenceLike> returnSentenceLikeFragmentsWithTermsOnly(List<TextFragment> textFragments) {
+    public static List<SentenceLike> returnSentenceLikeFragments(List<TextFragment> textFragments) {
         List<SentenceLike> listOfSentenceLikeFragments = new ArrayList();
         List<NGram> listOfNGrams = new ArrayList();
         Iterator<TextFragment> it = textFragments.iterator();
@@ -51,6 +50,8 @@ public class FragmentSelectorForNGramOps {
 //            if (nextTextFragment.getString().equals("burnes")){
 //                System.out.println("stop");
 //            }
+            sentenceLike.getTextFragments().add(nextTextFragment);
+            
             TypeOfTextFragment.TypeOfTextFragmentEnum typeOfTextFragment = nextTextFragment.getTypeOfTextFragmentEnum();
 //            if (typeOfTextFragment == null){
 //                System.out.println("stop");

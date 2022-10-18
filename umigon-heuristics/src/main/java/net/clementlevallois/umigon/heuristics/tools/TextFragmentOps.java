@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.heuristics.tools;
 
@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.ListIterator;
 import net.clementlevallois.umigon.model.NGram;
+import net.clementlevallois.umigon.model.TextFragment;
 
 /**
  *
@@ -27,7 +28,7 @@ public class TextFragmentOps {
         if (relativeIndex < 0) {
             while (listIterator.hasPrevious()) {
                 NGram previous = listIterator.previous();
-                if (previous.getIndexOrdinal() == indexToLookUp & (previous.getIndexOrdinal()+ previous.getTerms().size())<= ngram.getIndexOrdinal()) {
+                if (previous.getIndexOrdinal() == indexToLookUp & (previous.getIndexOrdinal() + previous.getTerms().size()) <= ngram.getIndexOrdinal()) {
                     ngramResults.add(previous);
                 }
             }
@@ -80,6 +81,17 @@ public class TextFragmentOps {
 
     public static List<NGram> getNGramsAfterAnOrdinalIndex(List<NGram> ngrams, NGram ngram) {
         return ngrams.subList(ngrams.indexOf(ngram), ngrams.size());
+    }
+
+    public static List<TextFragment> getTextFragmentsAfterAnNgram(List<TextFragment> textFragments, NGram ngram) {
+        List<TextFragment> textFragmentsAfterNGram = new ArrayList();
+        int indexCardinalNGram = ngram.getIndexCardinal();
+        for (TextFragment textFragment : textFragments) {
+            if (textFragment.getIndexCardinal() > indexCardinalNGram) {
+                textFragmentsAfterNGram.add(textFragment);
+            }
+        }
+        return textFragmentsAfterNGram;
     }
 
     public static List<NGram> getNGramsBeforeAnOrdinalIndex(List<NGram> ngrams, NGram ngram) {

@@ -130,6 +130,7 @@ crashing	!isImmediatelyPrecededByANegation	12:10		2
 creep	!isPrecededBySpecificTerm///im a|i am a	12:10		3
 creepy	!isImmediatelyPrecededByANegation	12:10		3
 cretin	!isImmediatelyPrecededByANegation	12:10		3
+crime	isPrecededBySpecificTerm///it's a|its a|it is a	12:10		3
 cross	isPrecededBySpecificTerm///im|i am+++isFollowedBySpecificTerm///about|that	if (A && B) {12} else {10}		3
 cruel	!isImmediatelyPrecededByANegation	12:10		3
 crushed	!isImmediatelyPrecededByANegation	12:10		3
@@ -438,7 +439,7 @@ layoff	!isImmediatelyPrecededByANegation	12:10		1
 layoffs	!isImmediatelyPrecededByANegation	12:10		1
 left wing		12		1
 liar		12		2
-like	isImmediatelyPrecededByANegation	12:10	x	1
+like	isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///is|are	if(A && B){12} else if (A == 'false' && B){11} else {10}	x	2
 loathe		12		3
 loathsome		12		3
 lobbies		12		1
@@ -639,7 +640,7 @@ shame		12		2
 shameful		12		3
 schmuck	!isImmediatelyPrecededByANegation	12		2
 sheesh		12		2
-shit	!isImmediatelyPrecededByPositive+++!isImmediatelyPrecededByANegation+++!isImmediatelyPrecededBySpecificTerm///real	if(A && B && C){12} else if (C == 'false' || A == 'false') {11}  else {10}		2
+shit	!isImmediatelyPrecededByPositive+++!isImmediatelyPrecededByANegation+++!isImmediatelyPrecededBySpecificTerm///real|new	if(A && B && C){12} else if (C == 'false' || A == 'false') {11}  else {10}		2
 shite		12		3
 shitfaced		12		3
 shits	!isImmediatelyPrecededByANegation	12:10		2
@@ -790,12 +791,9 @@ whats wrong		12		2
 what s wrong		12		2
 whore		12		3
 whores		12		3
-wish he		12		1
-wish i	isImmediatelyFollowedBySpecificTerm///had|didn	12:10		1
-wish she	isImmediatelyFollowedBySpecificTerm///had|didn	12:10		1
-wish they	isImmediatelyFollowedBySpecificTerm///had|didn	12:10		1
-wish we	isImmediatelyFollowedBySpecificTerm///had|didn	12:10		1
-wont be buying		12		2
+wish i	isImmediatelyFollowedBySpecificTerm///had|hadn|did|didn|would|wouldn	12:10		1
+wish	isImmediatelyFollowedBySpecificTerm///he|they|she|we|people	12:10		1
+be buying		12		2
 won t be buying		12		2
 won t buy		12		2
 wont buy		12		2

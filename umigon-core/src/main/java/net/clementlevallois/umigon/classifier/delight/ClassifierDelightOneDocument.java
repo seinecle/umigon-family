@@ -32,7 +32,7 @@ import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.Text;
 import net.clementlevallois.umigon.model.TextFragment;
 import net.clementlevallois.umigon.model.TypeOfTextFragment;
-import net.clementlevallois.umigon.ngram.ops.FragmentSelectorForNGramOps;
+import net.clementlevallois.umigon.ngram.ops.SentenceLikeFragmentsDetector;
 import net.clementlevallois.umigon.ngram.ops.NGramFinderBisForTextFragments;
 import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 import net.clementlevallois.umigonfamily.umigon.decision.SentimentDecisionMaker;
@@ -58,7 +58,6 @@ public class ClassifierDelightOneDocument {
         TermWithConditionalExpressions termAndItsConditionalExpressions;
 
         Set<NGram> alreadyExaminedNGramInPositive = new HashSet();
-        Set<NGram> alreadyExaminedNGramInNegative = new HashSet();
 
         Text text = new Text();
 
@@ -71,7 +70,7 @@ public class ClassifierDelightOneDocument {
 
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(document.getText(), semantics.getLexiconsAndTheirConditionalExpressions().getLexiconsWithoutTheirConditionalExpressions());
         List<NGram> ngrams = new ArrayList();
-        List<SentenceLike> listOfSentenceLikeFragments = new FragmentSelectorForNGramOps().returnSentenceLikeFragmentsWithTermsOnly(allTextFragments);
+        List<SentenceLike> listOfSentenceLikeFragments = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
         for (SentenceLike sentenceLikeFragment : listOfSentenceLikeFragments) {
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);
             ngrams.addAll(generateNgramsUpto);
@@ -98,12 +97,11 @@ public class ClassifierDelightOneDocument {
         List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.check(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
         resultsHeuristics.addAll(runningHashTagOps);
         alreadyExaminedNGramInPositive.addAll(textFragmentsThatAreHashTag);
-        alreadyExaminedNGramInNegative.addAll(textFragmentsThatAreHashTag);
 
         // checking onomatopaes, texto speak and emoticons in ascii ("non words")
         for (TextFragment textFragment : ngrams) {
-            if (textFragment instanceof NonWord) {
-                List<Category> categories = ((NonWord) textFragment).getPoi().getCategories();
+            if (textFragment instanceof NonWord nonWord) {
+                List<Category> categories = nonWord.getPoi().getCategories();
                 for (Category cat : categories) {
                     ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(cat.getCategoryEnum(), textFragment);
                     resultsHeuristics.add(resultOneHeuristics);
@@ -128,6 +126,7 @@ public class ClassifierDelightOneDocument {
         for (SentenceLike sentenceLikeFragment : listOfSentenceLikeFragments) {
 
             List<NGram> ngramsInSentence = sentenceLikeFragment.getNgrams().stream().filter(x -> x instanceof NGram).map(NGram.class::cast).collect(toList());
+            sentenceLikeFragment.setNgrams(ngramsInSentence);
 
             for (NGram ngram : sentenceLikeFragment.getNgrams()) {
 
@@ -159,7 +158,7 @@ public class ClassifierDelightOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }

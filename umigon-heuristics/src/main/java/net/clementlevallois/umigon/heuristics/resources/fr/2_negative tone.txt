@@ -266,6 +266,7 @@ couilles	!isImmediatelyPrecededBySpecificTerm///des	12:11
 les c*		12
 les c**		12
 les c***		12
+couard		12
 couillon		12
 couillons		12
 couillonne		12

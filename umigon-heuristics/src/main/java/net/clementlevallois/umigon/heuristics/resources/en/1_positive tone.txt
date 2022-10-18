@@ -1,4 +1,5 @@
 achievement	!isImmediatelyPrecededByANegation	11:12	2
+accommodating	!isImmediatelyPrecededByANegation	11:12	2
 admire	!isImmediatelyPrecededByANegation	11:12	3
 affordable	!isImmediatelyPrecededByANegation	11:12	2
 all in one		11	2
@@ -25,9 +26,11 @@ big fan	!isImmediatelyPrecededByANegation	11:12	3
 big up	!isImmediatelyPrecededByANegation	11:12	3
 big ups	!isImmediatelyPrecededByANegation	11:12	3
 bitch	!isImmediatelyPrecededByANegation	11:12	3
+blast	isPrecededBySpecificTerm///it's|its|it is|what a	11:12	3
 blessed	!isImmediatelyPrecededByANegation	11:12	3
 blessing	!isImmediatelyPrecededByANegation	11:12	3
 blown	isPrecededBySpecificTerm ///mind+++isPrecededBySubjectiveTerm+++isFirstTermOfText	if(A || B || C){11} else {10}	3
+blunder	!isImmediatelyPrecededByANegation	11:12	3
 bright	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///light	if(A && B){11} else {10}	3
 brightening	!isImmediatelyPrecededByANegation	11:12	3
 brightens		11	3
@@ -45,6 +48,7 @@ celebrate	!isImmediatelyPrecededByANegation	11:12	3
 celebration	!isImmediatelyPrecededByANegation	11:12	3
 champion	!isImmediatelyPrecededByANegation	11:12	3
 champions	!isImmediatelyPrecededByANegation	11:12	3
+charming	!isImmediatelyPrecededByANegation	11:12	3
 cheer!		11	3
 cheers	!isImmediatelyPrecededByANegation	11:12	3
 chill out	!isImmediatelyPrecededByANegation	11:12	1
@@ -76,16 +80,20 @@ devoted	!isImmediatelyPrecededByANegation	11:12	3
 dig	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}	3
 digging	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}	3
 donates		11	1
+dope	isImmediatelyPrecededBySpecificTerm///it's|it is|its	11:10	3
 dream	!isImmediatelyPrecededByANegation	11:12	3
+dreamy	!isImmediatelyPrecededByANegation	11:12	3
 dreamin	!isImmediatelyPrecededByANegation	11:12	3
 dreams	!isImmediatelyPrecededByANegation	11:12	3
 ease	!isImmediatelyPrecededByANegation	11:12	2
 easily	!isImmediatelyPrecededByANegation	11:12	2
+easier	!isImmediatelyPrecededByANegation	11:12	2
 easy	!isImmediatelyPrecededByANegation	11:12	2
 eco friendly	!isImmediatelyPrecededByANegation	11:12	2
 ecofriendly	!isImmediatelyPrecededByANegation	11:12	2
 efficient	!isImmediatelyPrecededByANegation	11:12	2
 elated	!isImmediatelyPrecededByANegation	11:12	3
+embarassing	!isImmediatelyPrecededByANegation	11:12	2
 enabled	!isImmediatelyPrecededByANegation	11:12	2
 enhance	!isImmediatelyPrecededByANegation	11:12	2
 enhancement	!isImmediatelyPrecededByANegation	11:12	2
@@ -217,6 +225,7 @@ life saver	!isImmediatelyPrecededByANegation	11:12	3
 lightning fast	!isImmediatelyPrecededByANegation	11:12	3
 liked	!isImmediatelyPrecededByANegation	11:12	2
 liking	!isImmediatelyPrecededByANegation	11:12	2
+lit	isPrecededBySpecificTerm///it's|its|it is	11:12	3
 livesaver	!isImmediatelyPrecededByANegation	11:12	3
 lol	!isImmediatelyPrecededByANegation	11:12	3
 look forwad to	!isImmediatelyPrecededByANegation	11:12	2
@@ -238,6 +247,7 @@ made my night	!isImmediatelyPrecededByANegation	11:12	3
 magic!	!isImmediatelyPrecededByANegation	11:12	3
 magnificent	!isImmediatelyPrecededByANegation	11:12	3
 magnifique	!isImmediatelyPrecededByANegation	11:12	3
+mandem	!isImmediatelyPrecededByANegation	11:10	3
 marvelous	!isImmediatelyPrecededByANegation	11:12	3
 marvellous	!isImmediatelyPrecededByANegation	11:12	3
 means a lot		11	3
@@ -265,6 +275,7 @@ passions	!isImmediatelyPrecededByANegation	11:12	3
 perfect	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else {10}	3
 perfect Christmas present	!isImmediatelyPrecededByANegation	11:12	3
 perfect present	!isImmediatelyPrecededByANegation	11:12	3
+phenomenal	!isImmediatelyPrecededByANegation	11:12	3
 pinnacle	!isImmediatelyPrecededByANegation	11:12	3
 pleasant	!isImmediatelyPrecededByANegation	11:12	3
 pleasantly	!isImmediatelyPrecededByANegation	11:12	3
@@ -348,6 +359,7 @@ the best	!isImmediatelyPrecededByANegation	11	3
 the easiest way to	!isImmediatelyPrecededByANegation	11:12	3
 the way 2 go	!isImmediatelyPrecededByANegation	11:12	3
 the way to go	!isImmediatelyPrecededByANegation	11:12	3
+thrilled	!isImmediatelyPrecededByANegation	11:12	3
 thumbs up		11	3
 thx	!isImmediatelyPrecededByANegation	11:12	2
 to life	isPrecededBySpecificTerm///brings|bring|brought	11	2

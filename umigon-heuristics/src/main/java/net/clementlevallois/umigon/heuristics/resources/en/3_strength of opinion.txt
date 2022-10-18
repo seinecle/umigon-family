@@ -42,6 +42,7 @@ highest	isImmediatelyFollowedByAnOpinion	22
 highly	isImmediatelyFollowedByAnOpinion	22
 holy	isImmediatelyFollowedByAnOpinion	22
 incredibly	isImmediatelyFollowedByAnOpinion	22
+inherently	isImmediatelyFollowedByAnOpinion	22
 insane		22
 insanely	isImmediatelyFollowedByAnOpinion	22
 limitless	isImmediatelyFollowedByAnOpinion	22

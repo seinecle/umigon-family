@@ -32,7 +32,7 @@ import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.Text;
 import net.clementlevallois.umigon.model.TextFragment;
 import net.clementlevallois.umigon.model.TypeOfTextFragment;
-import net.clementlevallois.umigon.ngram.ops.FragmentSelectorForNGramOps;
+import net.clementlevallois.umigon.ngram.ops.SentenceLikeFragmentsDetector;
 import net.clementlevallois.umigon.ngram.ops.NGramFinderBisForTextFragments;
 import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 import net.clementlevallois.umigonfamily.umigon.decision.SentimentDecisionMaker;
@@ -71,11 +71,11 @@ public class ClassifierSentimentOneDocument {
 
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(document.getText(), semantics.getLexiconsAndTheirConditionalExpressions().getLexiconsWithoutTheirConditionalExpressions());
         List<NGram> ngrams = new ArrayList();
-        List<SentenceLike> listOfSentenceLikeFragments = new FragmentSelectorForNGramOps().returnSentenceLikeFragmentsWithTermsOnly(allTextFragments);
-        for (SentenceLike sentenceLikeFragment : listOfSentenceLikeFragments) {
+        List<SentenceLike> sentenceLikeFragments = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
+        for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);
             ngrams.addAll(generateNgramsUpto);
-            sentenceLikeFragment.setNgrams(ngrams);
+            sentenceLikeFragment.setNgrams(generateNgramsUpto);
         }
         document.setAllTextFragments(allTextFragments);
         document.setNgrams(ngrams);
@@ -102,8 +102,7 @@ public class ClassifierSentimentOneDocument {
 
         // checking onomatopaes, texto speak and emoticons in ascii ("non words")
         for (TextFragment textFragment : allTextFragments) {
-            if (textFragment instanceof NonWord) {
-                NonWord nonWord = (NonWord) textFragment;
+            if (textFragment instanceof NonWord nonWord) {
                 List<Category> categories = nonWord.getPoi().getCategories();
                 for (Category cat : categories) {
                     ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(cat.getCategoryEnum(), textFragment);
@@ -126,9 +125,7 @@ public class ClassifierSentimentOneDocument {
             }
         }
 
-        for (SentenceLike sentenceLikeFragment : listOfSentenceLikeFragments) {
-
-            List<NGram> ngramsInSentence = sentenceLikeFragment.getNgrams().stream().filter(x -> x instanceof NGram).map(NGram.class::cast).collect(toList());
+        for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
 
             for (NGram ngram : sentenceLikeFragment.getNgrams()) {
 
@@ -160,7 +157,7 @@ public class ClassifierSentimentOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }
@@ -187,7 +184,7 @@ public class ClassifierSentimentOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, ngramsInSentence, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }

@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.heuristics.catalog;
 
@@ -7,17 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import net.clementlevallois.umigon.model.BooleanCondition;
-import static net.clementlevallois.umigon.model.BooleanCondition.BooleanConditionEnum.isInATextWithOneOfTheseSpecificTerms;
 import net.clementlevallois.umigon.model.NGram;
+import static net.clementlevallois.umigon.model.BooleanCondition.BooleanConditionEnum.isInASentenceLikeFragmentWithOneOfTheseSpecificTerms;
 
 /**
  *
  * @author LEVALLOIS
  */
-public class IsInATextWithOneOfTheseSpecificTerms {
+public class IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms {
 
     public static BooleanCondition check(boolean stripped, NGram ngram, List<NGram> ngrams, Set<String> keywords) {
-        BooleanCondition booleanCondition = new BooleanCondition(isInATextWithOneOfTheseSpecificTerms);
+        BooleanCondition booleanCondition = new BooleanCondition(isInASentenceLikeFragmentWithOneOfTheseSpecificTerms);
         booleanCondition.setAssociatedKeywords(keywords);
         List<NGram> nGramsThatMatched = new ArrayList();
         for (NGram ngramLoop : ngrams) {

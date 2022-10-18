@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -14,6 +14,7 @@ import java.util.List;
 public class SentenceLike  implements Serializable{
     
     private List<NGram> ngrams = new ArrayList();
+    private List<TextFragment> textFragments = new ArrayList();
     private int indexOrdinal;
     private int indexCardinal;
 
@@ -23,6 +24,14 @@ public class SentenceLike  implements Serializable{
 
     public void setNgrams(List<NGram> ngrams) {
         this.ngrams = ngrams;
+    }
+
+    public List<TextFragment> getTextFragments() {
+        return textFragments;
+    }
+
+    public void setTextFragments(List<TextFragment> textFragments) {
+        this.textFragments = textFragments;
     }
 
     public int getIndexOrdinal() {

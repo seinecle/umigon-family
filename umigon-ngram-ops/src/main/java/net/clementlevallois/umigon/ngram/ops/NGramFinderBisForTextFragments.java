@@ -29,7 +29,7 @@ public class NGramFinderBisForTextFragments {
 //        String example = "J'aime, vraiment vous êtes des champions (même toi!) http://momo";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
-        List<SentenceLike> listOfSentenceLike = new FragmentSelectorForNGramOps().returnSentenceLikeFragmentsWithTermsOnly(allTextFragments);
+        List<SentenceLike> listOfSentenceLike = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
         int countSentenceLikeFragments = 1;
         for (SentenceLike sentenceLikeFragment : listOfSentenceLike) {
             System.out.println("sentence like fragment #" + countSentenceLikeFragments++);

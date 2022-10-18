@@ -26,6 +26,8 @@ public class BooleanCondition implements Serializable {
 
     public static enum BooleanConditionEnum implements Serializable {
         none,
+        isLastNGramOfSegment,
+        isInSegmentEndingWithExclamation,
         isImmediatelyPrecededByANegation,
         isImmediatelyFollowedByTimeIndication,
         isImmediatelyFollowedByANegation,
@@ -45,7 +47,7 @@ public class BooleanCondition implements Serializable {
         isPrecededByPositive,
         isPrecededBySpecificTerm,
         isFollowedBySpecificTerm,
-        isInATextWithOneOfTheseSpecificTerms,
+        isInASentenceLikeFragmentWithOneOfTheseSpecificTerms,
         isHashtagStart,
         isHashtag,
         isInHashtag,
