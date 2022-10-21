@@ -15,8 +15,8 @@ import java.util.Set;
  */
 public class Lemmatizer {
 
-    private String[] noLemmaEN = new String[]{"access", "accumbens", "addresses", "afterwards", "always", "amazing", "approaches", "analyses", "biases", "businesses", "ceiling", "classes", "crises", "daunting", "discusses", "economics", "ethics", "focuses", "fries", "goes", "humanities", "hypotheses", "inches", "lies", "losses", "marketing", "morning", "news", "outstanding", "physics", "politics", "premises", "processes", "red", "rigged", "ries", "series", "sometimes", "species", "spring", "status", "ted", "themselves", "neural processes", "united", "wales", "witnesses"};
-    private String[] noLemmaFR = new String[]{"accès", "alors", "après", "auprès", "Calvados", "concours", "corps", "cours", "dans", "discours", "divers", "êtes", "éthos", "gens", "gros", "lors", "outils", "pays", "parcours", "près", "procès", "puis", "sans", "secours", "sens", "sommes", "succès", "temps", "travers", "très", "univers", "viens"};
+    private String[] noLemmaEN = new String[]{"access", "accumbens", "addresses", "afterwards", "always", "amazing", "approaches", "analyses", "biases", "businesses", "ceiling", "classes", "crises", "daunting", "discusses", "economics", "elsevier", "ethics", "focuses", "fries", "goes", "humanities", "hypotheses", "inches", "lies", "losses", "marketing", "morning", "news", "outlier", "outstanding", "physics", "politics", "premises", "processes", "red", "rigged", "ries", "series", "sometimes", "something", "species", "spring", "status", "ted", "themselves", "neural processes", "united", "wales", "witnesses"};
+    private String[] noLemmaFR = new String[]{"accès", "alors", "après", "auprès", "Calvados", "concours", "corps", "cours", "dans", "discours", "divers", "êtes", "éthos", "gens", "gros", "lors", "outils", "pays", "parcours", "près", "procès", "propos", "puis", "sans", "secours", "sens", "sommes", "succès", "temps", "travers", "très", "univers", "viens"};
     private String[] noLemma = new String[]{"analytics", "accumbens", "aws", "bayes", "business", "charles", "ects", "cnrs", "cowles", "deep learning", "developer", "ethos", "faas", "forbes", "iaas", "james", "keynes", "koopmans", "nhs", "paas", "paris", "programming", "reactjs", "saas", "siemens", "sanders", "ted", "vuejs", "united states"};
 
     private Set<String> noLemmaSet;
@@ -53,6 +53,7 @@ public class Lemmatizer {
                 && !term.endsWith("us")
                 && !term.endsWith("as")
                 && !term.endsWith("ss")
+                && !term.endsWith("sses")
                 && !term.endsWith("ies")
                 && !noLemmaSet.contains(term)
                 && !term.endsWith("is")) {
@@ -68,18 +69,25 @@ public class Lemmatizer {
         }
 
         if (lang.equals("en")) {
+            if (term.endsWith("sses")) {
+                term = term.substring(0, term.length() - 2);
+            }
             if (term.endsWith("ies")) {
                 term = term.substring(0, term.length() - 3) + "y";
-            } else if (term.endsWith("'s")) {
+            }
+            else if (term.endsWith("'s")) {
                 term = term.substring(0, term.length() - 2);
             } else if (term.endsWith("ed")) {
                 if (term.endsWith("rred")) {
                     term = term.substring(0, term.length() - 3);
                 } else if (term.endsWith("lked")
                         || term.endsWith("cked")
+                        || term.endsWith("pted")
                         || term.endsWith("ssed")
                         || term.endsWith("lled")
-                        || term.endsWith("red")
+                        || term.endsWith("iased")
+                        || (term.endsWith("red") && (!term.endsWith("ired")& !term.endsWith("ured")))
+                        || term.endsWith("aired")
                         || term.endsWith("used")
                         || term.endsWith("ned")
                         || (term.endsWith("ded") & !term.endsWith("ided"))
@@ -98,7 +106,13 @@ public class Lemmatizer {
             } else if (term.endsWith("ing")) {
                 if (term.endsWith("king") && !term.equals("king")) {
                     term = term.substring(0, term.length() - 3) + "e";
-                } else if (term.endsWith("sing") || term.endsWith("cing") || term.endsWith("ving") || term.endsWith("ring")) {
+                } else if (term.endsWith("ging") && !term.endsWith("gging")) {
+                    term = term.substring(0, term.length() - 3) + "e";
+                } else if (term.endsWith("sing")
+                        || term.endsWith("zing")
+                        || term.endsWith("cing")
+                        || term.endsWith("ving")
+                        || term.endsWith("ring")) {
                     term = term.substring(0, term.length() - 3) + "e";
                 } else if (term.length() > 2) {
                     term = term.substring(0, term.length() - 3);
@@ -113,7 +127,7 @@ public class Lemmatizer {
                         if (size > 1) {
                             //voting has become vot. Should become vote. Same for any word ending in at or ot (not plant, suspect, ...). Yet, it will miscorrect "pivot"
                             lastTwoLetters = term.substring(size - 2, size);
-                            if (lastTwoLetters.equals("at") || lastTwoLetters.equals("ot")) {
+                            if (lastTwoLetters.equals("at") || lastTwoLetters.equals("ot") || lastTwoLetters.equals("id")) {
                                 term = term + "e";
                             }
                         }
@@ -124,6 +138,9 @@ public class Lemmatizer {
             }
         }
         if (lang.equals("fr")) {
+            if (term.endsWith("ies") || term.endsWith("sses")) {
+                term = term.substring(0, term.length() - 1);
+            }
             if (term.endsWith("ère")) {
                 term = term.substring(0, term.length() - 3) + "er";
             }
