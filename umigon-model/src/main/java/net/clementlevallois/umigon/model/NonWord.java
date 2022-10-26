@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -26,6 +26,7 @@ public class NonWord extends TextFragment implements Serializable {
 
     public void setPoi(PatternOfInterest poi) {
         this.poi = poi;
+        this.typeOfTextFragmentEnum = poi.getTypeOfTextFragmentEnum();
     }
 
     public void setTypeOfTextFragmentEnum(TypeOfTextFragment.TypeOfTextFragmentEnum typeOfTextFragmentEnum) {

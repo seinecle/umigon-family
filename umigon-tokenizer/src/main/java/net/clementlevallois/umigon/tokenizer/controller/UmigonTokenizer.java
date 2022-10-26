@@ -28,7 +28,7 @@ public class UmigonTokenizer {
 
     public static void main(String[] args) throws IOException {
 
-//        String text = "I love chocolate";
+        String text = "I love chocolate";
 //        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
 
 //        String text = "I love chocolate :-), really (especially with coffee!)";
@@ -168,13 +168,6 @@ public class UmigonTokenizer {
                             if (poi.getMatched()) {
                                 nonWord = punctuation.toNonWord(poi, currPunctWithNewChar);
                                 currFragment = CurrentFragment.CURR_FRAGMENT_IS_NON_WORD;
-//                                textFragments.add(nonWord);
-//                                textFragmentStarted = false;
-//                                dontStartNewFragment = true;
-//                                term = new Term();
-//                                whiteSpace = new WhiteSpace();
-//                                punctuation = new Punctuation();
-
                                 break;
                             } else {
                                 punctuation.addStringToOriginalForm(stringOfCodePoint);
