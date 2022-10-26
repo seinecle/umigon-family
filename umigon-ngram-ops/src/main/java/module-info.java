@@ -8,6 +8,7 @@ module net.clementlevallois.umigon.ngram.ops {
     
     requires net.clementlevallois.umigon.model;
     requires net.clementlevallois.umigon.tokenizer;
+    requires net.clementlevallois.utils;
     
     exports net.clementlevallois.umigon.ngram.ops;
 }

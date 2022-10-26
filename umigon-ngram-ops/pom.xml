@@ -20,5 +20,9 @@
             <artifactId>umigon-tokenizer</artifactId>
             <version>1.0</version>
         </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.utils</groupId>
+            <artifactId>utils-core</artifactId>
+        </dependency>
     </dependencies>
 </project>
