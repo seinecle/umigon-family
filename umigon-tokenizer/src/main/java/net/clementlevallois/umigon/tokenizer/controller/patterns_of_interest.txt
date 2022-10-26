@@ -5,7 +5,7 @@ arrgh	(arr+g)	true	12,22	ONOMATOPAE
 ouchhh	(ouu+ch+)	true	12,22	ONOMATOPAE
 yeeey or yaaaay	(y[e|a]+y)	true	11,22	ONOMATOPAE
 hahahaha	(haha)	true	11,22	ONOMATOPAE
-ewww	([^n||#]eww+)	true	12,22	ONOMATOPAE
+ewww	([^n|^j|^f|#]eww+)	true	12,22	ONOMATOPAE
 LMFAO	(lmfao+)	true	11,22	TEXTO_SPEAK
 LMAO	(lmao+)	true	11,22	TEXTO_SPEAK
 yeaaa	(yeaa+)	true	11,22	ONOMATOPAE
