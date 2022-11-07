@@ -23,7 +23,7 @@ import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 public class SentenceLikeFragmentsDetector {
 
     public static void main(String args[]) throws IOException {
-        String example = "La meuf qui hurle dans le bus parce qu' on s' est assis à côté d' elle... 😒";
+        String example = "I love chocolate, because it is so sweet and delicious. Really (I am honest!)";
 //        String example = "Je vais super bien :-), vraiment vous êtes des champions (même toi!)";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
@@ -47,11 +47,11 @@ public class SentenceLikeFragmentsDetector {
 
         while (it.hasNext()) {
             TextFragment nextTextFragment = it.next();
-//            if (nextTextFragment.getString().equals("burnes")){
+//            if (nextTextFragment.getOriginalForm().equals("it")) {
 //                System.out.println("stop");
 //            }
             sentenceLike.getTextFragments().add(nextTextFragment);
-            
+
             TypeOfTextFragment.TypeOfTextFragmentEnum typeOfTextFragment = nextTextFragment.getTypeOfTextFragmentEnum();
 //            if (typeOfTextFragment == null){
 //                System.out.println("stop");
@@ -80,7 +80,10 @@ public class SentenceLikeFragmentsDetector {
                 }
                 case PUNCTUATION -> {
                     String s = nextTextFragment.getOriginalForm();
-                    if (!sentenceLike.getNgrams().isEmpty() && s.contains(",") || s.contains("(") || s.contains(")") || s.contains("\"") || s.contains("«") || s.contains("»") || s.contains("“") || s.contains("”") || s.contains("„")) {
+                    if (s.equals(",")) {
+                        System.out.println("stop");
+                    }
+                    if (s.contains(".") || s.contains(",") || s.contains("(") || s.contains(")") || s.contains("\"") || s.contains("«") || s.contains("»") || s.contains("“") || s.contains("”") || s.contains("„")) {
                         sentenceLike.getNgrams().addAll(listOfNGrams);
                         sentenceLike.setIndexOrdinal(listOfSentenceLikeFragments.size());
                         listOfSentenceLikeFragments.add(sentenceLike);
@@ -91,8 +94,7 @@ public class SentenceLikeFragmentsDetector {
                 default -> {
                 }
             }
-            //do nothing
-                    }
+        }
         sentenceLike.getNgrams().addAll(listOfNGrams);
         if (!sentenceLike.getNgrams().isEmpty()) {
             listOfSentenceLikeFragments.add(sentenceLike);

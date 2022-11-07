@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.heuristics.catalog;
 

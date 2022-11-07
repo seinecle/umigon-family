@@ -25,8 +25,8 @@ import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 public class NGramFinderBisForTextFragments {
 
     public static void main(String[] args) throws IOException {
-        String example = "Nuts have properties)";
-//        String example = "J'aime, vraiment vous êtes des champions (même toi!) http://momo";
+//        String example = "This sentence is hard)";
+        String example = "I love it, really (I am serious)";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
         List<SentenceLike> listOfSentenceLike = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);

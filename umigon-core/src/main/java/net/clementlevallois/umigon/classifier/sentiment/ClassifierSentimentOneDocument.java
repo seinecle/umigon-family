@@ -14,7 +14,6 @@ import net.clementlevallois.umigon.model.Document;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import static java.util.stream.Collectors.toList;
 import net.clementlevallois.umigon.heuristics.catalog.IsNegationInAllCaps;
 import net.clementlevallois.umigon.heuristics.catalog.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;

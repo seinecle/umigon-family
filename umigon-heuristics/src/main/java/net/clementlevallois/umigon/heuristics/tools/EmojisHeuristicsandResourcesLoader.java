@@ -1,9 +1,8 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.heuristics.tools;
 
-import com.vdurmont.emoji.EmojiParser;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +18,6 @@ import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Emoji;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.TextFragment;
-import net.clementlevallois.umigon.model.TypeOfTextFragment;
 
 /**
  *
