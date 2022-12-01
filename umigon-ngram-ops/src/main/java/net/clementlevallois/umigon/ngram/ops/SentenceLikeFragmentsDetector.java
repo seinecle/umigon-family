@@ -80,9 +80,9 @@ public class SentenceLikeFragmentsDetector {
                 }
                 case PUNCTUATION -> {
                     String s = nextTextFragment.getOriginalForm();
-                    if (s.equals(",")) {
-                        System.out.println("stop");
-                    }
+//                    if (s.equals(",")) {
+//                        System.out.println("stop");
+//                    }
                     if (s.contains(".") || s.contains(",") || s.contains("(") || s.contains(")") || s.contains("\"") || s.contains("«") || s.contains("»") || s.contains("“") || s.contains("”") || s.contains("„")) {
                         sentenceLike.getNgrams().addAll(listOfNGrams);
                         sentenceLike.setIndexOrdinal(listOfSentenceLikeFragments.size());

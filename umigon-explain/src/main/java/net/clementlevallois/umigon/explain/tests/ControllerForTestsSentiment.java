@@ -6,9 +6,9 @@ package net.clementlevallois.umigon.explain.tests;
  * and open the template in the editor.
  */
 
+import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.classifier.sentiment.ClassifierSentimentOneDocument;
 import net.clementlevallois.umigon.model.Document;
-import net.clementlevallois.umigon.semantics.resources.Semantics;
 import net.clementlevallois.umigon.explain.controller.UmigonExplain;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
 

@@ -3,34 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.clementlevallois.umigon.controller;
+package net.clementlevallois.umigon.classifier.controller;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import net.clementlevallois.umigon.classifier.organic.ClassifierOrganicOneDocument;
-import net.clementlevallois.umigon.semantics.resources.Semantics;
+import net.clementlevallois.umigon.classifier.resources.Semantics;
+import net.clementlevallois.umigon.classifier.sentiment.ClassifierSentimentOneDocument;
 import net.clementlevallois.umigon.model.Document;
 
 /**
  *
  * @author LEVALLOIS
  */
-public class UmigonControllerOrganic {
+public class UmigonController {
 
     boolean initCompleted = false;
-    ClassifierOrganicOneDocument classifierMachineForPriorInitialization;
+    ClassifierSentimentOneDocument classifierMachineForPriorInitialization;
     Semantics semanticsFR = new Semantics();
     Semantics semanticsEN = new Semantics();
+    Semantics semanticsES = new Semantics();
+    ClassifierSentimentOneDocument machineFR;
+    ClassifierSentimentOneDocument machineEN;
+    ClassifierSentimentOneDocument machineES;
 
     public static void main(String args[]) throws URISyntaxException, Exception {
-        Document document = new UmigonControllerOrganic().runSingleLine("C'est vraiment bien nul", "fr");
+        Document document = new UmigonController().runSingleLine("rappelez vous que si agnes buzin au lieu de mettre des mots dans les aéroports pendant 1 mois avait pris des mesures on serait pas passé de 0% de bridage à 100% en 3j mais on aurait �t� � 50% depuis 15 jours. bien + vivable #macron20h #covid19france #castaner #confinementtotal", "fr");
         System.out.println("language du texte: " + document.getLanguage());
+        System.out.println("sentiment du texte: " + document.getExplanationSentimentHtml());
 
     }
 
-    public UmigonControllerOrganic() {
+    public UmigonController() {
         try {
             init();
         } catch (Exception ex) {
@@ -53,18 +58,25 @@ public class UmigonControllerOrganic {
         if (!initCompleted) {
             semanticsFR.loader("fr");
             semanticsEN.loader("en");
+            semanticsEN.loader("es");
+            machineFR = new ClassifierSentimentOneDocument(semanticsFR);
+            machineEN = new ClassifierSentimentOneDocument(semanticsEN);
+            machineES = new ClassifierSentimentOneDocument(semanticsES);
             initCompleted = true;
         }
     }
 
     public List<Document> runMultipleLinesOneLanguage(List<String> stringsToBeProcessed, String lang) throws Exception {
-        ClassifierOrganicOneDocument classifierMachine = null;
+        ClassifierSentimentOneDocument classifierMachine = null;
         List<Document> list = new ArrayList();
         if (lang.equals("fr")) {
-            classifierMachine = new ClassifierOrganicOneDocument(semanticsFR);
+            classifierMachine = new ClassifierSentimentOneDocument(semanticsFR);
         }
         if (lang.equals("en")) {
-            classifierMachine = new ClassifierOrganicOneDocument(semanticsEN);
+            classifierMachine = new ClassifierSentimentOneDocument(semanticsEN);
+        }
+        if (lang.equals("es")) {
+            classifierMachine = new ClassifierSentimentOneDocument(semanticsES);
         }
         for (String stringToBeProcessed : stringsToBeProcessed) {
             Document document = new Document(stringToBeProcessed);
@@ -77,8 +89,6 @@ public class UmigonControllerOrganic {
 
     public List<Document> runMultipleLinesMultipleLanguages(Map<String, String> stringsWithLangs) throws Exception {
         List<Document> list = new ArrayList();
-        ClassifierOrganicOneDocument machineFR = new ClassifierOrganicOneDocument(semanticsFR);
-        ClassifierOrganicOneDocument machineEN = new ClassifierOrganicOneDocument(semanticsEN);
         for (Map.Entry<String, String> entry : stringsWithLangs.entrySet()) {
             Document document = new Document(entry.getKey());
             if (entry.getValue().equals("fr")) {
@@ -86,6 +96,9 @@ public class UmigonControllerOrganic {
             }
             if (entry.getValue().equals("en")) {
                 document = machineEN.call(document);
+            }
+            if (entry.getValue().equals("es")) {
+                document = machineES.call(document);
             }
             list.add(document);
         }
@@ -98,15 +111,19 @@ public class UmigonControllerOrganic {
             Document document = new Document(stringToBeProcessed);
             return document;
         }
-        ClassifierOrganicOneDocument classifierMachine = null;
+            Document document = new Document(stringToBeProcessed);
         if (lang.equals("fr")) {
-            classifierMachine = new ClassifierOrganicOneDocument(semanticsFR);
+            document = machineFR.call(document);
+            return document;
         }
         if (lang.equals("en")) {
-            classifierMachine = new ClassifierOrganicOneDocument(semanticsEN);
+            document = machineEN.call(document);
+            return document;
         }
-        Document document = new Document(stringToBeProcessed);
-        document = classifierMachine.call(document);
+        if (lang.equals("es")) {
+            document = machineES.call(document);
+            return document;
+        }
         return document;
     }
 
@@ -122,11 +139,28 @@ public class UmigonControllerOrganic {
 
     public void initializeClassifier(String lang) throws Exception {
         if (lang.equals("fr")) {
-            classifierMachineForPriorInitialization = new ClassifierOrganicOneDocument(semanticsFR);
+            classifierMachineForPriorInitialization = new ClassifierSentimentOneDocument(semanticsFR);
         }
         if (lang.equals("en")) {
-            classifierMachineForPriorInitialization = new ClassifierOrganicOneDocument(semanticsEN);
+            classifierMachineForPriorInitialization = new ClassifierSentimentOneDocument(semanticsEN);
+        }
+        if (lang.equals("es")) {
+            classifierMachineForPriorInitialization = new ClassifierSentimentOneDocument(semanticsES);
         }
     }
+
+    public Semantics getSemanticsFR() {
+        return semanticsFR;
+    }
+
+    public Semantics getSemanticsEN() {
+        return semanticsEN;
+    }
+    
+    public Semantics getSemanticsES() {
+        return semanticsES;
+    }
+    
+    
 
 }

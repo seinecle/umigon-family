@@ -5,7 +5,7 @@
  */
 package net.clementlevallois.umigon.classifier.delight;
 
-import net.clementlevallois.umigon.semantics.resources.Semantics;
+import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.model.Document;
 
 /**

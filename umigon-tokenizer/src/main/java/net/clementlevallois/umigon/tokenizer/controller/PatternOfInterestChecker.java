@@ -41,7 +41,7 @@ public class PatternOfInterestChecker {
                 poi = new PatternOfInterest();
                 poi.setDescription(elements[0]);
                 poi.setRegex(elements[1]);
-                poi.setShouldApplyToLowerCaseText(Boolean.valueOf(elements[2]));
+                poi.setShouldApplyToLowerCaseText(Boolean.parseBoolean(elements[2]));
                 List<String> categoriesIds = Arrays.asList(elements[3].split(","));
                 for (String categoryId : categoriesIds) {
                     Category category = new Category(categoryId);
@@ -89,20 +89,4 @@ public class PatternOfInterestChecker {
             return toReturn;
         }
     }
-
-//    public void containsTimeIndication() {
-//        Heuristic heuristic;
-//        TermLevelHeuristics termLevelHeuristics = new TermLevelHeuristics();
-//        int index = 0;
-//        for (String term : HeuristicsLoaderAtStartup.getMapH4().keySet()) {
-//            if (lc.contains(term)) {
-//                heuristic = HeuristicsLoaderAtStartup.getMapH12().get(term);
-//                String result = termLevelHeuristics.checkFeatures(heuristic, lc, lc, term);
-//                if (result != null) {
-//                    index = lc.indexOf(term);
-//                    tweet.addToListCategories(result, index);
-//                }
-//            }
-//        }
-//    }
 }

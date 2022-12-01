@@ -181,7 +181,7 @@ public class ExplanationOneDecision {
             sb.append(".");
         }
         switch (decision.getDecisionMotive()) {
-            case POSITIVE_TERM_THEN_NEGATION_THEN_NEGATIVE_TERM:
+            case POSITIVE_TERM_THEN_NEGATION_THEN_NEGATIVE_TERM -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_negative_term_is"))
                         .append(" ")
@@ -191,8 +191,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case NEGATIVE_TERM_THEN_NEGATION_THEN_POSITIVE_TERM:
+            }
+            case NEGATIVE_TERM_THEN_NEGATION_THEN_POSITIVE_TERM -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_negative_term_is"))
                         .append(" ")
@@ -202,8 +202,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case NEGATION_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM:
+            }
+            case NEGATION_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_negative_term_is"))
                         .append(" ")
@@ -213,8 +213,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case NEGATION_THEN_POSITIVE_TERM_THEN_NEGATIVE_TERM:
+            }
+            case NEGATION_THEN_POSITIVE_TERM_THEN_NEGATIVE_TERM -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_negative_term_is"))
                         .append(" ")
@@ -224,8 +224,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case MODERATOR_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM:
+            }
+            case MODERATOR_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" ")
@@ -236,8 +236,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case NEGATIVE_TERM_THEN_MODERATOR:
+            }
+            case NEGATIVE_TERM_THEN_MODERATOR -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" ")
@@ -248,8 +248,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case POSITIVE_TERM_THEN_MODERATOR:
+            }
+            case POSITIVE_TERM_THEN_MODERATOR -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" ")
@@ -260,8 +260,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case TWO_POSITIVE_TERMS_THEN_MODERATOR:
+            }
+            case TWO_POSITIVE_TERMS_THEN_MODERATOR -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" ")
@@ -272,8 +272,8 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case TWO_NEGATIVE_TERMS_THEN_MODERATOR:
+            }
+            case TWO_NEGATIVE_TERMS_THEN_MODERATOR -> {
                 sb.append(" ");
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" ")
@@ -284,10 +284,11 @@ public class ExplanationOneDecision {
                         .append(decision.getTextFragmentInvolvedInDecision().getOriginalForm())
                         .append("</span>")
                         .append("\"");
-                break;
-            case WINNER_TAKES_ALL:
-            //nothing here because we treated this case above the switch statement
+            }
+            case WINNER_TAKES_ALL -> {
+            }
         }
+        //nothing here because we treated this case above the switch statement
 
         return sb.toString();
     }

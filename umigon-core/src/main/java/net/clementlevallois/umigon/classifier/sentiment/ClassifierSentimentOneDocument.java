@@ -24,7 +24,7 @@ import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
-import net.clementlevallois.umigon.semantics.resources.Semantics;
+import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;

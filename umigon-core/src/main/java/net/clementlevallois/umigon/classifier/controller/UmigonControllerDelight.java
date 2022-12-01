@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.clementlevallois.umigon.controller;
+package net.clementlevallois.umigon.classifier.controller;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import net.clementlevallois.umigon.classifier.delight.ClassifierDelightOneDocument;
-import net.clementlevallois.umigon.semantics.resources.Semantics;
+import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.model.Document;
 
 /**

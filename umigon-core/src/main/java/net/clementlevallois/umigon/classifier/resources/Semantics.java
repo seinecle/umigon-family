@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.clementlevallois.umigon.semantics.resources;
+package net.clementlevallois.umigon.classifier.resources;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -32,6 +32,7 @@ public class Semantics {
             this.lang = lang;
             this.supportedLanguages.add("en");
             this.supportedLanguages.add("fr");
+            this.supportedLanguages.add("es");
             if (lang == null || !supportedLanguages.contains(lang)) {
                 this.lang = "en";
             }
