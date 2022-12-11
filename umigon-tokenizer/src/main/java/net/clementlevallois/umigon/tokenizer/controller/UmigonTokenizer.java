@@ -30,8 +30,8 @@ public class UmigonTokenizer {
 
 //        String text = "I love chocolate";
 //        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
-
-        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
+//        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
+        String text = "This app is amazing";
 //        String text = "nocode is the new thing :) 🤔";
         System.out.println("text: " + text);
         System.out.println("");
@@ -237,6 +237,11 @@ public class UmigonTokenizer {
                 }
 
                 if (currFragment == CurrentFragment.CURR_FRAGMENT_IS_TERM) {
+                    String originalForm = term.getOriginalForm();
+                    String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
+                    String cleanedAndStrippedForm = TextCleaningOps.flattenToAscii(cleanedForm);
+                    term.setCleanedForm(cleanedForm);
+                    term.setCleanedAndStrippedForm(cleanedAndStrippedForm);
                     textFragments.add(term);
                 }
 
