@@ -32,16 +32,41 @@ public class ControllerForTestsSentiment {
         Semantics semanticsFR = new Semantics();
         semanticsFR.loader("fr");
 
+        Semantics semanticsES = new Semantics();
+        semanticsES.loader("es");
+
 
         ClassifierSentimentOneDocument classifierOneDocumentFR = new ClassifierSentimentOneDocument(semanticsFR);
         Document docFR;
         Document resultFR;
+        Document docES;
+        Document resultES;
         Document resultEN;
         Document docEN;
         String markers;
 
         ClassifierSentimentOneDocument classifierOneDocumentEN = new ClassifierSentimentOneDocument(semanticsEN);
+        ClassifierSentimentOneDocument classifierOneDocumentES = new ClassifierSentimentOneDocument(semanticsES);
 
+
+        docES = new Document();
+        docES.setText("Odio");
+        resultES = classifierOneDocumentES.call(docES);
+        System.out.println("test: " + docES.getText());
+        System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultES, "fr"));
+        markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultES, "fr");
+        System.out.println("semantic markers found: " + markers);
+        System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultES, "fr"));        
+        
+        docEN = new Document();
+        docEN.setText("This app is amazing");
+        resultEN = classifierOneDocumentEN.call(docEN);
+        System.out.println("test: " + docEN.getText());
+        System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultEN, "fr"));
+        markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultEN, "fr");
+        System.out.println("semantic markers found: " + markers);
+        System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultEN, "fr"));        
+        
         docFR = new Document();
         docFR.setText("D’habitude je n’aime pas trop la charcuterie mais j’ai beaucoup apprécie la cuisine des bouchons lyonnais 😊");
         resultFR = classifierOneDocumentFR.call(docFR);
