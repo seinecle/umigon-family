@@ -58,7 +58,7 @@ public class UmigonController {
         if (!initCompleted) {
             semanticsFR.loader("fr");
             semanticsEN.loader("en");
-            semanticsEN.loader("es");
+            semanticsES.loader("es");
             machineFR = new ClassifierSentimentOneDocument(semanticsFR);
             machineEN = new ClassifierSentimentOneDocument(semanticsEN);
             machineES = new ClassifierSentimentOneDocument(semanticsES);

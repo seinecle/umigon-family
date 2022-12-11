@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -13,6 +13,7 @@ public class Term extends TextFragment implements Serializable {
 
     private String cleanedForm;
     private String cleanedAndStrippedForm;
+
 
     @Override
     public TypeOfTextFragment.TypeOfTextFragmentEnum getTypeOfTextFragmentEnum() {

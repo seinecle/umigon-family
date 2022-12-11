@@ -63,6 +63,9 @@ public class SentenceLikeFragmentsDetector {
                     }
                     nextTextFragment.setIndexOrdinal(listOfNGrams.size());
                     Term term = (Term) nextTextFragment;
+//                    if (term.getOriginalForm().equals("amazing")){
+//                        System.out.println("stop");
+//                    }
                     NGram ngram = new NGram();
                     ngram.setIndexCardinal(term.getIndexCardinal());
                     ngram.setIndexOrdinal(term.getIndexOrdinal());
