@@ -1,0 +1,21 @@
+fallar	isHashtagStart	012
+ofertas	isHashtag	0611
+acuerdo	isHashtag	0611
+libre	isHashtag	0611
+deténgase	isHashtagStart	012
+verguenza	isHashtagStart	012
+ayuda	isHashtag	012
+ayúdame	isHashtag	012
+boicotear	isHashtagStart	012
+victoria	isHashtagStart	0611
+rebaja	isHashtagStart	0611
+bam	isHashtag	022
+Molesto	isHashtag	012
+desear	isHashtag	011
+adicto	isHashtag	011
+fiesta	isHashtag	011
+invitar	isHashtag	0611
+sacude los puños	isHashtag	012
+adicto	isHashtag	011
+bendecido	isHashtag	011
+estupendo	isHashtagStart	011

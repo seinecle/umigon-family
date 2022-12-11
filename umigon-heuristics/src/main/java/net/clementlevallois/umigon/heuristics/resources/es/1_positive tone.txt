@@ -1,0 +1,373 @@
+logro	!isImmediatelyPrecededByANegation	11:12
+admirar	!isImmediatelyPrecededByANegation	11:12
+asequible	!isImmediatelyPrecededByANegation	11:12
+todo en uno		11
+siempre un placer	!isImmediatelyPrecededByANegation	11:12
+asombrosa	!isImmediatelyPrecededByANegation	11:12
+	!isImmediatelyPrecededByANegation	11:12
+entretenida	!isImmediatelyPrecededByANegation	11:12
+y he terminado		11
+ángel	!isImmediatelyPrecededByANegation	11:12
+valorar	!isImmediatelyPrecededByANegation	11:12
+apreciada	!isImmediatelyPrecededByANegation	11:12
+atractiva	!isImmediatelyPrecededByANegation	11:12
+asombrosa	!isImmediatelyPrecededByANegation	11:12
+asombrosa	!isImmediatelyPrecededByANegation	11:12
+genialidad	!isImmediatelyPrecededByANegation	11:12
+asombrosa	!isImmediatelyPrecededByANegation	11:12
+antipática		11
+antipática		11
+estropear		11
+hermosa	!isImmediatelyPrecededByANegation	11:12
+La mejor	!isImmediatelyPrecededByANegation	11:12
+mejor	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///not|start+++!isImmediatelyPrecededBySpecificTerm///would|d|wd	if(A && B && C){11} else {10} 
+mejores amigos		11
+gran admirador	!isImmediatelyPrecededByANegation	11:12
+big up	!isImmediatelyPrecededByANegation	11:12
+big ups	!isImmediatelyPrecededByANegation	11:12
+perra	!isImmediatelyPrecededByANegation	11:12
+bendecida	!isImmediatelyPrecededByANegation	11:12
+bendición	!isImmediatelyPrecededByANegation	11:12
+estropeada	isPrecededBySpecificTerm ///mind+++isPrecededBySubjectiveTerm+++isFirstTermOfText	if(A || B || C){11} else {10}
+brillante	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///luz	if(A && B){11} else {10}
+brillo	!isImmediatelyPrecededByANegation	11:12
+ilumina		11
+ilumina	!isImmediatelyPrecededByANegation	11:12
+brillantez	!isImmediatelyPrecededByANegation	11:12
+brillante	!isImmediatelyPrecededByANegation	11:12
+no puedo esperar	!isFollowedBySpecificTerm ///que se acabe	11:12
+preocuparse	!isImmediatelyPrecededByANegation	11:12
+te tengo		11
+celebrar	!isImmediatelyPrecededByANegation	11:12
+celebracion	!isImmediatelyPrecededByANegation	11:12
+campeona	!isImmediatelyPrecededByANegation	11:12
+campeonas	!isImmediatelyPrecededByANegation	11:12
+¡salud!		11
+salud	!isImmediatelyPrecededByANegation	11:12
+relajarse	!isImmediatelyPrecededByANegation	11:12
+relajarsa	!isImmediatelyPrecededByANegation	11:12
+elegante	!isImmediatelyPrecededByANegation	11:12
+inteligente	!isImmediatelyPrecededByANegation	11:12
+cohesiva	!isImmediatelyPrecededByANegation	11:12
+comodidad	!isImmediatelyPrecededByANegation	11:12
+felicitaciones		11
+felicidades a	!isImmediatelyPrecededByANegation	11:12
+felicidades		11
+felicidades	!isImmediatelyPrecededByANegation	11:12
+padre	!isImmediatelyPrecededByANegation	11:12
+el más padre	!isImmediatelyPrecededByANegation	11:12
+genial		11
+económico	!isImmediatelyPrecededByANegation	11:12
+agrietamiento	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///nudillo|nudillos|junta|juntas	if (A && B) {11} else {10}
+crank	!isImmediatelyPrecededByANegation	11:12
+antojo	!isImmediatelyPrecededByANegation	11:12
+Astuta	!isImmediatelyPrecededByANegation	11:12
+linda	!isImmediatelyPrecededByANegation	11:12
+cariño	!isImmediatelyPrecededByANegation	11:12
+decente	!isImmediatelyPrecededByANegation	11:12
+deliciosa	!isImmediatelyPrecededByANegation	11:12
+encantada	!isImmediatelyPrecededByANegation	11:12
+dedicada	!isImmediatelyPrecededByANegation	11:12
+codazo	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
+codazo	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
+dona		11
+sueño	!isImmediatelyPrecededByANegation	11:12
+soñando	!isImmediatelyPrecededByANegation	11:12
+Sueños	!isImmediatelyPrecededByANegation	11:12
+facilitar	!isImmediatelyPrecededByANegation	11:12
+fácilmente	!isImmediatelyPrecededByANegation	11:12
+fácil	!isImmediatelyPrecededByANegation	11:12
+Respetuosa del medio ambiente	!isImmediatelyPrecededByANegation	11:12
+Respetuosa del medio ambiente	!isImmediatelyPrecededByANegation	11:12
+eficiente	!isImmediatelyPrecededByANegation	11:12
+exaltada	!isImmediatelyPrecededByANegation	11:12
+activada	!isImmediatelyPrecededByANegation	11:12
+mejorar	!isImmediatelyPrecededByANegation	11:12
+mejora	!isImmediatelyPrecededByANegation	11:12
+mejoras	!isImmediatelyPrecededByANegation	11:12
+mejora	!isImmediatelyPrecededByANegation	11:12
+mejorando	!isImmediatelyPrecededByANegation	11:12
+disfrutar	!isImmediatelyPrecededByANegation	11:12
+disfruté	!isImmediatelyPrecededByANegation	11:12
+disfrutando	!isImmediatelyPrecededByANegation	11:12
+disfrute	!isImmediatelyPrecededByANegation	11:12
+entretenida	!isImmediatelyPrecededByANegation	11:12
+épica	!isImmediatelyPrecededByANegation	11:12
+excelente	!isImmediatelyPrecededByANegation	11:12
+excitar	!isImmediatelyPrecededByANegation	11:12
+Emocionada	!isImmediatelyPrecededByANegation	11:12
+Emocionada	!isImmediatelyPrecededByANegation	11:12
+emocionante	!isImmediatelyPrecededByANegation	11:12
+exquisita	!isImmediatelyPrecededByANegation	11:12
+fabulosa	!isImmediatelyPrecededByANegation	11:12
+fabulosa	!isImmediatelyPrecededByANegation	11:12
+lujosa	!isImmediatelyPrecededByANegation	11:12
+fantástica	!isImmediatelyPrecededByANegation	11:12
+fascinante	!isImmediatelyPrecededByANegation	11:12
+favorita	!isImmediatelyPrecededByANegation	11:12
+favorita	!isImmediatelyPrecededByANegation	11:12
+favorita	!isImmediatelyPrecededByANegation	11:12
+favorita	!isImmediatelyPrecededByANegation	11:12
+festiva	!isImmediatelyPrecededByANegation	11:12
+La mejor	!isImmediatelyPrecededByANegation	11:12
+chuparse los dedos	!isImmediatelyPrecededByANegation	11:12
+aficionada	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
+afectuosamente	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	11:12
+libre	!isImmediatelyPrecededByANegation	11:12
+regalos	!isImmediatelyPrecededByANegation	11:12
+Amistosa	!isImmediatelyPrecededByANegation	11:12
+así se hace	!isImmediatelyPrecededByANegation	11:12
+divertida	!isImmediatelyPrecededByANegation	11:12
+Más divertida	!isImmediatelyPrecededByANegation	11:12
+graciosa	!isImmediatelyPrecededByANegation	11:12
+futurista	!isImmediatelyPrecededByANegation	11:12
+ganancias	!isImmediatelyPrecededByANegation	11:12
+cambio de juego	!isImmediatelyPrecededByANegation	11:12
+genia	!isImmediatelyPrecededByANegation	11:12
+contenta	!isImmediatelyPrecededByANegation	11:12
+gloriosa	!isImmediatelyPrecededByANegation	11:12
+Dios los bendiga		11
+oro	isAllCaps	11
+buena	!isImmediatelyPrecededByANegation	11:12
+golosinas		11
+preciosa	!isImmediatelyPrecededByANegation	11:12
+estupenda	!isImmediatelyPrecededByANegation	11:12
+grandiosa	!isImmediatelyPrecededByANegation	11:12
+agradecida	!isImmediatelyPrecededByANegation	11:12
+estupenda	!isImmediatelyPrecededByANegation	11:12
+mayor	!isImmediatelyFollowedByANegativeOpinion+++!isImmediatelyFollowedByAPositiveOpinion	if(A && B){11} else {10}
+grandeza	!isImmediatelyPrecededByANegation	11:12
+sonrisa	!isImmediatelyPrecededByANegation	11:12
+maravillosa	!isImmediatelyPrecededByANegation	11:12
+innovador	!isImmediatelyPrecededByANegation	11:12
+innovador	!isImmediatelyPrecededByANegation	11:12
+valiente	!isImmediatelyPrecededByANegation	11:12
+ja ja		11
+ja ja		11
+práctica	!isImmediatelyPrecededByANegation	11:12
+más feliz	isImmediatelyPrecededBySpecificTerm///no podría ser|nunca ha sido|cualquier|yo|tanto|yo mismo | yo misma	11:10
+más feliz	!isImmediatelyPrecededByANegation	11:12
+contenta	!isImmediatelyPrecededByANegation	11:12
+Tiene algo para todas	!isImmediatelyPrecededByANegation	11:12
+te tiene cubierto	!isImmediatelyPrecededByANegation	11:12
+te tiene cubierto	!isImmediatelyPrecededByANegation	11:12
+celestial	!isImmediatelyPrecededByANegation	11:12
+jejeje		11
+ayudó	!isImmediatelyPrecededByANegation	11:12
+útil	!isImmediatelyPrecededByANegation	11:12
+ayuda	!isImmediatelyPrecededByANegation	11:12
+ayuda	!isImmediatelyPrecededByANegation	11:12
+héroe	!isImmediatelyPrecededByANegation	11:12
+alta calidad	!isImmediatelyPrecededByANegation	11:12
+alta calidad	!isImmediatelyPrecededByANegation	11:12
+divertidísima	!isImmediatelyPrecededByANegation	11:12
+divertidísima	!isImmediatelyPrecededByANegation	11:12
+honesta	!isImmediatelyPrecededByANegation	11:12
+honorable	!isImmediatelyPrecededByANegation	11:12
+honrada	!isImmediatelyPrecededByANegation	11:12
+esperar	!isImmediatelyPrecededByANegation	11:12
+esperanzas	!isImmediatelyPrecededByANegation	11:12
+caliente	!isPrecededBySpecificTerm///tiempo+++!isFollowedBySpecificTerm///tiempo+++!isImmediatelyPrecededByANegation	if (A && B && C) {11} else {10}
+más caliente	!isImmediatelyPrecededByANegation	11:12
+humilde	!isImmediatelyPrecededByANegation	11:12
+humillada	!isImmediatelyPrecededByANegation	11:12
+viva		11
+me gusta	!isImmediatelyPrecededByANegation	11:12
+te quiero	!isImmediatelyPrecededByANegation	11:12
+impresionada	!isImmediatelyPrecededByANegation	11:12
+impressive	!isImmediatelyPrecededByANegation	11:12
+mejorar	!isImmediatelyPrecededByANegation	11:12
+mejora	!isImmediatelyPrecededByANegation	11:12
+increíble	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else {10}
+innovadora	!isImmediatelyPrecededByANegation	11:12
+inspiración	!isImmediatelyPrecededByANegation	11:12
+inspiraciones	!isImmediatelyPrecededByANegation	11:12
+inspirada	!isImmediatelyPrecededByANegation	11:12
+inspiradora	!isImmediatelyPrecededByANegation	11:12
+instantáneamente	!isImmediatelyPrecededByANegation	11:12
+inteligente	!isImmediatelyPrecededByANegation	11:12
+interesada	!isImmediatelyPrecededByANegation	11:12
+interesante	!isImmediatelyPrecededByANegation	11:12
+irresistible	!isImmediatelyPrecededByANegation	11:12
+jadore		11
+bromas	!isImmediatelyPrecededByANegation	11:12
+bromas	!isImmediatelyPrecededByANegation	11:12
+alegre	!isImmediatelyPrecededByANegation	11:12
+alegría	!isImmediatelyPrecededByANegation	11:12
+kawaii	!isImmediatelyPrecededByANegation	11:12
+les patee el culo	!isImmediatelyPrecededByANegation	11:12
+te patee el culo	!isImmediatelyPrecededByANegation	11:12
+amable	isImmediatelyFollowedBySpecificTerm///de su parte	11
+ nombrado caballero	!isImmediatelyPrecededByANegation	11:12
+prestigio	!isImmediatelyPrecededByANegation	11:12
+risa	!isImmediatelyPrecededByANegationis+++!isImmediatelyFollowedBySpecificTerm///de	if (A && B) {11} else {12}
+Se rió	!isImmediatelyPrecededByANegation	11:12
+risas	!isImmediatelyPrecededByANegation	11:12
+ventaja	!isImmediatelyPrecededByANegation	11:12
+le permite	!isImmediatelyPrecededByANegation	11:12
+le permite	!isImmediatelyPrecededByANegation	11:12
+apalancamiento	!isImmediatelyPrecededByANegation	11:12
+salvavidas	!isImmediatelyPrecededByANegation	11:12
+velocidad del rayo	!isImmediatelyPrecededByANegation	11:12
+apreciada	!isImmediatelyPrecededByANegation	11:12
+gusto	!isImmediatelyPrecededByANegation	11:12
+salvavidas	!isImmediatelyPrecededByANegation	11:12
+lol	!isImmediatelyPrecededByANegation	11:12
+esperar	!isImmediatelyPrecededByANegation	11:12
+deseando	!isImmediatelyPrecededByANegation	11:12
+amor	!isImmediatelyPrecededByANegation	11:12
+amada	!isImmediatelyPrecededByANegation	11:12
+hermosa	!isImmediatelyPrecededByANegation	11:12
+ama	!isImmediatelyPrecededByANegation	11:12
+cariñosa	!isImmediatelyPrecededByANegation	11:12
+leal	!isImmediatelyPrecededByANegation	11:12
+afortunadamente	!isImmediatelyPrecededByANegation	11:12
+afortunada	!isImmediatelyPrecededByANegation	11:12
+eres afortunado	!isImmediatelyPrecededByANegation	11:12
+lozan	!isImmediatelyPrecededByANegation	11:12
+amor	!isImmediatelyPrecededByANegation	11:12
+amor		11
+me alegró el día	!isImmediatelyPrecededByANegation	11:12
+Me hizo la noche	!isImmediatelyPrecededByANegation	11:12
+magic!	!isImmediatelyPrecededByANegation	11:12
+magnífica	!isImmediatelyPrecededByANegation	11:12
+magnífico	!isImmediatelyPrecededByANegation	11:12
+maravillosa	!isImmediatelyPrecededByANegation	11:12
+maravillosa	!isImmediatelyPrecededByANegation	11:12
+significa mucho		11
+significa mucho		11
+alegre	!isImmediatelyPrecededByANegation	11:12
+poderosa	!isImmediatelyPrecededByANegation	11:12
+alucinante	!isImmediatelyPrecededByANegation	11:12
+alucinado	!isImmediatelyPrecededByANegation	11:12
+alucinante	!isImmediatelyPrecededByANegation	11:12
+alucinado	!isImmediatelyPrecededByANegation	11:12
+Agua en la boca	!isImmediatelyPrecededByANegation	11:12
+muahah		11
+muahahah		11
+ordenada	!isImmediatelyPrecededByANegation	11:12
+bonita	!isImmediatelyPrecededByANegation	11:12
+Más bonita	!isImmediatelyPrecededByANegation	11:12
+noble	!isImmediatelyPrecededByANegation	11:12
+nada supera		11
+nutritiva	!isImmediatelyPrecededByANegation	11:12
+uno de los	isImmediatelyFollowedBySpecificTerm///de los pocos|de los raros|de los únicos	11:12
+outstanding	!isImmediatelyPrecededByANegation	11:12
+paraíso	!isImmediatelyPrecededByANegation	11:12
+pasión	!isImmediatelyPrecededByANegation	11:12
+pasiones	!isImmediatelyPrecededByANegation	11:12
+perfecta	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else {10}
+perfecto regalo de navidad	!isImmediatelyPrecededByANegation	11:12
+regalo perfecto	!isImmediatelyPrecededByANegation	11:12
+pináculo	!isImmediatelyPrecededByANegation	11:12
+agradable	!isImmediatelyPrecededByANegation	11:12
+agradablemente	!isImmediatelyPrecededByANegation	11:12
+popular	!isImmediatelyPrecededByANegation	11:12
+posibilidades		11
+prefecto	!isImmediatelyPrecededByANegation	11:12
+Más bonita	!isImmediatelyPrecededByANegation	11:12
+prevenir	!isImmediatelyPrecededByANegation	11:12
+previene	!isImmediatelyPrecededByANegation	11:12
+rentable	!isImmediatelyPrecededByANegation	11:12
+orgullosa	!isImmediatelyPrecededByANegation	11:12
+bombeada	!isImmediatelyPrecededByANegation	11:12
+ingenioso	!isImmediatelyPrecededByANegation	11:12
+carreras de ideas	!isImmediatelyPrecededByANegation	11:12
+radical	!isImmediatelyPrecededByANegation	11:12
+recomendar	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedBySpecificTerm///a	11:12
+de confianza	!isImmediatelyPrecededByANegation	11:12
+alivio	!isImmediatelyPrecededByANegation	11:12
+respeto	!isImmediatelyPrecededByANegation	11:12
+revolucionaria	!isImmediatelyPrecededByANegation	11:12
+La mas rica	!isImmediatelyPrecededByANegation	11:12
+probado en carretera	!isImmediatelyPrecededByANegation	11:12
+roca	isAllCaps	11
+rockear		11
+¡roca!	!isImmediatelyPrecededByANegation	11:12
+rockeando	!isImmediatelyPrecededByANegation	11:12
+Mas segura	!isImmediatelyPrecededByANegation	11:12
+saludo		11
+satisfecha	!isImmediatelyPrecededByANegation	11:12
+satisfactoria	!isImmediatelyPrecededByANegation	11:12
+sabrosa	!isImmediatelyPrecededByANegation	11:12
+di hola	!isImmediatelyPrecededByANegation	11:12
+¡puntaje!	!isImmediatelyPrecededByANegation	11:12
+sin costura	!isImmediatelyPrecededByANegation	11:12
+sensacional	!isImmediatelyPrecededByANegation	11:12
+más sexy	!isImmediatelyPrecededByANegation	11:12
+gritar	!isImmediatelyPrecededByANegation	11:12
+gritar	!isImmediatelyPrecededByANegation	11:12
+pulcra	!isImmediatelyPrecededByANegation	11:12
+resbalosa	!isImmediatelyPrecededByANegation	11:12
+inteligente	!isImmediatelyPrecededByANegation	11:12
+sonreír	!isImmediatelyPrecededByANegation	11:12
+suavemente	!isImmediatelyPrecededByANegation	11:12
+Tan cierta	!isImmediatelyPrecededByANegation	11:12
+sólida	!isImmediatelyPrecededByANegation	11:12
+soluciones	!isImmediatelyPrecededByANegation	11:12
+conmovedora	!isImmediatelyPrecededByANegation	11:12
+rápida	!isImmediatelyPrecededByANegation	11:12
+espléndida	!isImmediatelyPrecededByANegation	11:12
+deportiva	!isImmediatelyPrecededByANegation	11:12
+¡estrellas!	!isImmediatelyPrecededByANegation	11:12
+firme	!isImmediatelyPrecededByANegation	11:12
+todavía balanceándose	!isImmediatelyPrecededByANegation	11:12
+fortalecimiento	!isImmediatelyPrecededByANegation	11:12
+impresionante	!isImmediatelyPrecededByANegation	11:12
+sensacionalmente	!isImmediatelyPrecededByANegation	11:12
+estilo	!isImmediatelyPrecededByANegation	11:12
+exitosa	!isImmediatelyPrecededByANegation	11:12
+éxito	!isImmediatelyPrecededByANegation	11:12
+exitosa	!isImmediatelyPrecededByANegation	11:12
+exitosamente	!isImmediatelyPrecededByANegation	11:12
+suculenta	!isImmediatelyPrecededByANegation	11:12
+Brillo Solar	!isImmediatelyPrecededByANegation	11:12
+superado	!isImmediatelyPrecededByANegation	11:12
+magnífica	!isImmediatelyPrecededByANegation	11:12
+dulce	!isImmediatelyPrecededByANegation	11:12
+hinchar	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedBySpecificTerm///up+++!isPrecededBySpecificTerm///cabeza|labios|labio|cofret|brazo|pie|pies|mano|manos|dedo|dedos|pulgar|pulgares|dedo del pie|dedos del pie|cuello|rodilla|vientre|muslo|pierna|piernas|mejilla|mejillas|oreja|orejas|lengua|codo	if (A && B && C) {11} else {10}
+talentosa	!isImmediatelyPrecededByANegation	11:12
+sabrosa	!isImmediatelyPrecededByANegation	11:12
+fantástica	!isImmediatelyPrecededByANegation	11:12
+gracias	!isImmediatelyPrecededByANegation	11:12
+gracias	!isImmediatelyPrecededByANegation	11:12
+agradecidamente		11
+Gracias	!isImmediatelyPrecededByANegation	11:12
+Gracias	!isImmediatelyPrecededByANegation	11:12
+eso funciono	!isImmediatelyPrecededByANegation	11:12
+La mejor	!isImmediatelyPrecededByANegation	11
+la forma más fácil de	!isImmediatelyPrecededByANegation	11:12
+el camino a seguir	!isImmediatelyPrecededByANegation	11:12
+el camino a seguir	!isImmediatelyPrecededByANegation	11:12
+para arriba		11
+gracias	!isImmediatelyPrecededByANegation	11:12
+la vida a	isPrecededBySpecificTerm///da	11
+sabrosa		11
+arriba de	!isImmediatelyPrecededByANegation	11:12
+tops	!isImmediatelyPrecededByANegation	11:12
+tremenda	isPrecededBySpecificTerm///would be+++ isImmediatelyFollowedBySpecificTerm///tabajo|esfuerzo|crecimiento|esfuerzos|beneficio|beneficios|pieza|potencial|talento	if (A || B) {11} else {10}
+inquebrantable		11
+inquebrantable		11
+fácil de usar	!isImmediatelyPrecededByANegation	11:12
+valiosa	!isImmediatelyPrecededByANegation	11:12
+valores	!isImmediatelyPrecededByANegation	11:12
+muy bien	!isImmediatelyPrecededByANegation	11:12
+calienta mi		11
+bienvenidas	!isImmediatelyPrecededByANegation	11:12
+da la bienvenida		11
+bien hecho	!isImmediatelyPrecededByANegation	11:12
+maravillosa	!isImmediatelyPrecededByANegation	11:12
+maravillosa	!isImmediatelyPrecededByANegation	11:12
+woohoo		11
+guau		11
+vale la pena leer	!isImmediatelyPrecededByANegation	11:12
+vale la pena	!isImmediatelyPrecededByANegation	11:12
+guau	!isImmediatelyPrecededByANegation	11:12
+wuhu		11
+xoxo		11
+Hurra		11
+Hurra	!isImmediatelyPrecededByANegation	11:12
+¡sí!		11
+sí	isAllCaps	11
+deliciosa	!isImmediatelyPrecededByANegation	11:12
+mmm	!isImmediatelyPrecededByANegation	11:12

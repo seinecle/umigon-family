@@ -9,7 +9,6 @@ import net.clementlevallois.umigon.model.LanguageSpecificLexicons;
 import net.clementlevallois.umigon.model.BooleanCondition;
 import net.clementlevallois.umigon.model.TermWithConditionalExpressions;
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -23,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import net.clementlevallois.umigon.heuristics.resources.en.PlaceHolderEN;
+import net.clementlevallois.umigon.heuristics.resources.es.PlaceHolderES;
 import net.clementlevallois.umigon.heuristics.resources.fr.PlaceHolderFR;
 import net.clementlevallois.utils.TextCleaningOps;
 
@@ -34,7 +34,6 @@ public class LoaderOfLexiconsAndConditionalExpressions {
 
     private final String lang;
     private BufferedReader br;
-    private FileReader fr;
     private String string;
     private TermWithConditionalExpressions lexiconsAndConditionalExpressions;
     private Set<String> lexiconsWithoutTheirConditionalExpressions;
@@ -117,6 +116,9 @@ public class LoaderOfLexiconsAndConditionalExpressions {
                 }
                 if (lang.equalsIgnoreCase("fr")) {
                     inputStream = PlaceHolderFR.class.getResourceAsStream(fileName);
+                }
+                if (lang.equalsIgnoreCase("es")) {
+                    inputStream = PlaceHolderES.class.getResourceAsStream(fileName);
                 }
                 if (inputStream == null) {
                     continue;

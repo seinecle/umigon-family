@@ -1,0 +1,66 @@
+2ganar		0611
+permite		0611
+anuncios		0611
+disponible en		0611
+reservar ahora	isFirstLetterCapitalized	0611
+comprar	isFirstTermOfText+++isFollowedBySpecificTerm///ahora	if(A || B) {0611} else {10}
+Complementario		0611
+podría ser el	isPrecededBySpecificTerm///porque	0611
+acuerdo	isFirstLetterCapitalized	0611
+descuentos		0611
+donar		0611
+dona		0611
+habilitar		061
+entrar para ganar		0611
+gratis		0611
+libre	isAllCaps	0611
+consigalo gratis		0611
+ser inteligente		061
+ideas de regalo		0611
+ideas de regalos		0611
+obsequio		0611
+regalos		0611
+regalando		0611
+golosinas		0611
+ayudó		0611
+trato especial		0611
+oferta más caliente		0611
+mejores ofertas		0611
+en el interior	isFirstLetterCapitalized	061
+introducir		0611
+introduciendo el		0611
+es gratis		0611
+recién publicado		0611
+patada inicial		0611
+última oportunidad de		0611
+lanzar		0611
+Cerciorarse	isFirstLetterCapitalized	0611
+hacer que suceda con		0611
+satisfacer la		0611
+la oferta termina		0611
+ofrecimiento		0611
+ofrendas		0611
+lanzamiento oficial	isFirstLetterCapitalized	061
+en venta	!isImmediatelyPrecededByANegation	0611
+Salir	isImmediatelyPrecededByPositive	0611
+resultados	isImmediatelyPrecededByPositive	0611
+energizado por	isFirstLetterCapitalized	0611
+reembolso		0611
+reinventa		0611
+Ventas	isAllCaps	0611
+guardar hasta		0611
+soluciones		0611
+especiales		0611
+emocionado por		0611
+lotería de carreras		0611
+desvelado		0611
+desvela		0611
+votar	isFirstLetterCapitalized	0611
+reloj	isFirstLetterCapitalized	0611
+Bienvenido a	isFirstLetterCapitalized	0611
+victoria	!isImmediatelyPrecededByANegation	0611
+coger		0611
+bebidas		0611
+concurso	isPrecededBySpecificTerm///participar | se presentó	061
+detrás de escena		061
+entre bastidores		061
