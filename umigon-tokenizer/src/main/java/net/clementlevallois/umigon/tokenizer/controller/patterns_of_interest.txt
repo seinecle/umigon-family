@@ -32,6 +32,7 @@ smiley ^_^	(\^_*\^)	true	11,22	EMOTICON_IN_ASCII
 smiley :O or :D or :0 or ;p or :-p or :p	((?<!\S)(:d|:o|:0|;p|:-p|:p)(?!\S))	true	11	EMOTICON_IN_ASCII
 smiley (:	(\(:(?!\S))	true	11	EMOTICON_IN_ASCII
 smiley ;)	(;\)+)	true	11	EMOTICON_IN_ASCII
+smiley ;p	(;p+)	true	11	EMOTICON_IN_ASCII
 smiley :|	(:\|+)	true	12	EMOTICON_IN_ASCII
 smiley :S	(:S)	true	12	EMOTICON_IN_ASCII
 smiley =(	(=\(+)	true	12	EMOTICON_IN_ASCII
