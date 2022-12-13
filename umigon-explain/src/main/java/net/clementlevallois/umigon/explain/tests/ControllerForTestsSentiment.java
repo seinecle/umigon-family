@@ -59,7 +59,7 @@ public class ControllerForTestsSentiment {
         System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultES, "fr"));        
         
         docEN = new Document();
-        docEN.setText("This app is amazing");
+        docEN.setText("very informative and friendly. i did not feel judged at all");
         resultEN = classifierOneDocumentEN.call(docEN);
         System.out.println("test: " + docEN.getText());
         System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultEN, "fr"));
