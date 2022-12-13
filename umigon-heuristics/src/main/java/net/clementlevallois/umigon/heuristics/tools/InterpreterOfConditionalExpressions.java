@@ -23,11 +23,12 @@ import org.mvel2.MVEL;
 public class InterpreterOfConditionalExpressions {
 
     public static void main(String args[]) {
-        String rule = "if (A && B) {11} else if (A == 'false') {12} else {10}";
+//        String rule = "if (A && B) {11} else if (A == 'false') {12} else {10}";
+        String rule = "if (A && B) {11} else if (A) {12} else {10}";
 
         Map<String, Boolean> c = new HashMap();
-        c.put("A", true);
-        c.put("B", true);
+        c.put("A", false);
+        c.put("B", false);
         c.put("C", true);
         c.put("D", true);
         String output = "";

@@ -52,7 +52,6 @@ man,		22
 mindblown		22
 monstruously	isImmediatelyFollowedByAnOpinion	22
 most	isImmediatelyFollowedByAnOpinion	22
-much		22
 much	isImmediatelyFollowedByAnOpinion	22
 omfg		22
 omg		22

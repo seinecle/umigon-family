@@ -28,6 +28,8 @@ annoyingly		12		2
 annoys	!isImmediatelyPrecededByANegation	12:10		2
 anymore		12		2
 apathetic		12		2
+apologist	!isImmediatelyPrecededByANegation	12:10		2
+apologists	!isImmediatelyPrecededByANegation	12:10		2
 appalled		12		3
 arbitrary	!isFollowedBySpecificTerm///number	12:10	x	2
 are down		12		2

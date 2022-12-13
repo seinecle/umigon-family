@@ -120,6 +120,8 @@ fav	!isImmediatelyPrecededByANegation	11:12	3
 fave	!isImmediatelyPrecededByANegation	11:12	3
 favorite	!isImmediatelyPrecededByANegation	11:12	3
 favourite	!isImmediatelyPrecededByANegation	11:12	3
+feel at home	!isImmediatelyPrecededByANegation	11:12	3
+felt at home	!isImmediatelyPrecededByANegation	11:12	3
 festive	!isImmediatelyPrecededByANegation	11:12	2
 finest	!isImmediatelyPrecededByANegation	11:12	3
 finger licking	!isImmediatelyPrecededByANegation	11:12	3
@@ -192,6 +194,7 @@ impressive	!isImmediatelyPrecededByANegation	11:12	2
 improve	!isImmediatelyPrecededByANegation	11:12	2
 improves	!isImmediatelyPrecededByANegation	11:12	2
 incredible	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else {10}	3
+informative	!isImmediatelyPrecededByANegation	11:12	2
 innovative	!isImmediatelyPrecededByANegation	11:12	2
 inspiration	!isImmediatelyPrecededByANegation	11:12	2
 inspirations	!isImmediatelyPrecededByANegation	11:12	2
@@ -275,6 +278,7 @@ passions	!isImmediatelyPrecededByANegation	11:12	3
 perfect	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else {10}	3
 perfect Christmas present	!isImmediatelyPrecededByANegation	11:12	3
 perfect present	!isImmediatelyPrecededByANegation	11:12	3
+personable	!isImmediatelyPrecededByANegation	11:12	3
 phenomenal	!isImmediatelyPrecededByANegation	11:12	3
 pinnacle	!isImmediatelyPrecededByANegation	11:12	3
 pleasant	!isImmediatelyPrecededByANegation	11:12	3
@@ -283,8 +287,10 @@ popular	!isImmediatelyPrecededByANegation	11:12	3
 possibilities		11	1
 prefect	!isImmediatelyPrecededByANegation	11:12	3
 prettiest	!isImmediatelyPrecededByANegation	11:12	3
+pretty	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedByANegativeOpinion	if (A && B) {11} else if (A) {12} else {10}	3
 prevent	!isImmediatelyPrecededByANegation	11:12	1
 prevents	!isImmediatelyPrecededByANegation	11:12	1
+professional    !isImmediatelyPrecededByANegation+++isPrecededByStrongWord if (A && B) {11} else if (A) {12} else {10}
 profitable	!isImmediatelyPrecededByANegation	11:12	2
 proud	!isImmediatelyPrecededByANegation	11:12	3
 pumped	!isImmediatelyPrecededByANegation	11:12	3

@@ -128,6 +128,8 @@ thermometer_face	negative
 :bouquet:	positive
 :smiling_face_with_smiling_eyes:	positive
 :innocent:	positive
+:raised_hands:  positive
+:raising_hands: positive
 :smirk:	positive
 :triumph:	hyper-satisfaction
 :clap:	hyper-satisfaction
