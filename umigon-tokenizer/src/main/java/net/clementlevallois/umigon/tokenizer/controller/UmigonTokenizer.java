@@ -29,9 +29,9 @@ public class UmigonTokenizer {
     public static void main(String[] args) throws IOException {
 
 //        String text = "I love chocolate";
-//        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
+        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
 //        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
-        String text = "This app is amazing";
+//        String text = "This app is amazing";
 //        String text = "nocode is the new thing :) 🤔";
         System.out.println("text: " + text);
         System.out.println("");
@@ -72,9 +72,9 @@ public class UmigonTokenizer {
         for (int codePoint : codePoints) {
             dontStartNewFragment = false;
             String stringOfCodePoint = Character.toString(codePoint);
-            if (stringOfCodePoint.equals(")")) {
-                System.out.println("stop there is a )");
-            }
+//            if (stringOfCodePoint.equals(")")) {
+//                System.out.println("stop there is a )");
+//            }
 
             //check if this is a punctuation mark
             isCurrCodPointPunctuation = Pattern.matches("[\\p{Punct}\\p{IsPunctuation}]", stringOfCodePoint);
