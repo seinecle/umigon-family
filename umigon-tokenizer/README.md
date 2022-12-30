@@ -103,9 +103,9 @@ In the example above, we would expect "l@@@ve" and "can't" to be tokenized as si
 
 ## Principles followed
 - the least dependencies possible:
- * a Utils module which has no further dependency
- * the emoji-java library, which has a single dependency on org.json
- * the umigon-model module which is the dependency-free data structure for the Umigon modules
+   * a Utils module which has no further dependency
+   * the emoji-java library, which has a single dependency on org.json
+   * the umigon-model module which is the dependency-free data structure for the Umigon modules
 
 - each module should serve a function in a stand-alone fashion: you can use it independently from other modules.
 
