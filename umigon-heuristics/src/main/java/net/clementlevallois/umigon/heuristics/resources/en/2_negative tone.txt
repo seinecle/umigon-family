@@ -98,7 +98,6 @@ burned myself	!isImmediatelyPrecededByANegation	12:10		2
 butchered	!isImmediatelyPrecededByANegation	12:10		3
 butthurt		12		3
 cancelled	!isImmediatelyPrecededByANegation	12:10		2
-cancer	!isImmediatelyPrecededByANegation	12:10	x	3
 cant bear		12		3
 can t bear		12		3
 cease	!isImmediatelyPrecededByANegation	12:10	x	2
