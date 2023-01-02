@@ -12,7 +12,7 @@ This repository contains the documentation for Umigon.
 
  ③ [umigon-ngram-ops](https://github.com/seinecle/umigon-family/tree/main/umigon-ngram-ops): then, we identify the ngrams in the text. An ngram is a fragment of text composed of several words. We know "United" and "States" are in the text, but thanks to this step we will also have "United States".
 
- ④ [umigon-heuristics](https://github.com/seinecle/umigon-family/tree/main/umigon-heuristics). A heuristic is a rule that will be applied whenever a word is found in the text. This repo includes a catalog of heuristics and procedures to evaluate them. For instance, a heuristics says that "AWFUL" carries a negative sentiment (it is a bit more complicated but you get the idea).
+ ④ [umigon-lexicons](https://github.com/seinecle/umigon-family/tree/main/umigon-lexicons): this module contains lists of words ("lexicons") which help detect the emotion conveyed by the text (the word "love" conveys a positive emotion, for instance). Lexicons are complemented by heuristics, which are rules that will be applied whenever a word is found in the text. This repo includes a catalog of heuristics and procedures to evaluate them. For instance, there is a heuristic indicating that "love" preceded by a negation carries a negative sentiment (it is a bit more complicated but you get the idea).
 
  ⑤ [umigon-core](https://github.com/seinecle/umigon-family/tree/main/umigon-core). This repo is called "core" because this is where the projects 1, 2, 3 and 4 get leveraged to analyze the sentiment of a text. The text is tokenized, ngrams are added to it, and then heuristics are applied to each fragment. We get the sentiment of the text.
 

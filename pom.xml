@@ -19,7 +19,7 @@
         <module>umigon-tokenizer</module>
         <module>umigon-ngram-ops</module>
         <module>umigon-explain</module>
-        <module>umigon-heuristics</module>
+        <module>umigon-lexicons</module>
         <module>umigon-model</module>
         <module>umigon-decision</module>
         <module>umigon-lemmatizer-lightweight</module>

@@ -6,36 +6,13 @@
         <artifactId>umigon-family</artifactId>
         <version>1.0</version>
     </parent>
-
-    <artifactId>umigon-core</artifactId>
+    <artifactId>umigon-lexicons</artifactId>
     <version>1.0</version>
-
     <packaging>jar</packaging>
-    
     <dependencies>
-        <dependency>
-            <groupId>net.clementlevallois.functions</groupId>
-            <artifactId>umigon-stopwords</artifactId>
-            <version>1.0</version>
-        </dependency>
         <dependency>
             <groupId>com.vdurmont</groupId>
             <artifactId>emoji-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>net.clementlevallois.functions</groupId>
-            <artifactId>umigon-decision</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.clementlevallois.functions</groupId>
-            <artifactId>umigon-ngram-ops</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>net.clementlevallois.functions</groupId>
-            <artifactId>umigon-tokenizer</artifactId>
-            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
@@ -43,8 +20,18 @@
             <version>1.0</version>
         </dependency>
         <dependency>
+            <groupId>net.clementlevallois.utils</groupId>
+            <artifactId>utils-core</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mvel/mvel2 -->
+        <dependency>
+            <groupId>org.mvel</groupId>
+            <artifactId>mvel2</artifactId>
+            <version>2.4.14.Final</version>
+        </dependency>
+        <dependency>
             <groupId>net.clementlevallois.functions</groupId>
-            <artifactId>umigon-lexicons</artifactId>
+            <artifactId>umigon-stopwords</artifactId>
             <version>1.0</version>
         </dependency>
     </dependencies>
