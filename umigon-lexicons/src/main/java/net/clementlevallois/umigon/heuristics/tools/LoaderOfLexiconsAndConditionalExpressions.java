@@ -379,6 +379,13 @@ public class LoaderOfLexiconsAndConditionalExpressions {
     public Set<String> getSetModerators() {
         return multilingualLexicons.get(lang).getSetModerators();
     }
+    
+    
+    public Set<String> getTimeIndications() {
+        return multilingualLexicons.get(lang).getSetTimeTokens();
+    }
+    
+    
 
     public Set<String> getSetIronicallyPositive() {
         return multilingualLexicons.get(lang).getSetIronicallyPositive();

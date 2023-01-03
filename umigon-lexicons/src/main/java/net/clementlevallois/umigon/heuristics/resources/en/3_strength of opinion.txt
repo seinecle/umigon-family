@@ -1,16 +1,20 @@
 absolutely		22
 always	isImmediatelyFollowedByAnOpinion	22
+as hell	isPrecededByAnOpinion	22
+awfully	isImmediatelyFollowedByAnOpinion	22
 aww		22
 awww		22
 awwww		22
 beyond	isImmediatelyFollowedByAnOpinion	22
 big	isImmediatelyFollowedByAnOpinion	22
 biggest		22
+bloody	isImmediatelyFollowedByAnOpinion	22
 complete	isImmediatelyFollowedByAnOpinion	22
 completely	isImmediatelyFollowedByAnOpinion	22
 crazy		22
 damn		22
 epic	isImmediatelyFollowedByAnOpinion	22
+especially	isImmediatelyFollowedByAnOpinion	22
 ever	isPrecededByAnOpinion	22
 exactly	isImmediatelyFollowedByAnOpinion	22
 extremely	isImmediatelyFollowedByAnOpinion	22
@@ -48,15 +52,18 @@ insanely	isImmediatelyFollowedByAnOpinion	22
 limitless	isImmediatelyFollowedByAnOpinion	22
 literally		22
 literaly		22
+major		22
 man,		22
 mindblown		22
 monstruously	isImmediatelyFollowedByAnOpinion	22
 most	isImmediatelyFollowedByAnOpinion	22
 much	isImmediatelyFollowedByAnOpinion	22
+much more	isImmediatelyFollowedByAnOpinion	22
 omfg		22
 omg		22
 one of the	isImmediatelyFollowedByAnOpinion	22
 one of the most	isImmediatelyFollowedByAnOpinion	22
+particularly		22
 pretty		22
 pure		22
 quite	isImmediatelyFollowedByAnOpinion	22
@@ -69,16 +76,20 @@ smashing	isImmediatelyFollowedByAnOpinion	22
 so	isImmediatelyFollowedByAnOpinion	22
 sobering		22
 spectactularly	isImmediatelyFollowedByAnOpinion	22
+specially	isImmediatelyFollowedByAnOpinion	22
 such a	isImmediatelyFollowedByAnOpinion	22
 super	isImmediatelyFollowedByAnOpinion	22
+superbly	isImmediatelyFollowedByAnOpinion	22
 thoroughly	isImmediatelyFollowedByAnOpinion	22
 too	isImmediatelyFollowedByAnOpinion	22
 tremendous	isImmediatelyFollowedByAnOpinion	22
 tremendously	isImmediatelyFollowedByAnOpinion	22
 true	isImmediatelyFollowedByAnOpinion	22
+truly	isImmediatelyFollowedByAnOpinion	22
 uber	isImmediatelyFollowedByAnOpinion	22
 unlimited	isImmediatelyFollowedByAnOpinion	22
 ultra	isImmediatelyFollowedByAnOpinion	22
+utter	isImmediatelyFollowedByAnOpinion	22
 utterly	isImmediatelyFollowedByAnOpinion	22
 v	isImmediatelyFollowedByAnOpinion	22
 v.	isImmediatelyFollowedByAnOpinion	22

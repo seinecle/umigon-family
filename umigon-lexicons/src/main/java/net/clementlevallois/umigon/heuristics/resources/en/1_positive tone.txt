@@ -348,7 +348,9 @@ succulent	!isImmediatelyPrecededByANegation	11:12	3
 suitable	!isImmediatelyPrecededByANegation	11:12		1
 sunshine	!isImmediatelyPrecededByANegation	11:12	3
 suped up	!isImmediatelyPrecededByANegation	11:12	3
+super	!isImmediatelyFollowedByAnOpinion	11:10
 superb	!isImmediatelyPrecededByANegation	11:12	3
+superbly	!isImmediatelyFollowedByAnOpinion	11:10	3
 sweet	!isImmediatelyPrecededByANegation	11:12	2
 swell	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedBySpecificTerm///up+++!isPrecededBySpecificTerm///head|lips|lip|chest|arm|foot|feet|hand|hands|finger|fingers|thumb|thumbs|toe|toes|neck|knee|belly|thigh|leg|legs|chick|chicks|ear|ears|tongue|elbow	if (A && B && C) {11} else {10}	3
 talented	!isImmediatelyPrecededByANegation	11:12	3

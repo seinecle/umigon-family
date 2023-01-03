@@ -9,6 +9,7 @@ abhore		12		3
 abject		12		3
 abominable		12		3
 abominate		12		3
+abysmal		12		3
 accidentally		12		2
 accused of	!isImmediatelyPrecededByANegation	12:10		2
 ache	!isImmediatelyPrecededByANegation	12:10	x	2
@@ -330,6 +331,7 @@ grr		12	x	2
 grim		12		2
 gruesome		12		3
 grumpy	!isImmediatelyPrecededByANegation	12:10		2
+gtfo		12		3
 h8		12	x	3
 hacked	!isImmediatelyPrecededByANegation	12:10		2
 had to		12		1
@@ -375,6 +377,7 @@ horrific		12		3
 horrid		12		3
 horrified	!isImmediatelyPrecededByANegation	12:10		3
 horrifying	!isImmediatelyPrecededByANegation	12:10		3
+horseshit		12		3
 how can	!isImmediatelyFollowedBySpecificTerm///i|we	12		1
 humiliated		12		2
 humiliating		12		2
@@ -412,6 +415,7 @@ injury	!isImmediatelyPrecededByANegation	12:10		2
 inhuman		12		3
 inhumane		12		3
 insensitive	!isImmediatelyPrecededByANegation	12:10		3
+insidious		12		3
 interrupted	!isImmediatelyPrecededByANegation	12:10		1
 intolerable		12		3
 ironically		12		1
@@ -438,6 +442,7 @@ lame		12	x	3
 laughable		12		3
 layoff	!isImmediatelyPrecededByANegation	12:10		1
 layoffs	!isImmediatelyPrecededByANegation	12:10		1
+lazy	!isImmediatelyFollowedByATimeIndication	12:10	1
 left wing		12		1
 liar		12		2
 like	isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///is|are	if(A && B){12} else if (A == 'false' && B){11} else {10}	x	2
@@ -656,7 +661,7 @@ shouldn t exist		12		1
 shrewd		12		1
 shut up		12		3
 shysty		12		2
-sick	!isImmediatelyPrecededByANegation+++!isPrecededByPositive+++!isFollowedByAPositiveOpinion	if(A && B && C) {11} else{10}		2
+sick	!isImmediatelyPrecededByANegation+++!isPrecededByPositive+++!isFollowedByAPositiveOpinion	if(A && B && C) {11} else {10}		2
 sick of	!isImmediatelyPrecededByANegation	12:10		2
 sickening		12		3
 sickos		12		3

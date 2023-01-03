@@ -5,6 +5,7 @@ arent as
 barely
 but
 cant
+cannot
 can t
 cant be
 can t be
@@ -31,6 +32,8 @@ dont believe
 don t believe
 far from
 far from being
+havent
+haven t
 havent had
 haven t had
 inspite
@@ -71,6 +74,8 @@ reduce
 should be
 shouldnt be too
 shouldn t be too
+stop
+stopped
 unlike
 with out
 without
