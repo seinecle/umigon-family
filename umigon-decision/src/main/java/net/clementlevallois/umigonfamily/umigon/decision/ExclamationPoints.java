@@ -41,7 +41,7 @@ public class ExclamationPoints {
         if so, add a positive sentiment
          */
         List<TextFragment> allTextFragments = document.getAllTextFragments();
-        if (allTextFragments.size() < 2) {
+        if (allTextFragments.size() < 3) {
             return document;
         }
         Set<ResultOneHeuristics> indicesPos = document.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._11);
@@ -50,7 +50,40 @@ public class ExclamationPoints {
 
             TextFragment lastTF = allTextFragments.get(allTextFragments.size() - 1);
             TextFragment beforeLastTF = allTextFragments.get(allTextFragments.size() - 2);
-            if (lastTF.getOriginalForm().equals("!") && beforeLastTF.getOriginalForm().equals("!")) {
+            boolean questionMarkFollowedByExclamatioMark = false;
+            TextFragment beforeCurrent = null;
+            for (TextFragment tf: allTextFragments){
+                if (tf.getOriginalForm().equals("?")){
+                    beforeCurrent = tf;
+                }else{
+                    beforeCurrent =null;
+                }
+                if (beforeCurrent != null && tf.getOriginalForm().equals("!")){
+                    questionMarkFollowedByExclamatioMark = true;
+                    break;
+                }
+            }
+            
+            if (questionMarkFollowedByExclamatioMark){
+                // negative strong reaction detected
+                Decision decision = new Decision();
+                decision.setDecisionMotive(Decision.DecisionMotive.QUESTION_MARK_FOLLOWED_BY_EXCLAMATION_MARKS);
+                decision.setDecisionType(Decision.DecisionType.ADD);
+                decision.setTextFragmentInvolvedInDecision(beforeCurrent);                
+                ResultOneHeuristics oneHeuristics = new ResultOneHeuristics(CategoryEnum._12, beforeCurrent);
+                ResultOneHeuristics secondHeuristics = new ResultOneHeuristics(CategoryEnum._22, beforeCurrent);
+                List<ResultOneHeuristics> heuristics = new ArrayList();
+                heuristics.add(oneHeuristics);
+                heuristics.add(secondHeuristics);
+                decision.setListOfHeuristicsImpacted(heuristics);
+                document.getSentimentDecisions().add(decision);
+                document.getResultsOfHeuristics().addAll(heuristics);
+                
+            }
+            
+           
+            if (!questionMarkFollowedByExclamatioMark & lastTF.getOriginalForm().equals("!") && beforeLastTF.getOriginalForm().equals("!")) {
+                // positive enthusiasm detected
                 Decision decision = new Decision();
                 decision.setDecisionMotive(Decision.DecisionMotive.EXCLAMATION_MARKS_ENDING_SHORT_NEUTRAL_SENTENCES);
                 decision.setDecisionType(Decision.DecisionType.ADD);
@@ -64,7 +97,6 @@ public class ExclamationPoints {
                 decision.setListOfHeuristicsImpacted(heuristics);
                 document.getSentimentDecisions().add(decision);
                 document.getResultsOfHeuristics().addAll(heuristics);
-
             }
         }
         return document;
