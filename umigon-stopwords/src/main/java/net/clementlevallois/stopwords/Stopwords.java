@@ -6,11 +6,9 @@
 package net.clementlevallois.stopwords;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -66,21 +64,25 @@ public class Stopwords {
     private static Map<String, Map<String, Set<String>>> cache = new HashMap();
     private static Map<String, Set<String>> cacheTwitter = new HashMap();
 
-    public static void main(String args[]) throws URISyntaxException, IOException, Exception {
-        Stopwords app = new Stopwords();
-        InputStream fileFromResourceAsStream = app.getInputStreamFromResource("twitter/en.txt");
-        BufferedReader br = new BufferedReader(new InputStreamReader(fileFromResourceAsStream));
-        String readLine = br.readLine();
-        System.out.println("line: " + readLine);
-        Map<String, Set<String>> stopWords = Stopwords.getStopWords("en");
-        System.out.println(stopWords.toString());
+    public static void main(String args[])  {
+        try {
+            Stopwords app = new Stopwords();
+            InputStream fileFromResourceAsStream = app.getInputStreamFromResource("twitter/en.txt");
+            BufferedReader br = new BufferedReader(new InputStreamReader(fileFromResourceAsStream));
+            String readLine = br.readLine();
+            System.out.println("line: " + readLine);
+            Map<String, Set<String>> stopWords = Stopwords.getStopWords("en");
+            System.out.println(stopWords.toString());
 //        ResourceLoader.("twitter/en.txt");
 //        List<String> readAllLines = Files.readAllLines(Paths.get(url.toURI()));
 //        System.out.println("text: "+readAllLines.get(0));
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
     }
 
-    public static Map<String, Set<String>> getStopWords(String lang) throws Exception {
+    public static Map<String, Set<String>> getStopWords(String lang) {
 
         if (cache.containsKey(lang)) {
             return cache.get(lang);
@@ -124,7 +126,7 @@ public class Stopwords {
         return pair;
     }
 
-    public static Set<String> getStopWordsUsefulInSentimentAnalysis(String lang) throws Exception {
+    public static Set<String> getStopWordsUsefulInSentimentAnalysis(String lang) {
 
         Set<String> stopWords = new HashSet();
         InputStream inputStream;
@@ -146,7 +148,7 @@ public class Stopwords {
         return stopWords;
     }
 
-    public static Set<String> getScientificStopwordsInEnglish() throws Exception {
+    public static Set<String> getScientificStopwordsInEnglish() {
 
         Set<String> stopWords = new HashSet();
         InputStream inputStream;
@@ -168,7 +170,7 @@ public class Stopwords {
         return stopWords;
     }
 
-    public static Set<String> getScientificStopwordsInFrench() throws Exception {
+    public static Set<String> getScientificStopwordsInFrench() {
 
         Set<String> stopWords = new HashSet();
         InputStream inputStream;
@@ -190,7 +192,7 @@ public class Stopwords {
         return stopWords;
     }
 
-    public static Set<String> getTwitterStopwords(boolean longList) throws FileNotFoundException, IOException, Exception {
+    public static Set<String> getTwitterStopwords(boolean longList) {
         Set<String> words = new HashSet();
 
         InputStream inputStream;
