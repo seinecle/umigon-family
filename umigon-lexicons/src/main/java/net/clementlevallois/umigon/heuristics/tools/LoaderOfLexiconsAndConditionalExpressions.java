@@ -227,6 +227,11 @@ public class LoaderOfLexiconsAndConditionalExpressions {
                     hashtagRelevant = field3;
                     //parse the "feature" field to disentangle the feature from the parameters
                     //this parsing rule will be extended to allow for multiple features
+                    if (featureString == null) {
+                        System.out.println("error reading lexicon line: \"" + string + "\" in language " + lang);
+                        System.out.println("item in the lexicon not imported");
+                        continue;
+                    }
                     featuresArray = featureString.split("\\+\\+\\+");
                     featuresList = Arrays.asList(featuresArray);
                     featuresListIterator = featuresList.iterator();
@@ -379,13 +384,10 @@ public class LoaderOfLexiconsAndConditionalExpressions {
     public Set<String> getSetModerators() {
         return multilingualLexicons.get(lang).getSetModerators();
     }
-    
-    
+
     public Set<String> getTimeIndications() {
         return multilingualLexicons.get(lang).getSetTimeTokens();
     }
-    
-    
 
     public Set<String> getSetIronicallyPositive() {
         return multilingualLexicons.get(lang).getSetIronicallyPositive();

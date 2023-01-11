@@ -45,6 +45,7 @@ lacks in
 lacks some
 less
 need to
+neither
 never
 never a
 no
@@ -52,6 +53,7 @@ no such thing as
 no such thing as a
 no one
 nobody
+nor
 not
 not a
 not an

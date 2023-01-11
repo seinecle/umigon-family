@@ -743,9 +743,9 @@ tonifié	!isImmediatelyPrecededByANegation	11:12
 top	!isImmediatelyPrecededByANegation	11:12
 topissime	!isImmediatelyPrecededByANegation	11:12
 touché	!isImmediatelyPrecededByANegation	11:12
-touchée	!isImmediatelyPrecededByANegation	11:12
-touchées	!isImmediatelyPrecededByANegation	11:12
-touchés	!isImmediatelyPrecededByANegation	11:12
+touchée	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
+touchées	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
+touchés	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else {10}
 tranquille	!isImmediatelyPrecededByANegation	11:12
 tranquilles	!isImmediatelyPrecededByANegation	11:12
 transi	!isImmediatelyPrecededByANegation	11:12

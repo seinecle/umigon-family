@@ -795,6 +795,8 @@ we lost		12		2
 weird	!isImmediatelyPrecededByANegation	12:10	x	2
 whats wrong		12		2
 what s wrong		12		2
+why on earth		12		3
+why the hell		12		3
 whore		12		3
 whores		12		3
 wish i	isImmediatelyFollowedBySpecificTerm///had|hadn|did|didn|would|wouldn	12:10		1
