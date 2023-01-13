@@ -49,7 +49,7 @@ public class ControllerForTestsSentiment {
         ClassifierSentimentOneDocument classifierOneDocumentES = new ClassifierSentimentOneDocument(semanticsES);
 
         docEN = new Document();
-        docEN.setText("he didn't do a great job");
+        docEN.setText("he didn't really do a great job");
         resultEN = classifierOneDocumentEN.call(docEN);
         System.out.println("test: " + docEN.getText());
         System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultEN, "fr"));
