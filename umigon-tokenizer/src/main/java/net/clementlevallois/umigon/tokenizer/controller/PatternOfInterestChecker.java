@@ -76,7 +76,7 @@ public class PatternOfInterestChecker {
         PatternOfInterest toReturn = null;
         for (PatternOfInterest poiLoop : patternsOfInterest) {
             matcher = poiLoop.getPattern().matcher(text);
-            if (matcher.find()) {
+            if (matcher.matches()) {
                 toReturn = poiLoop;
                 toReturn.setMatched(Boolean.TRUE);
             }
