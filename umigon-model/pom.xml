@@ -6,7 +6,12 @@
         <artifactId>umigon-family</artifactId>
         <version>1.0</version>
     </parent>
-   <artifactId>umigon-model</artifactId>
+    <artifactId>umigon-model</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 </project>

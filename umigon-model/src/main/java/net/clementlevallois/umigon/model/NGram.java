@@ -54,4 +54,5 @@ public class NGram extends TextFragment implements Serializable {
         }
         return sb.toString().trim();
     }
+    
 }

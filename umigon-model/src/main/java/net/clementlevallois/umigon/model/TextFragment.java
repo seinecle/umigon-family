@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -9,7 +9,7 @@ import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEn
  *
  * @author LEVALLOIS
  */
-public abstract class TextFragment {
+public abstract class TextFragment implements Comparable<TextFragment> {
 
     private int indexCardinal;
     private int indexOrdinal;
@@ -81,5 +81,13 @@ public abstract class TextFragment {
     }
     
     
-
+    @Override
+    public int compareTo(TextFragment tf) {
+        if (this.indexCardinal == tf.indexCardinal && this.originalForm.equals(tf.originalForm)){
+            return 0;
+        }
+        else {
+            return - 1;
+        }
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -38,7 +38,8 @@ public class Decision implements Serializable {
         ANTI_PHRASE,
         WINNER_TAKES_ALL,
         FINAL_ADJUDICATION_NEGATIVE_SENTIMENT_PREVAILS,
-        EXCLAMATION_MARKS_ENDING_SHORT_NEUTRAL_SENTENCES
+        EXCLAMATION_MARKS_ENDING_SHORT_NEUTRAL_SENTENCES,
+        QUESTION_MARK_FOLLOWED_BY_EXCLAMATION_MARKS
     }
 
     public ResultOneHeuristics getOtherHeuristicsInvolvedInDecision() {
