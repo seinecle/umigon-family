@@ -28,9 +28,9 @@ public class UmigonTokenizer {
 
     public static void main(String[] args) throws IOException {
 
-//        String text = "I love chocolate";
+        String text = "I love chocolate";
 //        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
-        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
+//        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
 //        String text = "This app is amazing";
 //        String text = "nocode is the new thing :) 🤔";
         System.out.println("text: " + text);
@@ -73,9 +73,16 @@ public class UmigonTokenizer {
             int currentCodePoint = codePoints[indexCurrentCodePoint];
             String stringOfCodePoint = Character.toString(currentCodePoint);
 
-            if (stringOfCodePoint.equals(",")) {
-                System.out.println("stop there is a ,");
-            }
+//            if (stringOfCodePoint.equals(",")) {
+//                System.out.println("stop there is a ,");
+//            }
+
+            /* if we have started a text fragment of the type "term":
+                - we want to check whether the last character before the next whote space is a letter
+                - if so, down below the logic of the tokenizer will leverage this info to accept punctuation signs in the text fragement
+                - as in: "l@@@@ve" will be accepted as one text fragment
+                - but "reached)" will be decomposed in "reached" and ")"
+             */
 
             int nextCodePoint = -99;
             boolean isCodePointBeforeNextWhiteSpaceALetter = false;
@@ -124,7 +131,7 @@ public class UmigonTokenizer {
 
                     if (isCurrCodePointWhiteSpace) {
                         String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
-                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAscii(cleanedForm);
+                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAsciiAndRemoveApostrophs(cleanedForm);
                         term.setCleanedForm(cleanedForm);
                         term.setCleanedAndStrippedForm(cleanedAndStrippedForm);
 
@@ -149,7 +156,7 @@ public class UmigonTokenizer {
                         term.addStringToOriginalForm(stringOfCodePoint);
                     } else if (isCurrCodePointEmoji) {
                         String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
-                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAscii(cleanedForm);
+                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAsciiAndRemoveApostrophs(cleanedForm);
                         term.setCleanedForm(cleanedForm);
                         term.setCleanedAndStrippedForm(cleanedAndStrippedForm);
                         textFragments.add(term);
@@ -162,7 +169,7 @@ public class UmigonTokenizer {
                         term.addStringToOriginalForm(stringOfCodePoint);
                     } else {
                         String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
-                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAscii(cleanedForm);
+                        String cleanedAndStrippedForm = TextCleaningOps.flattenToAsciiAndRemoveApostrophs(cleanedForm);
                         term.setCleanedForm(cleanedForm);
                         term.setCleanedAndStrippedForm(cleanedAndStrippedForm);
                         textFragments.add(term);
@@ -275,7 +282,7 @@ public class UmigonTokenizer {
                 if (currFragment == CurrentFragment.CURR_FRAGMENT_IS_TERM) {
                     String originalForm = term.getOriginalForm();
                     String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
-                    String cleanedAndStrippedForm = TextCleaningOps.flattenToAscii(cleanedForm);
+                    String cleanedAndStrippedForm = TextCleaningOps.flattenToAsciiAndRemoveApostrophs(cleanedForm);
                     term.setCleanedForm(cleanedForm);
                     term.setCleanedAndStrippedForm(cleanedAndStrippedForm);
                     textFragments.add(term);
