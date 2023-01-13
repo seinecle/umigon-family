@@ -57,7 +57,7 @@ public class SentenceLikeFragmentsDetector {
 //                System.out.println("stop");
 //            }
             switch (typeOfTextFragment) {
-                case TERM -> {
+                case TERM:
                     if (sentenceLike.getNgrams().isEmpty()) {
                         sentenceLike.setIndexCardinal(nextTextFragment.getIndexCardinal());
                     }
@@ -80,8 +80,8 @@ public class SentenceLikeFragmentsDetector {
                     ngram.setOriginalForm(sb.toString().trim());
 
                     listOfNGrams.add(ngram);
-                }
-                case PUNCTUATION -> {
+                    break;
+                case PUNCTUATION:
                     String s = nextTextFragment.getOriginalForm();
 //                    if (s.equals(",")) {
 //                        System.out.println("stop");
@@ -93,9 +93,7 @@ public class SentenceLikeFragmentsDetector {
                         sentenceLike = new SentenceLike();
                         listOfNGrams = new ArrayList();
                     }
-                }
-                default -> {
-                }
+                    break;
             }
         }
         sentenceLike.getNgrams().addAll(listOfNGrams);
