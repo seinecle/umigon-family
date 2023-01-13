@@ -22,20 +22,23 @@ public class IsImmediatelyPrecededByANegation {
 
         List<NGram> ngramsFoundAtIndexMinusOne = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -1);
         List<NGram> ngramsFoundAtIndexMinusTwo = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -2);
-        
+
         // risky to search negations at index minus 3
-        
         // it will be wrong in the case of "not bad but ok" -> will output that "ok" is immediately preceded by "not", which is incorrect
-        
         // however it is useful in the case of "I don't think they are great" because "don't think" is in our lexicon of negations and it is at index minus 3 of "great"
-        
-        
         List<NGram> ngramsFoundAtIndexMinusThree = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -3);
 
         List<NGram> allNgramsFound = new ArrayList();
         allNgramsFound.addAll(ngramsFoundAtIndexMinusOne);
         allNgramsFound.addAll(ngramsFoundAtIndexMinusTwo);
         allNgramsFound.addAll(ngramsFoundAtIndexMinusThree);
+        List<NGram> nGramsThatMatchedAStrongTerm = TextFragmentOps.checkIfListOfNgramsMatchStringsFromCollection(stripped, allNgramsFound, lexiconsAndTheirConditionalExpressions.getSetStrong());
+
+        // if the terms preceding the term under examination contain a strong word ("really", "very" ...) we should search for a negator one more step before
+        if (!nGramsThatMatchedAStrongTerm.isEmpty()) {
+            List<NGram> ngramsFoundAtIndexMinusFour = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -4);
+            allNgramsFound.addAll(ngramsFoundAtIndexMinusFour);
+        }
 
         List<NGram> nGramsThatMatchedANegation = TextFragmentOps.checkIfListOfNgramsMatchStringsFromCollection(stripped, allNgramsFound, lexiconsAndTheirConditionalExpressions.getSetNegations());
         booleanCondition.setTokenInvestigatedGetsMatched(!nGramsThatMatchedANegation.isEmpty());

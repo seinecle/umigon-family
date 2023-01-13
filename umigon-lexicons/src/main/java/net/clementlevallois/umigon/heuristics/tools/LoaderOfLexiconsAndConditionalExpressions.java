@@ -56,6 +56,7 @@ public class LoaderOfLexiconsAndConditionalExpressions {
     private Set<String> setSubjective;
     private Set<String> setHashTags;
     private Set<String> setModerators;
+    private Set<String> setStrong;
     private Set<String> setFalsePositiveOpinions;
     private Set<String> setIronicallyPositive;
 
@@ -94,6 +95,7 @@ public class LoaderOfLexiconsAndConditionalExpressions {
         setFalsePositiveOpinions = new HashSet();
         setIronicallyPositive = new HashSet();
         setModerators = new HashSet();
+        setStrong = new HashSet();
         setSubjective = new HashSet();
         mapH1 = new HashMap();
         mapH2 = new HashMap();
@@ -153,7 +155,7 @@ public class LoaderOfLexiconsAndConditionalExpressions {
                         continue;
                     }
                     if (!lang.equals("zh")) {
-                        field0 = TextCleaningOps.flattenToAscii(fields[0].trim());
+                        field0 = TextCleaningOps.flattenToAsciiAndRemoveApostrophs(fields[0].trim());
                     }
                     if (field0.isEmpty()) {
                         continue;
@@ -180,6 +182,7 @@ public class LoaderOfLexiconsAndConditionalExpressions {
                             lexiconsAndConditionalExpressions.setHashtagRelevant(false);
                             lexiconsAndConditionalExpressions.generateNewHeuristic(term, "");
                             mapH3.put(term, lexiconsAndConditionalExpressions);
+                            setStrong.add(term);
                             continue;
                         }
 
@@ -347,6 +350,7 @@ public class LoaderOfLexiconsAndConditionalExpressions {
         lex.setSetFalsePositiveOpinions(setFalsePositiveOpinions);
         lex.setSetIronicallyPositive(setIronicallyPositive);
         lex.setSetModerators(setModerators);
+        lex.setSetStrong(setStrong);
         lex.setSetNegations(setNegations);
         lex.setSetTimeTokens(setTimeTokens);
         lex.setSetSubjective(setSubjective);
@@ -383,6 +387,10 @@ public class LoaderOfLexiconsAndConditionalExpressions {
 
     public Set<String> getSetModerators() {
         return multilingualLexicons.get(lang).getSetModerators();
+    }
+
+    public Set<String> getSetStrong() {
+        return multilingualLexicons.get(lang).getSetStrong();
     }
 
     public Set<String> getTimeIndications() {

@@ -15,7 +15,7 @@ import java.util.Set;
 public class LanguageSpecificLexicons {
 
     String language;
-    
+
     Set<String> lexiconsWithoutTheirConditionalExpressions;
     Map<String, TermWithConditionalExpressions> mapH1;
     Map<String, TermWithConditionalExpressions> mapH2;
@@ -34,6 +34,7 @@ public class LanguageSpecificLexicons {
     Set<String> setTimeTokens;
     Set<String> setHashTags;
     Set<String> setModerators;
+    Set<String> setStrong;
     Set<String> setSubjective;
     Set<String> setFalsePositiveOpinions;
     Set<String> setIronicallyPositive;
@@ -157,8 +158,6 @@ public class LanguageSpecificLexicons {
     public void setMapH17(Map<String, TermWithConditionalExpressions> mapH17) {
         this.mapH17 = mapH17;
     }
-    
-    
 
     public Set<String> getSetNegations() {
         return setNegations;
@@ -192,6 +191,14 @@ public class LanguageSpecificLexicons {
         this.setModerators = setModerators;
     }
 
+    public Set<String> getSetStrong() {
+        return setStrong;
+    }
+
+    public void setSetStrong(Set<String> setStrong) {
+        this.setStrong = setStrong;
+    }
+
     public Set<String> getSetFalsePositiveOpinions() {
         return setFalsePositiveOpinions;
     }
@@ -215,10 +222,5 @@ public class LanguageSpecificLexicons {
     public void setSetSubjective(Set<String> setSubjective) {
         this.setSubjective = setSubjective;
     }
-    
-    
-
-
 
 }
-
