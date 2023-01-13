@@ -1,7 +1,7 @@
 /*
  * author: Cl�ment Levallois
  */
-package net.clementlevallois.umigon.heuristics.catalog;
+package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import java.util.ArrayList;
 import java.util.List;

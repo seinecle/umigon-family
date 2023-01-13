@@ -1,7 +1,7 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
-package net.clementlevallois.umigon.heuristics.catalog;
+package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import java.util.HashSet;
 import java.util.List;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.clementlevallois.umigon.heuristics.resources.en;
+package net.clementlevallois.umigon.heuristics.lexicons.en;
 
 /**
  *

@@ -1,7 +1,7 @@
 /*
  * author: Cl�ment Levallois
  */
-package net.clementlevallois.umigon.heuristics.catalog;
+package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import net.clementlevallois.umigon.model.BooleanCondition;
 import static net.clementlevallois.umigon.model.BooleanCondition.BooleanConditionEnum.isFirstTermOfText;

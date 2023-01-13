@@ -485,7 +485,7 @@ missn	!isImmediatelyPrecededByANegation	12:10		2
 mmh		12		1
 mmmh		12		1
 mockery		12		1
-monotonous	!isImmediatelyFollowedBySpecificTerm///line|trend|increase|function|decrease|slope	11:10	1
+monotonous	!isImmediatelyFollowedBySpecificTerm///line|trend|increase|function|decrease|slope	12:10	1
 monstruous	!isFollowedByAPositiveOpinion	12:10		3
 moron		12		3
 mortified		12		3
@@ -661,7 +661,7 @@ shouldn t exist		12		1
 shrewd		12		1
 shut up		12		3
 shysty		12		2
-sick	!isImmediatelyPrecededByANegation+++!isPrecededByPositive+++!isFollowedByAPositiveOpinion	if(A && B && C) {11} else {10}		2
+sick	!isImmediatelyPrecededByANegation+++!isPrecededByPositive+++!isFollowedByAPositiveOpinion	if(A && B && C) {12} else {10}		2
 sick of	!isImmediatelyPrecededByANegation	12:10		2
 sickening		12		3
 sickos		12		3

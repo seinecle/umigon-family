@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package net.clementlevallois.umigon.heuristics.catalog;
+package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import java.util.ArrayList;
 import java.util.List;

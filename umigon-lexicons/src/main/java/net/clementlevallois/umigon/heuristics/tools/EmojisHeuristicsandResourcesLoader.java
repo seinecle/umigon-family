@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import net.clementlevallois.umigon.heuristics.resources.multilingual.PlaceHolderMULTI;
+import net.clementlevallois.umigon.heuristics.lexicons.multilingual.PlaceHolderMULTI;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Emoji;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
@@ -47,6 +47,10 @@ public class EmojisHeuristicsandResourcesLoader {
             List<String> patternsOfInterestAsTSV = br.lines().collect(Collectors.toList());
             for (String patternOfInterestAsTSV : patternsOfInterestAsTSV) {
                 String[] elements = patternOfInterestAsTSV.split("\t");
+                if (elements.length<2){
+                    System.out.println("error in an emoji line, too short:");
+                    System.out.println(patternOfInterestAsTSV);
+                }
                 switch (elements[1]) {
 
                     case "positive":

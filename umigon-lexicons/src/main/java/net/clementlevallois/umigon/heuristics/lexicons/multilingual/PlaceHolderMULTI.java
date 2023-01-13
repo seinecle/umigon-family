@@ -1,7 +1,7 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
-package net.clementlevallois.umigon.heuristics.resources.multilingual;
+package net.clementlevallois.umigon.heuristics.lexicons.multilingual;
 
 /**
  *

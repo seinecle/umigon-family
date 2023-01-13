@@ -6,5 +6,5 @@ module net.clementlevallois.umigon.heuristics {
     requires mvel2;
     
     exports net.clementlevallois.umigon.heuristics.tools;
-    exports net.clementlevallois.umigon.heuristics.catalog;
+    exports net.clementlevallois.umigon.heuristics.booleanconditions;
 }

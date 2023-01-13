@@ -111,8 +111,8 @@
 :poop:	negative
 :princess:	positive
 :rage:	negative
-:raised_hands:  positive
-:raising_hands: positive
+:raised_hands:	positive
+:raising_hands:	positive
 :relaxed:	positive
 :relieved:	positive
 :revolving_hearts:	positive
@@ -148,6 +148,7 @@
 :sweat:	negative
 :sweat_smile:	positive
 :thermometer_face:	negative
+:thermometer_face:	negative
 :thumbsdown:	negative
 :thumbsup:	positive
 :tired_face:	negative
@@ -167,4 +168,3 @@
 :worried_face:	negative
 :yellow_heart:	positive
 :yum:	positive
-thermometer_face	negative

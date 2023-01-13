@@ -6,9 +6,9 @@ package net.clementlevallois.umigon.heuristics.tools;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.clementlevallois.umigon.heuristics.catalog.IsHashtagNegativeSentiment;
-import net.clementlevallois.umigon.heuristics.catalog.IsHashtagPositiveSentiment;
-import net.clementlevallois.umigon.heuristics.catalog.IsInHashtag;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsHashtagNegativeSentiment;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsHashtagPositiveSentiment;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsInHashtag;
 import net.clementlevallois.umigon.model.BooleanCondition;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.NGram;

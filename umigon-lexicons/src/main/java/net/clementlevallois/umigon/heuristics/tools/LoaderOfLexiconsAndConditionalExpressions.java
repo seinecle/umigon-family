@@ -21,9 +21,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import net.clementlevallois.umigon.heuristics.resources.en.PlaceHolderEN;
-import net.clementlevallois.umigon.heuristics.resources.es.PlaceHolderES;
-import net.clementlevallois.umigon.heuristics.resources.fr.PlaceHolderFR;
+import net.clementlevallois.umigon.heuristics.lexicons.en.PlaceHolderEN;
+import net.clementlevallois.umigon.heuristics.lexicons.es.PlaceHolderES;
+import net.clementlevallois.umigon.heuristics.lexicons.fr.PlaceHolderFR;
 import net.clementlevallois.utils.TextCleaningOps;
 
 /**

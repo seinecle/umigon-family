@@ -1,7 +1,7 @@
 /*
- * author: Clément Levallois
+ * author: Clï¿½ment Levallois
  */
-package net.clementlevallois.umigon.heuristics.catalog;
+package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 import net.clementlevallois.umigon.model.BooleanCondition;

@@ -11,31 +11,31 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import net.clementlevallois.umigon.heuristics.catalog.IsAllCaps;
-import net.clementlevallois.umigon.heuristics.catalog.IsFirstLetterCapitalized;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByANegation;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByAnOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedBySpecificTerm;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyPrecededByANegation;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyPrecededBySpecificTerm;
-import net.clementlevallois.umigon.heuristics.catalog.IsFirstTermOfText;
-import net.clementlevallois.umigon.heuristics.catalog.IsFollowedByANegativeOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsFollowedByAPositiveOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsFollowedBySpecificTerm;
-import net.clementlevallois.umigon.heuristics.catalog.IsHashtagPositiveSentiment;
-import net.clementlevallois.umigon.heuristics.catalog.IsHashtagStart;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByANegativeOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyFollowedByAPositiveOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsImmediatelyPrecededByPositive;
-import net.clementlevallois.umigon.heuristics.catalog.IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms;
-import net.clementlevallois.umigon.heuristics.catalog.IsInHashtag;
-import net.clementlevallois.umigon.heuristics.catalog.IsInSegmentEndingInExclamation;
-import net.clementlevallois.umigon.heuristics.catalog.IsLastNGramOfSegment;
-import net.clementlevallois.umigon.heuristics.catalog.IsPrecededByOpinion;
-import net.clementlevallois.umigon.heuristics.catalog.IsPrecededByPositive;
-import net.clementlevallois.umigon.heuristics.catalog.IsPrecededBySpecificTerm;
-import net.clementlevallois.umigon.heuristics.catalog.IsPrecededByStrongWord;
-import net.clementlevallois.umigon.heuristics.catalog.IsPrecededBySubjectiveTerm;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsAllCaps;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsFirstLetterCapitalized;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyFollowedByANegation;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyFollowedByAnOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyFollowedBySpecificTerm;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyPrecededByANegation;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyPrecededBySpecificTerm;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsFirstTermOfText;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsFollowedByANegativeOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsFollowedByAPositiveOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsFollowedBySpecificTerm;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsHashtagPositiveSentiment;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsHashtagStart;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyFollowedByANegativeOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyFollowedByAPositiveOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyPrecededByPositive;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsInHashtag;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsInSegmentEndingInExclamation;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsLastNGramOfSegment;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsPrecededByOpinion;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsPrecededByPositive;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsPrecededBySpecificTerm;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsPrecededByStrongWord;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsPrecededBySubjectiveTerm;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
@@ -89,7 +89,7 @@ public class TermLevelHeuristicsVerifier {
         String termFromLexicon = termWithConditionalExpressions.getTerm();
         List<BooleanCondition> booleanConditions = termWithConditionalExpressions.getMapFeatures();
         String rule = termWithConditionalExpressions.getRule();
-        
+
         List<NGram> nGramsInSentence = sentenceLike.getNgrams();
         List<TextFragment> textFragmentsInSentence = sentenceLike.getTextFragments();
 
@@ -149,86 +149,112 @@ public class TermLevelHeuristicsVerifier {
 
                 switch (conditionEnum) {
 
-                    case isImmediatelyPrecededByANegation ->
+                    case isImmediatelyPrecededByANegation:
                         booleanCondition = IsImmediatelyPrecededByANegation.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isImmediatelyFollowedByANegation ->
+                    case isImmediatelyFollowedByANegation:
                         booleanCondition = IsImmediatelyFollowedByANegation.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isImmediatelyPrecededBySpecificTerm ->
+                    case isImmediatelyPrecededBySpecificTerm:
                         booleanCondition = IsImmediatelyPrecededBySpecificTerm.check(stripped, nGramsInSentence, ngramParam, associatedKeywords);
+                        break;
 
-                    case isImmediatelyFollowedBySpecificTerm ->
+                    case isImmediatelyFollowedBySpecificTerm:
                         booleanCondition = IsImmediatelyFollowedBySpecificTerm.check(stripped, nGramsInSentence, ngramParam, associatedKeywords);
+                        break;
 
-                    case isImmediatelyFollowedByAnOpinion ->
+                    case isImmediatelyFollowedByAnOpinion:
                         booleanCondition = IsImmediatelyFollowedByAnOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isPrecededBySubjectiveTerm ->
+                    case isPrecededBySubjectiveTerm:
                         booleanCondition = IsPrecededBySubjectiveTerm.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isFirstTermOfText ->
+                    case isFirstTermOfText:
                         booleanCondition = IsFirstTermOfText.check(ngramParam.getCleanedAndStrippedNgram(), nGramsInSentence.get(0).getCleanedAndStrippedNgram());
+                        break;
 
-                    case isFollowedByAPositiveOpinion ->
+                    case isFollowedByAPositiveOpinion:
                         booleanCondition = IsFollowedByAPositiveOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isFollowedByANegativeOpinion ->
+                    case isFollowedByANegativeOpinion:
                         booleanCondition = IsFollowedByANegativeOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isImmediatelyFollowedByAPositiveOpinion ->
+                    case isImmediatelyFollowedByAPositiveOpinion:
                         booleanCondition = IsImmediatelyFollowedByAPositiveOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isImmediatelyFollowedByANegativeOpinion ->
+                    case isImmediatelyFollowedByANegativeOpinion:
                         booleanCondition = IsImmediatelyFollowedByANegativeOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isFollowedBySpecificTerm ->
+                    case isFollowedBySpecificTerm:
                         booleanCondition = IsFollowedBySpecificTerm.check(stripped, nGramsInSentence, ngramParam, associatedKeywords);
+                        break;
 
-                    case isLastNGramOfSegment ->
+                    case isLastNGramOfSegment:
                         booleanCondition = IsLastNGramOfSegment.check(stripped, nGramsInSentence, ngramParam);
+                        break;
 
-                    case isInSegmentEndingWithExclamation ->
+                    case isInSegmentEndingWithExclamation:
                         booleanCondition = IsInSegmentEndingInExclamation.check(stripped, textFragmentsInSentence, ngramParam);
+                        break;
 
-                    case isInASentenceLikeFragmentWithOneOfTheseSpecificTerms ->
+                    case isInASentenceLikeFragmentWithOneOfTheseSpecificTerms:
                         booleanCondition = IsInASentenceLikeFragmentWithOneOfTheseSpecificTerms.check(stripped, ngramParam, nGramsInSentence, associatedKeywords);
+                        break;
 
-                    case isHashtagStart ->
+                    case isHashtagStart:
                         booleanCondition = IsHashtagStart.check(stripped, ngramParam, termFromLexicon);
+                        break;
 
-                    case isInHashtag ->
+                    case isInHashtag:
                         booleanCondition = IsInHashtag.check(stripped, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isHashtagPositiveSentiment ->
+                    case isHashtagPositiveSentiment:
                         booleanCondition = IsHashtagPositiveSentiment.check(stripped, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isHashtagNegativeSentiment ->
+                    case isHashtagNegativeSentiment:
                         booleanCondition = IsHashtagPositiveSentiment.check(stripped, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isPrecededBySpecificTerm ->
+                    case isPrecededBySpecificTerm:
                         booleanCondition = IsPrecededBySpecificTerm.check(stripped, nGramsInSentence, ngramParam, associatedKeywords);
+                        break;
 
-                    case isQuestionMarkAtEndOfText -> {
-                    }
+                    case isQuestionMarkAtEndOfText:
+                        break;
 
-                    case isAllCaps ->
+                    case isAllCaps:
                         booleanCondition = IsAllCaps.check(ngramParam);
+                        break;
 
-                    case isPrecededByStrongWord ->
+                    case isPrecededByStrongWord:
                         booleanCondition = IsPrecededByStrongWord.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isImmediatelyPrecededByPositive ->
+                    case isImmediatelyPrecededByPositive:
                         booleanCondition = IsImmediatelyPrecededByPositive.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isPrecededByPositive ->
+                    case isPrecededByPositive:
                         booleanCondition = IsPrecededByPositive.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isPrecededByOpinion ->
+                    case isPrecededByOpinion:
                         booleanCondition = IsPrecededByOpinion.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        break;
 
-                    case isFirstLetterCapitalized ->
+                    case isFirstLetterCapitalized:
                         booleanCondition = IsFirstLetterCapitalized.check(ngramParam.getCleanedNgram());
+                        break;
                 }
 //                        booleanCondition = IsQuestionMarkAtEndOfText.check(text);
 
