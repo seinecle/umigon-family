@@ -107,7 +107,9 @@ public class TextFragmentOps {
     public static List<NGram> checkIfListOfNgramsMatchStringsFromCollection(boolean stripped, List<NGram> ngrams, Collection<String> collection) {
         List<NGram> results = new ArrayList();
         for (NGram ngram : ngrams) {
-            if (collection.contains(ngram.getCleanedAndStrippedNgramIfCondition(stripped).toLowerCase())) {
+            if (collection.contains(ngram.getCleanedAndStrippedNgramIfCondition(stripped).toLowerCase())
+                    ||
+                    collection.contains(ngram.getCleanedAndStrippedNgramIfCondition(!stripped).toLowerCase())) {
                 results.add(ngram);
             }
         }
