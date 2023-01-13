@@ -59,7 +59,7 @@ public class ExplanationOneHeuristics {
         Collection<BooleanCondition> nonFlippedBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
         TypeOfTextFragmentEnum ttf = resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum();
-        
+
         String tokenWasMatched = getTokenWasMatched(ttf, languageTag);
         sb.append(tokenWasMatched);
         sb.append(": ");
@@ -123,25 +123,33 @@ public class ExplanationOneHeuristics {
     }
 
     public static String getAndANumberOfConditionsWereMatched(int numberOfConditions, String languageTag) {
-        return switch (numberOfConditions) {
-            case 1 -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_one_condition_was_met");
-            case 2 -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_two_conditions_were_met");
-            case 3 -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_three_conditions_were_met");
-            default -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_these_conditions_were_met");
-        };
-
+        switch (numberOfConditions) {
+            case 1:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_one_condition_was_met");
+            case 2:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_two_conditions_were_met");
+            case 3:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_three_conditions_were_met");
+            default:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_these_conditions_were_met");
+        }
     }
 
     public static String getTokenWasMatched(TypeOfTextFragmentEnum typeOfTokenEnum, String languageTag) {
-        return switch (typeOfTokenEnum) {
-            case NGRAM -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.term_was_matched");
-            case EMOJI -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.emoji_was_matched");
-            case ONOMATOPAE -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.onomatopae_was_matched");
-            case HASHTAG -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.hashtag_was_matched");
-            case EMOTICON_IN_ASCII -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.emoticon_in_ascii_was_matched");
-            default -> UmigonExplain.getLocaleBundle(languageTag).getString("statement.term_was_matched");
-        };
-
+        switch (typeOfTokenEnum) {
+            case NGRAM:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.term_was_matched");
+            case EMOJI:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.emoji_was_matched");
+            case ONOMATOPAE:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.onomatopae_was_matched");
+            case HASHTAG:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.hashtag_was_matched");
+            case EMOTICON_IN_ASCII:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.emoticon_in_ascii_was_matched");
+            default:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.term_was_matched");
+        }
     }
 
     public static String getEmojiWasMatched(String languageTag) {

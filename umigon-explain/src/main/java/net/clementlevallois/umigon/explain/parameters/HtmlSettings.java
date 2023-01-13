@@ -21,12 +21,16 @@ public class HtmlSettings {
     }
 
     public String getTermColorBasedOnSentiment(CategoryEnum categoryEnum) {
-        return switch (categoryEnum) {
-            case _11 -> positiveTermColor;
-            case _111 -> positiveTermColor;
-            case _12 -> negativeTermColor;
-            default -> "#000000";
-        };
+        switch (categoryEnum) {
+            case _11:
+                return positiveTermColor;
+            case _111:
+                return positiveTermColor;
+            case _12:
+                return negativeTermColor;
+            default:
+                return "#000000";
+        }
     }
 
     public void setPositiveTermColor(String positiveTermColor) {

@@ -79,21 +79,21 @@ public class UmigonExplain {
 
     public static String getSentimentPlainText(CategoryEnum categoryEnum, String locale) {
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
-        return switch (categoryEnum) {
-            case _11 -> bundle.getString("sentiment.ispositive");
-            case _12 -> bundle.getString("sentiment.isnegative");
-            default -> bundle.getString("sentiment.isneutral");
-        };
+        switch (categoryEnum) {
+            case _11 : return  bundle.getString("sentiment.ispositive");
+            case _12 : return  bundle.getString("sentiment.isnegative");
+            default : return  bundle.getString("sentiment.isneutral");
+        }
     }
 
     public static JsonObjectBuilder getSentimentJsonObject(CategoryEnum categoryEnum, String locale) {
         JsonObjectBuilder job = Json.createObjectBuilder();
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
-        return switch (categoryEnum) {
-            case _11 -> job.add("sentiment", bundle.getString("sentiment.ispositive"));
-            case _12 -> job.add("sentiment", bundle.getString("sentiment.isnegative"));
-            default -> job.add("sentiment", bundle.getString("sentiment.isneutral"));
-        };
+        switch (categoryEnum) {
+            case _11 : return  job.add("sentiment", bundle.getString("sentiment.ispositive"));
+            case _12 : return  job.add("sentiment", bundle.getString("sentiment.isnegative"));
+            default : return  job.add("sentiment", bundle.getString("sentiment.isneutral"));
+        }
     }
 
     public static String getExplanationsOfDecisionsPlainText(Document doc, String languageTag) {
