@@ -14,8 +14,8 @@ import net.clementlevallois.umigon.model.Document;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import net.clementlevallois.umigon.heuristics.catalog.IsNegationInAllCaps;
-import net.clementlevallois.umigon.heuristics.catalog.IsQuestionMarkAtEndOfText;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
 import net.clementlevallois.umigon.heuristics.tools.TermLevelHeuristicsVerifier;
@@ -101,7 +101,8 @@ public class ClassifierSentimentOneDocument {
 
         // checking onomatopaes, texto speak and emoticons in ascii ("non words")
         for (TextFragment textFragment : allTextFragments) {
-            if (textFragment instanceof NonWord nonWord) {
+            if (textFragment instanceof NonWord) {
+                NonWord nonWord = (NonWord) textFragment;
                 List<Category> categories = nonWord.getPoi().getCategories();
                 for (Category cat : categories) {
                     ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(cat.getCategoryEnum(), textFragment);
@@ -205,7 +206,7 @@ public class ClassifierSentimentOneDocument {
         // Commenting the check on negations because it seems unuseful actually.
         //        sentimentDecisionMaker.doCheckOnNegations();
         
-// if the text is a question, classify it as neutral.
+		// if the text is a question, classify it as neutral.
         // we might of course miss ironic intent, but questions are too hard to decipher
         BooleanCondition bc = IsQuestionMarkAtEndOfText.check(allTextFragments);
         if (bc.getTokenInvestigatedGetsMatched()) {

@@ -15,8 +15,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import static java.util.stream.Collectors.toList;
-import net.clementlevallois.umigon.heuristics.catalog.IsNegationInAllCaps;
-import net.clementlevallois.umigon.heuristics.catalog.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
 import net.clementlevallois.umigon.heuristics.tools.TermLevelHeuristicsVerifier;
@@ -26,6 +24,8 @@ import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
@@ -100,7 +100,8 @@ public class ClassifierDelightOneDocument {
 
         // checking onomatopaes, texto speak and emoticons in ascii ("non words")
         for (TextFragment textFragment : ngrams) {
-            if (textFragment instanceof NonWord nonWord) {
+            if (textFragment instanceof NonWord) {
+                NonWord nonWord =  (NonWord) textFragment;
                 List<Category> categories = nonWord.getPoi().getCategories();
                 for (Category cat : categories) {
                     ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(cat.getCategoryEnum(), textFragment);
