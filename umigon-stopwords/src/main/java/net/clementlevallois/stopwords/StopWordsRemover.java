@@ -44,7 +44,7 @@ public final class StopWordsRemover {
         rem.shouldItBeRemoved("government data and");
     }
 
-    public StopWordsRemover(int minWordLength, String lang) throws Exception {
+    public StopWordsRemover(int minWordLength, String lang) {
         stopWordsLongAndShort = Stopwords.getStopWords(lang);
         stopwordsLong = new ArrayList((Set<String>) stopWordsLongAndShort.get("long"));
         this.minWordLength = minWordLength;
