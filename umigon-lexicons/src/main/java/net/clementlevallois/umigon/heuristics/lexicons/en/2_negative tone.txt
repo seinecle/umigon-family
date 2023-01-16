@@ -9,6 +9,7 @@ abhore		12		3
 abject		12		3
 abominable		12		3
 abominate		12		3
+absurd	!isImmediatelyPrecededByANegation	12:10		2
 abysmal		12		3
 accidentally		12		2
 accused of	!isImmediatelyPrecededByANegation	12:10		2
@@ -27,7 +28,6 @@ annoyed	!isImmediatelyPrecededByANegation	12:10		2
 annoying	!isImmediatelyPrecededByANegation	12:10		2
 annoyingly		12		2
 annoys	!isImmediatelyPrecededByANegation	12:10		2
-anymore		12		2
 apathetic		12		2
 apologist	!isImmediatelyPrecededByANegation	12:10		2
 apologists	!isImmediatelyPrecededByANegation	12:10		2
@@ -86,6 +86,7 @@ bonehead	!isImmediatelyPrecededByANegation	12:10		3
 boring	!isImmediatelyPrecededByANegation	12:10		1
 boyed	!isImmediatelyPrecededByANegation	12:10	x	2
 bozo		12		3
+brag		12		3
 broke	!isImmediatelyPrecededByANegation	12:10	x	2
 broken	!isImmediatelyPrecededByANegation	12:10		2
 bruised	!isImmediatelyPrecededByANegation	12:10		2
@@ -125,10 +126,6 @@ cowardly	!isImmediatelyPrecededByANegation	12:10		3
 crap	!isImmediatelyPrecededByANegation	12:10	x	3
 crappy	!isImmediatelyPrecededByANegation	12:10		3
 crapware	!isImmediatelyPrecededByANegation	12:10		3
-crash	!isImmediatelyPrecededByANegation	12:10		2
-crashed	!isImmediatelyPrecededByANegation	12:10		2
-crashes	!isImmediatelyPrecededByANegation	12:10		2
-crashing	!isImmediatelyPrecededByANegation	12:10		2
 creep	!isPrecededBySpecificTerm///im a|i am a	12:10		3
 creepy	!isImmediatelyPrecededByANegation	12:10		3
 cretin	!isImmediatelyPrecededByANegation	12:10		3
@@ -171,6 +168,7 @@ desperation		12		2
 despicable	!isFollowedBySpecificTerm///me	12:10		3
 destroyed 	!isImmediatelyPrecededByANegation	12:10		2
 detest	!isImmediatelyPrecededByANegation	12:10		2
+detrimental	isPrecededByStrongWord	12:10		2
 devastated	!isImmediatelyPrecededByANegation	12:10		3
 dick		12	x	2
 dicks		12		2
@@ -246,11 +244,10 @@ dumbass		12		3
 dysfunctional		12		1
 earache	!isImmediatelyPrecededByANegation	12:10		2
 eek		12		3
-embargoed		12		2
-embarrassing	!isImmediatelyPrecededByANegation	12:10		2
+.embarrassing	!isImmediatelyPrecededByANegation	12:10		2
 enraged	!isImmediatelyPrecededByANegation	12:10		3
-error	!isImmediatelyPrecededByANegation	12:10		2
-errors	!isImmediatelyPrecededByANegation	12:10		2
+error	isPrecededByStrongWord	12:10		2
+errors	isPrecededByStrongWord	12:10		2
 ever	isPrecededBySpecificTerm///never	12:10	x	1
 exasperating		12		3
 excrement		12		2
@@ -282,7 +279,7 @@ fml		12	x	2
 fool	!isImmediatelyPrecededByANegation+++!isImmediatelyPrecededBySpecificTerm///to	if (A && B) {12} else {10}	x	3
 fooled	!isImmediatelyPrecededByANegation	12:10		3
 fools	!isImmediatelyPrecededByANegation	12:10	x	3
-forced	!isImmediatelyPrecededByANegation	12:10		2
+forced	!isImmediatelyPrecededByANegation+++!isImmediatelyPrecededBySpecificTerm///in the	if (A && B) {12} else {10}	x	3
 forgot me	!isImmediatelyPrecededByANegation	12:10		1
 forgot us	!isImmediatelyPrecededByANegation	12:10		1
 fraud	!isImmediatelyPrecededByANegation	12:10	x	2
@@ -313,6 +310,7 @@ galling		12		3
 garbage		12		2
 garbages		12		2
 gerrymandering	!isImmediatelyPrecededByANegation	12:10		2
+get out	isImmediatelyPrecededByANegation	12:10		2
 glitch	!isImmediatelyPrecededByANegation	12:10		1
 gloomy		12		3
 glum		12		2
@@ -323,6 +321,7 @@ goddam	+++!isFollowedByAPositiveOpinion	12:10		3
 goddamn	+++!isFollowedByAPositiveOpinion	12:10		3
 goddamned		12		3
 going crazy		12		2
+good	!isFollowedByANegativeOpinion	12:22		3
 greed	!isImmediatelyPrecededByANegation	12:10	x	2
 greedy	!isImmediatelyPrecededByANegation	12:10		2
 grossly		12		3
@@ -463,7 +462,7 @@ lousy		12		2
 low	isPrecededByStrongWord	12	x	2
 mad	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///max	if(A && B){12} else{10}		2
 maddening	+++!isFollowedByAPositiveOpinion	12:10		3
-malignious tumor	!isImmediatelyPrecededByANegation	12:10		2
+made up	IsPrecededByStrongWord	12:10	3
 mess	!isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///go to the|went to the|watched the|watch the|attend the|attended the	if (A && B) {12} else {10}	x	2
 mess up	!isImmediatelyPrecededByANegation	12:10		2
 messed	!isImmediatelyPrecededByANegation	12:10		2
@@ -576,7 +575,7 @@ pornographic		12		1
 prat		12		2
 pray 4		12		2
 pray for		12		2
-problem	!isPrecededBySpecificTerm///solve|solving|solve my|solving my|tackling+++!isImmediatelyFollowedBySpecificTerm///solving|solver+++!isImmediatelyPrecededByANegation	if(A && B && C){12} else{10}		2
+problem	!isPrecededBySpecificTerm///solve|solving|solve my|solving my|tackling+++!isImmediatelyFollowedBySpecificTerm///solving|solver+++!isImmediatelyPrecededByANegation+++isPrecededByStrongWord	if(A && B && C && D) {12} else {10}		2
 problems	!isPrecededBySpecificTerm///solve|solving|solve my|solving my|tackling+++!isImmediatelyFollowedBySpecificTerm///solving|solver+++!isImmediatelyPrecededByANegation	if(A && B && C){12} else{10}		2
 probs		12		1
 profanity		12		3
@@ -585,13 +584,12 @@ puerile		12		1
 puke		12		3
 rabid		12		3
 rabidly		12		3
-racism		12		2
 racist		12		2
 racists		12		2
 ran out		12		1
 rant		12	x	2
-raped		12		3
 really don’t		12		2
+reckless	isPrecededByStrongWord	12		2
 red faced		12		2
 refund		12		1
 refuse	!isImmediatelyPrecededByANegation	12:10		1
@@ -600,6 +598,7 @@ reimburse		12		1
 reppellent				2
 repulsive		12		2
 retarded		12		3
+retrograde		12		3
 revolting		12		3
 rid of		12		2
 ridiculous		12		2

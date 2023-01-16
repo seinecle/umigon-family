@@ -5,6 +5,8 @@ awfully	isImmediatelyFollowedByAnOpinion	22
 aww		22
 awww		22
 awwww		22
+basic		22
+basically		22
 beyond	isImmediatelyFollowedByAnOpinion	22
 big	isImmediatelyFollowedByAnOpinion	22
 biggest		22
@@ -45,6 +47,8 @@ high		22
 highest	isImmediatelyFollowedByAnOpinion	22
 highly	isImmediatelyFollowedByAnOpinion	22
 holy	isImmediatelyFollowedByAnOpinion	22
+huge	isImmediatelyFollowedByAnOpinion	22
+hugely	isImmediatelyFollowedByAnOpinion	22
 incredibly	isImmediatelyFollowedByAnOpinion	22
 inherently	isImmediatelyFollowedByAnOpinion	22
 insane		22

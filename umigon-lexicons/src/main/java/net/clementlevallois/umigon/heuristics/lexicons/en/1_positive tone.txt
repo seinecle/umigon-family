@@ -1,6 +1,6 @@
 achievement	!isImmediatelyPrecededByANegation	11:12	2
 accommodating	!isImmediatelyPrecededByANegation	11:12	2
-admire	!isImmediatelyPrecededByANegation	11:12	3
+admire	!isImmediatelyPrecededByANegation+++isPrecededBySubjectiveTerm	if (A && B) {11} else if (A == 'false') {12} else {10}	3
 affordable	!isImmediatelyPrecededByANegation	11:12	2
 all in one		11	2
 always a pleasure	!isImmediatelyPrecededByANegation	11:12	3
@@ -377,6 +377,7 @@ tops	!isImmediatelyPrecededByANegation	11:12	3
 tremendous	isPrecededBySpecificTerm///would be+++ isImmediatelyFollowedBySpecificTerm///job|effort|growth|efforts|hit|hits|benefit|benefits|piece|potential|talent	if (A || B) {11} else {0}	3
 unswerving		11	3
 unwavering		11	3
+useful	!isImmediatelyPrecededByANegation	11:12	3
 user-friendly	!isImmediatelyPrecededByANegation	11:12	2
 valuable	!isImmediatelyPrecededByANegation	11:12	2
 values	!isImmediatelyPrecededByANegation	11:12	2
