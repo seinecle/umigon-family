@@ -5,6 +5,7 @@ package net.clementlevallois.umigon.heuristics.booleanconditions;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 import net.clementlevallois.umigon.heuristics.tools.TextFragmentOps;
 import net.clementlevallois.umigon.model.BooleanCondition;
@@ -17,7 +18,7 @@ import net.clementlevallois.umigon.model.NGram;
  */
 public class IsImmediatelyPrecededByANegation {
 
-    public static BooleanCondition check(boolean stripped, List<NGram> textFragmentsThatAreNGrams, NGram ngram, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions) {
+    public static BooleanCondition check(boolean stripped, List<NGram> textFragmentsThatAreNGrams, NGram ngram, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions, Set<String> stopwords) {
         BooleanCondition booleanCondition = new BooleanCondition(isImmediatelyPrecededByANegation);
 
         List<NGram> ngramsFoundAtIndexMinusOne = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -1);
@@ -32,12 +33,26 @@ public class IsImmediatelyPrecededByANegation {
         allNgramsFound.addAll(ngramsFoundAtIndexMinusOne);
         allNgramsFound.addAll(ngramsFoundAtIndexMinusTwo);
         allNgramsFound.addAll(ngramsFoundAtIndexMinusThree);
+        
         List<NGram> nGramsThatMatchedAStrongTerm = TextFragmentOps.checkIfListOfNgramsMatchStringsFromCollection(stripped, allNgramsFound, lexiconsAndTheirConditionalExpressions.getSetStrong());
 
         // if the terms preceding the term under examination contain a strong word ("really", "very" ...) we should search for a negator one more step before
         if (!nGramsThatMatchedAStrongTerm.isEmpty()) {
             List<NGram> ngramsFoundAtIndexMinusFour = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -4);
             allNgramsFound.addAll(ngramsFoundAtIndexMinusFour);
+        }
+
+        // if one of the terms preceding the term under examination is a stopword, then add a fifth step
+        boolean isOnePrecedingTermAStopWord = false;
+        for (NGram ngramFound: allNgramsFound){
+            if (stopwords.contains(ngramFound.getCleanedAndStrippedNgram())){
+                isOnePrecedingTermAStopWord = true;
+                break;
+            }
+        }
+        if (isOnePrecedingTermAStopWord) {
+            List<NGram> ngramsFoundAtIndexMinusFive = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -5);
+            allNgramsFound.addAll(ngramsFoundAtIndexMinusFive);
         }
 
         List<NGram> nGramsThatMatchedANegation = TextFragmentOps.checkIfListOfNgramsMatchStringsFromCollection(stripped, allNgramsFound, lexiconsAndTheirConditionalExpressions.getSetNegations());

@@ -84,7 +84,7 @@ import net.clementlevallois.umigon.model.TextFragment;
  */
 public class TermLevelHeuristicsVerifier {
 
-    public static ResultOneHeuristics checkHeuristicsOnOneNGram(NGram ngramParam, SentenceLike sentenceLike, TermWithConditionalExpressions termWithConditionalExpressions, LoaderOfLexiconsAndConditionalExpressions lexiconsAndConditionalExpressions, boolean stripped) {
+    public static ResultOneHeuristics checkHeuristicsOnOneNGram(NGram ngramParam, SentenceLike sentenceLike, TermWithConditionalExpressions termWithConditionalExpressions, LoaderOfLexiconsAndConditionalExpressions lexiconsAndConditionalExpressions, boolean stripped, Set<String> stopWords) {
         String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String termFromLexicon = termWithConditionalExpressions.getTerm();
         List<BooleanCondition> booleanConditions = termWithConditionalExpressions.getMapFeatures();
@@ -150,7 +150,7 @@ public class TermLevelHeuristicsVerifier {
                 switch (conditionEnum) {
 
                     case isImmediatelyPrecededByANegation:
-                        booleanCondition = IsImmediatelyPrecededByANegation.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions);
+                        booleanCondition = IsImmediatelyPrecededByANegation.check(stripped, nGramsInSentence, ngramParam, lexiconsAndConditionalExpressions, stopWords);
                         break;
 
                     case isImmediatelyFollowedByANegation:
