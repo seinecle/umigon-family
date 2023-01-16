@@ -11,6 +11,7 @@ import java.util.Set;
 import net.clementlevallois.stopwords.Stopwords;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
+import net.clementlevallois.umigon.heuristics.tools.PunctuationValenceVerifier;
 
 /**
  *
@@ -44,6 +45,7 @@ public class Semantics {
             setNegations = lexiconsAndTheirConditionalExpressions.getSetNegations();
             setModerators = lexiconsAndTheirConditionalExpressions.getSetModerators();
             EmojisHeuristicsandResourcesLoader.load();
+            PunctuationValenceVerifier.load();
             stopwordsWithoutSentimentRelevance = new HashSet();
             stopwordsWithoutSentimentRelevance.addAll(stopwords);
             stopwordsWithoutSentimentRelevance.removeAll(lexiconsAndTheirConditionalExpressions.getLexiconsWithoutTheirConditionalExpressions());

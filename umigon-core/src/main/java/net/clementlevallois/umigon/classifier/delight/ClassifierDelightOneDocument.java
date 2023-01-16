@@ -159,7 +159,7 @@ public class ClassifierDelightOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped, semantics.getStopwordsWithoutSentimentRelevance());
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }

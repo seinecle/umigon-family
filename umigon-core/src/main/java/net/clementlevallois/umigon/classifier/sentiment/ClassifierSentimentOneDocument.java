@@ -25,6 +25,8 @@ import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
+import net.clementlevallois.umigon.heuristics.tools.PunctuationValenceVerifier;
+import net.clementlevallois.umigon.model.Punctuation;
 import net.clementlevallois.umigon.model.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
@@ -85,13 +87,12 @@ public class ClassifierSentimentOneDocument {
         // a hashtag is a text fragment immediately preceded by a text fragment which is a punctuation sign equal to "#"
         boolean nextTextFragmentIsHashtag = false;
         for (TextFragment textFragment : allTextFragments) {
-            if (textFragment.getTypeOfTextFragmentEnum().equals(TypeOfTextFragment.TypeOfTextFragmentEnum.PUNCTUATION)) {
-                nextTextFragmentIsHashtag = textFragment.getOriginalForm().equals("#");
-            }
             if (nextTextFragmentIsHashtag && textFragment.getTypeOfTextFragmentEnum().equals(TypeOfTextFragment.TypeOfTextFragmentEnum.TERM)) {
                 Term hashtag = (Term) textFragment;
                 textFragmentsThatAreHashTag.add(hashtag.toNgram());
             }
+            nextTextFragmentIsHashtag = textFragment.getOriginalForm().equals("#");
+
         }
 
         List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.check(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
@@ -108,6 +109,14 @@ public class ClassifierSentimentOneDocument {
                     ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(cat.getCategoryEnum(), textFragment);
                     resultsHeuristics.add(resultOneHeuristics);
                 }
+            }
+        }
+
+        // checking some strong punctuation
+        for (TextFragment textFragment : allTextFragments) {
+            if (textFragment instanceof Punctuation) {
+                Punctuation punctuation = (Punctuation) textFragment;
+                resultsHeuristics.addAll(PunctuationValenceVerifier.check(punctuation));
             }
         }
 
@@ -157,7 +166,7 @@ public class ClassifierSentimentOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped, semantics.getStopwordsWithoutSentimentRelevance());
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }
@@ -184,7 +193,7 @@ public class ClassifierSentimentOneDocument {
                 }
 
                 if (termAndItsConditionalExpressions != null) {
-                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped);
+                    ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped, semantics.getStopwordsWithoutSentimentRelevance());
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInPositive.add(ngram);
                 }
@@ -205,8 +214,7 @@ public class ClassifierSentimentOneDocument {
 
         // Commenting the check on negations because it seems unuseful actually.
         //        sentimentDecisionMaker.doCheckOnNegations();
-        
-		// if the text is a question, classify it as neutral.
+        // if the text is a question, classify it as neutral.
         // we might of course miss ironic intent, but questions are too hard to decipher
         BooleanCondition bc = IsQuestionMarkAtEndOfText.check(allTextFragments);
         if (bc.getTokenInvestigatedGetsMatched()) {
