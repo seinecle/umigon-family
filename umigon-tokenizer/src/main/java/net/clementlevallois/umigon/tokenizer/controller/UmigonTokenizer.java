@@ -28,7 +28,8 @@ public class UmigonTokenizer {
 
     public static void main(String[] args) throws IOException {
 
-        String text = "I love chocolate";
+        String text = "a surprisingly good-natured throwback to the '80s heyday of the body-switching genre .";
+//        String text = "I love chocolate";
 //        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
 //        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
 //        String text = "This app is amazing";
@@ -57,6 +58,9 @@ public class UmigonTokenizer {
         boolean isCurrCodePointEmoji = false;
         boolean isCurrCodPointPunctuation = false;
 
+        // from https://www.compart.com/en/unicode/category/Pd
+        Set<String> dashLikeCharacters = Set.of("-", "‐", "‑", "‒", "–", "—", "︱", "﹘", "﹣", "－", "_");
+        
         boolean dontStartNewFragment = false;
         CurrentFragment currFragment = CurrentFragment.CURR_FRAGMENT_IS_NOT_STARTED;
 
@@ -79,7 +83,8 @@ public class UmigonTokenizer {
 
             /* if we have started a text fragment of the type "term":
                 - we want to check whether the last character before the next whote space is a letter
-                - if so, down below the logic of the tokenizer will leverage this info to accept punctuation signs in the text fragement
+                - if so, down below the logic of the tokenizer will leverage this info to accept punctuation signs in the text fragment
+                - BUT NOT hyphens and similar chars
                 - as in: "l@@@@ve" will be accepted as one text fragment
                 - but "reached)" will be decomposed in "reached" and ")"
              */
@@ -163,9 +168,10 @@ public class UmigonTokenizer {
                         textFragmentStarted = false;
                     } else /*
                         what if we are in a term fragment and the current point is a punctuation sign?
-                        - either the next character will be alphabetical, in which case we add the current punctuation sign to the term
+                        - either the last character before the next whitespace will be alphabetical,
+                        -> in which case, *if the punctuation sign is NOT an hyphen*, we add the current punctuation sign to the term
                         - or it is not, in which case we close the term and start a new text fragment
-                     */ if (isCurrCodPointPunctuation & isCodePointBeforeNextWhiteSpaceALetter) {
+                     */ if (isCurrCodPointPunctuation && isCodePointBeforeNextWhiteSpaceALetter && !dashLikeCharacters.contains(stringOfCodePoint)) {
                         term.addStringToOriginalForm(stringOfCodePoint);
                     } else {
                         String cleanedForm = RepeatedCharactersRemover.repeatedCharacters(originalForm, languageSpecificLexicon);
