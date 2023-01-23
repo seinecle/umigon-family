@@ -1,5 +1,6 @@
 absolutely		22
 always	isImmediatelyFollowedByAnOpinion	22
+amazingly	isImmediatelyFollowedByAnOpinion	22
 as hell	isPrecededByAnOpinion	22
 awfully	isImmediatelyFollowedByAnOpinion	22
 aww		22
@@ -11,15 +12,21 @@ beyond	isImmediatelyFollowedByAnOpinion	22
 big	isImmediatelyFollowedByAnOpinion	22
 biggest		22
 bloody	isImmediatelyFollowedByAnOpinion	22
+charmingly	isImmediatelyFollowedByAnOpinion	22
 complete	isImmediatelyFollowedByAnOpinion	22
 completely	isImmediatelyFollowedByAnOpinion	22
+compulsively	isImmediatelyFollowedByAnOpinion	22
+constantly	isImmediatelyFollowedByAnOpinion	22
 crazy		22
 damn		22
+deadpan		22
+distinct		22
 epic	isImmediatelyFollowedByAnOpinion	22
 especially	isImmediatelyFollowedByAnOpinion	22
 ever	isPrecededByAnOpinion	22
 exactly	isImmediatelyFollowedByAnOpinion	22
 extremely	isImmediatelyFollowedByAnOpinion	22
+fair amount of	isImmediatelyFollowedByAnOpinion	22
 f*cking		22
 freakin	isImmediatelyFollowedByAnOpinion	22
 freaking	isImmediatelyFollowedByAnOpinion	22
@@ -41,8 +48,11 @@ f*king		22
 fully	isImmediatelyFollowedByAnOpinion	22
 genius	isImmediatelyFollowedByAnOpinion	22
 geniusly	isImmediatelyFollowedByAnOpinion	22
+genuinely	isImmediatelyFollowedByAnOpinion	22
 great		22
 greatest		22
+heavy	isImmediatelyFollowedByAnOpinion	22
+heavy dose of	isImmediatelyFollowedByAnOpinion	22
 high		22
 highest	isImmediatelyFollowedByAnOpinion	22
 highly	isImmediatelyFollowedByAnOpinion	22
@@ -72,18 +82,23 @@ pretty		22
 pure		22
 quite	isImmediatelyFollowedByAnOpinion	22
 really	isImmediatelyFollowedByAnOpinion	22
+remarkably	isImmediatelyFollowedByAnOpinion	22
+relentlessly	isImmediatelyFollowedByAnOpinion	22
 ridiculously	isImmediatelyFollowedByAnOpinion	22
 seriously		22
 sheer	isImmediatelyFollowedByAnOpinion	22
 simply	isImmediatelyFollowedByAnOpinion	22
 smashing	isImmediatelyFollowedByAnOpinion	22
 so	isImmediatelyFollowedByAnOpinion	22
+soaringly	isImmediatelyFollowedByAnOpinion	22
 sobering		22
 spectactularly	isImmediatelyFollowedByAnOpinion	22
 specially	isImmediatelyFollowedByAnOpinion	22
+strongly	isImmediatelyFollowedByAnOpinion	22
 such a	isImmediatelyFollowedByAnOpinion	22
 super	isImmediatelyFollowedByAnOpinion	22
 superbly	isImmediatelyFollowedByAnOpinion	22
+suprisingly	isImmediatelyFollowedByAnOpinion	22
 thoroughly	isImmediatelyFollowedByAnOpinion	22
 too	isImmediatelyFollowedByAnOpinion	22
 tremendous	isImmediatelyFollowedByAnOpinion	22
@@ -91,6 +106,7 @@ tremendously	isImmediatelyFollowedByAnOpinion	22
 true	isImmediatelyFollowedByAnOpinion	22
 truly	isImmediatelyFollowedByAnOpinion	22
 uber	isImmediatelyFollowedByAnOpinion	22
+ultimately	isImmediatelyFollowedByAnOpinion	22
 unlimited	isImmediatelyFollowedByAnOpinion	22
 ultra	isImmediatelyFollowedByAnOpinion	22
 utter	isImmediatelyFollowedByAnOpinion	22

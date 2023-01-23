@@ -7,7 +7,6 @@ import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndCondition
 import net.clementlevallois.umigon.model.BooleanCondition;
 import static net.clementlevallois.umigon.model.BooleanCondition.BooleanConditionEnum.isHashtagNegativeSentiment;
 import net.clementlevallois.umigon.model.NGram;
-import net.clementlevallois.umigon.model.Term;
 
 /**
  *

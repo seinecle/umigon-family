@@ -43,15 +43,15 @@ public class IsImmediatelyPrecededByANegation {
         }
 
         // if one of the terms preceding the term under examination is a stopword, then add a fifth step
-        boolean isOnePrecedingTermAStopWord = false;
+        int numberOfStopWords = 0;
         for (NGram ngramFound: allNgramsFound){
             if (stopwords.contains(ngramFound.getCleanedAndStrippedNgram())){
-                isOnePrecedingTermAStopWord = true;
-                break;
+                numberOfStopWords++;
             }
         }
-        if (isOnePrecedingTermAStopWord) {
-            List<NGram> ngramsFoundAtIndexMinusFive = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, -5);
+        if (numberOfStopWords !=0) {
+            int stepsBack = Math.max(-4 - numberOfStopWords, -6);
+            List<NGram> ngramsFoundAtIndexMinusFive = TextFragmentOps.getNGramsAtRelativeOrdinalIndex(textFragmentsThatAreNGrams, ngram, stepsBack);
             allNgramsFound.addAll(ngramsFoundAtIndexMinusFive);
         }
 
