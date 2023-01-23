@@ -31,10 +31,18 @@ public class WhenTextContainsAModerator {
         List<NGram> ngrams = document.getNgrams();
         NGram moderator = null;
 
+        String precedingNGramAsString = "";
         for (NGram ngram : ngrams) {
-            if (moderators.contains(ngram.getCleanedNgram().toLowerCase())) {
-                moderator = ngram;
+            String ngramAsString = ngram.getCleanedNgram().toLowerCase();
+            if (moderators.contains(ngramAsString)) {
+                moderator = ngram; 
+                String moderatorAsString = ngram.getCleanedAndStrippedNgram().toLowerCase();
+                // because "if" is a moderator, but "as if" and "even if" is not one.
+                if (moderatorAsString.equals("if ") && (precedingNGramAsString.equals("as") || precedingNGramAsString.equals("even"))){
+                    moderator = null;
+                }
             }
+            precedingNGramAsString = ngramAsString;
         }
         if (moderator == null) {
             return document;
