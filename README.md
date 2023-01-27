@@ -16,8 +16,8 @@ A family of modules for essential NLP tasks and sentiment analysis, done well.
 Umigon is implemented in [Nocodefunctions](https://nocodefunctions.com), a free web app for nocode data analysis.
 
 
-## Contact
+## Author and Contact
 [Clément Levallois](https://twitter.com/seinecle)
 
 ## License
-See [license.md](LICENCE.md)
+See [license.md](LICENSE.md)
