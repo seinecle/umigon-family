@@ -61,15 +61,7 @@ text fragment: will (type: TERM)
 
 text fragment:   (type: WHITE_SPACE)
 
-text fragment: l (type: TERM)
-
-text fragment: @ (type: PUNCTUATION)
-
-text fragment: @ (type: PUNCTUATION)
-
-text fragment: @ (type: PUNCTUATION)
-
-text fragment: ve (type: TERM)
+text fragment: l@@@ve (type: TERM)
 
 text fragment:   (type: WHITE_SPACE)
 
@@ -96,9 +88,6 @@ text fragment:   (type: WHITE_SPACE)
 text fragment: :((( (type: EMOTICON_IN_ASCII)
 
 text fragment:   (type: WHITE_SPACE)
-
-## Improvements needed
-In the example above, we would expect "l@@@ve" and "can't" to be tokenized as single tokens, not to be decomposed in sub-fragments. This should be relatively easily obtained by detecting fragments that end and finish with letters. This is on my todo list.
 
 
 ## Principles followed

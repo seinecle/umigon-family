@@ -23,7 +23,8 @@ import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 public class SentenceLikeFragmentsDetector {
 
     public static void main(String args[]) throws IOException {
-        String example = "I love chocolate, because it is so sweet and delicious. Really (I am honest!)";
+        String example = "I did not know. Thank you.";
+//        String example = "I love chocolate, because it is so sweet and delicious. Really (I am honest!)";
 //        String example = "Je vais super bien :-), vraiment vous êtes des champions (même toi!)";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
@@ -44,7 +45,7 @@ public class SentenceLikeFragmentsDetector {
         SentenceLike sentenceLike = new SentenceLike();
         sentenceLike.setIndexCardinal(0);
         sentenceLike.setIndexOrdinal(0);
-
+        
         while (it.hasNext()) {
             TextFragment nextTextFragment = it.next();
 //            if (nextTextFragment.getOriginalForm().equals("it")) {

@@ -49,6 +49,15 @@ public class ControllerForTestsSentiment {
         ClassifierSentimentOneDocument classifierOneDocumentES = new ClassifierSentimentOneDocument(semanticsES);
 
         docEN = new Document();
+        docEN.setText("I don’t think he really did a great job");
+        resultEN = classifierOneDocumentEN.call(docEN);
+        System.out.println("test: " + docEN.getText());
+        System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultEN, "fr"));
+        markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultEN, "fr");
+        System.out.println("semantic markers found: " + markers);
+        System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultEN, "fr"));        
+
+        docEN = new Document();
         docEN.setText("I don't think #Macron is very smart");
         resultEN = classifierOneDocumentEN.call(docEN);
         System.out.println("test: " + docEN.getText());
