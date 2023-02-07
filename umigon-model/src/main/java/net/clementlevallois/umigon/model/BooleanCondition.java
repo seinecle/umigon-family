@@ -68,25 +68,28 @@ public class BooleanCondition implements Serializable {
     }
 
     public BooleanCondition(String conditionName) {
-        if (conditionName.isBlank()) {
+        if (conditionName == null || conditionName.isBlank()) {
             this.booleanConditionEnum = BooleanConditionEnum.none;
-            return;
+        } else {
+            setConditionName(conditionName);
         }
-        setConditionName(conditionName);
     }
 
     public BooleanCondition(BooleanCondition.BooleanConditionEnum booleanConditionEnum) {
-        this.booleanConditionEnum = booleanConditionEnum;
+        if (booleanConditionEnum == null) {
+            this.booleanConditionEnum = BooleanConditionEnum.none;
+        } else {
+            this.booleanConditionEnum = booleanConditionEnum;
+        }
     }
 
     public void setCondition(String conditionName, Boolean flipped) {
         this.flipped = flipped;
-        if (conditionName.isBlank()) {
+        if (conditionName == null || conditionName.isBlank()) {
             this.booleanConditionEnum = BooleanConditionEnum.none;
-            return;
+        } else {
+            setConditionName(conditionName);
         }
-
-        setConditionName(conditionName);
     }
 
     public void setConditionName(String conditionName) {
@@ -100,8 +103,8 @@ public class BooleanCondition implements Serializable {
         if (!isValidConditionName) {
             System.out.println("error in class ConditionalExpression");
             System.out.println("type of condition name \"" + conditionName + "\" is not a valid condition name");
+            this.booleanConditionEnum = BooleanCondition.BooleanConditionEnum.none;
         }
-
     }
 
     public Boolean getFlipped() {
