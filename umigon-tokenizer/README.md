@@ -112,4 +112,4 @@ The tokenizer and all Umigon modules are implemented in [Nocodefunctions](https:
 [Clément Levallois](https://twitter.com/seinecle)
 
 ## License
-See [license.md](LICENCE.md)
+See [license.md](LICENSE.md)
