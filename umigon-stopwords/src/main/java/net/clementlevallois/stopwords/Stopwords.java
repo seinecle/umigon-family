@@ -59,12 +59,12 @@ import net.clementlevallois.stopwords.resources.PlaceHolder;
 public class Stopwords {
 
     private static final String[] twitterStopWords = {"rt", "w/"};
-    private static final String[] commonStopWords = {"and", "for", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20", "25", "30", "40", "50", "100", "1000"};
+    private static final String[] commonStopWords = {"and", "for", "nbsp", "http", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20", "25", "30", "40", "50", "100", "1000"};
 
     private static Map<String, Map<String, Set<String>>> cache = new HashMap();
     private static Map<String, Set<String>> cacheTwitter = new HashMap();
 
-    public static void main(String args[])  {
+    public static void main(String args[]) {
         try {
             Stopwords app = new Stopwords();
             InputStream fileFromResourceAsStream = app.getInputStreamFromResource("twitter/en.txt");
@@ -87,11 +87,21 @@ public class Stopwords {
         if (cache.containsKey(lang)) {
             return cache.get(lang);
         }
+
         Set<String> stopWords = new HashSet();
         Set<String> shortStopWords = new HashSet();
         Map<String, Set<String>> pair = null;
         InputStream inputStream;
         URL resource;
+
+        for (String commonStopWord : commonStopWords) {
+            stopWords.add(commonStopWord);
+            shortStopWords.add(commonStopWord);
+        }
+        for (String twitterStopWord : twitterStopWords) {
+            stopWords.add(twitterStopWord);
+            shortStopWords.add(twitterStopWord);
+        }
 
         resource = PlaceHolder.class.getResource(lang + ".txt");
         if (resource != null) {
@@ -241,6 +251,12 @@ public class Stopwords {
 
     public static Set<String> getStopwordsValidForAllLanguages() {
         Set<String> words = new HashSet();
+        for (String commonStopWord : commonStopWords) {
+            words.add(commonStopWord);
+        }
+        for (String twitterStopWord : twitterStopWords) {
+            words.add(twitterStopWord);
+        }
 
         InputStream inputStream;
         URL resource;

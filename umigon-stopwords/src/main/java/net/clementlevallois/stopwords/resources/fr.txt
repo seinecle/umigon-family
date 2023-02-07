@@ -54,6 +54,7 @@ arrêter
 arrive
 arrivé
 arrivée
+as
 assez
 attend
 attends
@@ -188,6 +189,7 @@ debout
 dedans
 dehors
 déjà
+deja
 delà
 demande
 depuis
@@ -732,6 +734,7 @@ verrais
 verrons
 verront
 vers
+veut
 via
 viens
 vient
