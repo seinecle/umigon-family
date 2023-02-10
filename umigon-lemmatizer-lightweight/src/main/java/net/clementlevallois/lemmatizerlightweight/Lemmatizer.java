@@ -15,7 +15,7 @@ import java.util.Set;
  */
 public class Lemmatizer {
 
-    private String[] noLemmaEN = new String[]{"access", "accumbens", "addresses", "afterwards", "always", "amazing", "approaches", "analyses", "biases", "businesses", "ceiling", "classes", "crises", "daunting", "discusses", "during", "economics", "elsevier", "ethics", "focuses", "fries", "goes", "humanities", "hypotheses", "inches", "lies", "losses", "marketing", "morning", "news", "outlier", "outstanding", "physics", "politics", "premises", "processes", "red", "rigged", "ries", "series", "sometimes", "something", "species", "spring", "status", "ted", "themselves", "neural processes", "united", "wales", "witnesses"};
+    private String[] noLemmaEN = new String[]{"access", "accumbens", "addresses", "afterwards", "always", "amazing", "approaches", "analyses", "biases", "businesses", "ceiling", "classes", "crises", "daunting", "discusses", "during", "economics", "elsevier", "ethics", "focuses", "fries", "goes", "humanities", "hundred", "hypotheses", "inches", "lens", "lies", "losses", "marketing", "morning", "news", "outlier", "outstanding", "physics", "politics", "premises", "processes", "red", "rigged", "ries", "series", "sometimes", "something", "species", "spring", "status", "ted", "themselves", "neural processes", "united", "wales", "witnesses"};
     private String[] noLemmaFR = new String[]{"accès", "alors", "apres", "après", "aupres", "auprès", "Calvados", "concours", "corps", "cours", "dans", "discours", "divers", "etes", "êtes", "ethos", "éthos", "gens", "gros", "lors", "outils", "pays", "parcours", "pres", "près", "proces", "procès", "propos", "puis", "sans", "secours", "sens", "sommes", "succès", "succes", "temps", "toujours", "travers", "très", "tres", "univers", "viens", "vos"};
     private String[] noLemma = new String[]{"analytics", "accumbens", "aws", "bayes", "business", "charles", "ects", "cnrs", "cowles", "deep learning", "developer", "ethos", "faas", "forbes", "iaas", "james", "keynes", "koopmans", "nhs", "paas", "paris", "programming", "reactjs", "saas", "siemens", "sanders", "ted", "vuejs", "united states"};
 
@@ -24,7 +24,7 @@ public class Lemmatizer {
 
     public static void main(String[] args) throws Exception {
         Lemmatizer l = new Lemmatizer("en");
-        l.lemmatize("gets");
+        l.lemmatize("accounting");
     }
 
     public Lemmatizer(String lang) throws Exception {
@@ -73,7 +73,7 @@ public class Lemmatizer {
                 term = term.substring(0, term.length() - 2);
             }
             if (term.endsWith("ies")) {
-                if (!term.equals("movies")) {
+                if (!term.endsWith("movies")) {
                     term = term.substring(0, term.length() - 3) + "y";
                 } else {
                     term = term.substring(0, term.length() - 1);
@@ -115,7 +115,8 @@ public class Lemmatizer {
                 } else if (term.endsWith("sing")
                         || term.endsWith("zing")
                         || term.endsWith("cing")
-                        || (term.endsWith("ting") && !term.endsWith("sting") && !term.endsWith("tting"))
+                        || (term.endsWith("oding") && !term.endsWith("ooding"))
+                        || (term.endsWith("ting") && !term.endsWith("sting") && !term.endsWith("tting")&& !term.endsWith("ounting"))
                         || (term.endsWith("ming") && (term.endsWith("framing") || !term.endsWith("laming") || !term.endsWith("naming") || !term.endsWith("shaming")))
                         || term.endsWith("ving")
                         || term.endsWith("ring") & !term.endsWith("during")) {

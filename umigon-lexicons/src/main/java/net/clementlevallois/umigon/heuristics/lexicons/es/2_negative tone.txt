@@ -35,7 +35,7 @@ argh		12
 arrogancia	!isImmediatelyPrecededByANegation	12
 arrogante	!isImmediatelyPrecededByANegation	12
 avergonzado	!isImmediatelyPrecededByANegation	12
-culo	!isPrecededBySpecificTerm///mal|cool+++!isImmediatelyPrecededByANegation	if{A && B) {12} else {11}
+culo	!isPrecededBySpecificTerm///mal|cool+++!isImmediatelyPrecededByANegation	if (A && B) {12} else {11}
 culos		12
 estúpido	!isImmediatelyPrecededByANegation	12
 imbéciles	!isImmediatelyPrecededByANegation	12
