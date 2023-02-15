@@ -26,4 +26,4 @@ Otherwise, please add a link to this repo in your app.
 Your contributions are very welcome.
 
 ### License
-Apache v2
+Creative Commons Attribution 4.0 International Public License
