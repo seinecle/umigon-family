@@ -15,6 +15,13 @@ These lists are extremely useful when following a ngram type of approach in topi
 ### Origin?
 This function is developed by Clement Levallois, in support of academic work published [in various places](https://scholar.google.fr/citations?user=r0R0vekAAAAJ&hl=en). It is now used in support of [a web app providing free text analysis for non coders](https://nocodefunctions.com).
 
+### Credit and attribution
+If you use this repository in an academic context, please cite the publication where these stopwords where first deployed:
+
+> Levallois, C., Clithero, J. A., Wouters, P., Smidts, A., & Huettel, S. A. (2012). Translating upwards: linking the neural and social sciences via neuroeconomics. Nature Reviews Neuroscience, 13(11), 789-797.
+
+Otherwise, please add a link to this repo in your app.
+
 ### Contributions
 Your contributions are very welcome.
 
