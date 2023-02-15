@@ -325,6 +325,7 @@ changed
 changing
 channel
 chapter
+character
 characterise
 characterised
 characterising
@@ -614,6 +615,8 @@ dealing
 debate
 decade
 deceptive
+deciphering
+deciphered
 decline
 decrease
 decreased
