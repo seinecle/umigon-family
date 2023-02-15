@@ -62,7 +62,7 @@ public class NGramDuplicatesCleaner {
                 itFreqList.remove();
             }
         }
-        System.out.println("number of ngrams after purge of unique terms: " + mapNGrams.keySet().size());
+//        System.out.println("number of ngrams after purge of unique terms: " + mapNGrams.keySet().size());
 
         // then we remove the terms which appear less frequently individually than in combined expressions 
         for (int i = maxGrams - 1; i > 0; i--) {
