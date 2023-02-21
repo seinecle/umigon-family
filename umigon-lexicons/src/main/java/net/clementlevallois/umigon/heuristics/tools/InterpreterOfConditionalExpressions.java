@@ -25,7 +25,7 @@ public class InterpreterOfConditionalExpressions {
     public static void main(String args[]) {
 //        String rule = "if (A && B) {11} else if (A == 'false') {12} else {10}";
 //        String rule = "if (A && (B || C)) {11} else {10}";
-        String rule = "if (A) {12} else if (B) {11} else {10}";
+        String rule = "if (A && B) {11} else if (A && B == 'false') {11} else {12}";
 
         Map<String, Boolean> c = new HashMap();
         c.put("A", false);

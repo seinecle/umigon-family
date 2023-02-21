@@ -13,11 +13,13 @@ cant have
 can t have
 contrary to
 could have been
+could have been more
 couldnt
 couldn t
 despite
 didnt
 didn t
+disappointingly
 doesnt
 doesn t
 dont
@@ -78,6 +80,7 @@ not their
 nothing
 please
 pls
+pseudo
 reduce
 should be
 shouldnt be too
@@ -86,6 +89,7 @@ stop
 stopped
 too bad that
 unlike
+wannabe
 with out
 without
 wont

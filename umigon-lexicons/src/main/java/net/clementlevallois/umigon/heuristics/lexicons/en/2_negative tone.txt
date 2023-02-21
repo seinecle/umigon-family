@@ -23,6 +23,7 @@ agh		12		2
 aholes		12		3
 alarming	!isImmediatelyPrecededByANegation	12:10		3
 aloof	!isImmediatelyPrecededByANegation	12:10		3
+already	isImmediatelyPrecededByNegativePriorAssociation	12:10
 amateurish	!isImmediatelyPrecededByANegation	12:10		3
 angry	!isImmediatelyPrecededByANegation	12:10		3
 angst	!isImmediatelyPrecededByANegation	12:10		2
@@ -57,6 +58,7 @@ bad	!isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///want|wanna|w
 badly	!isImmediatelyPrecededByANegation	12:10		2
 baffles		12		3
 baffled		12		3
+baffling		12		3
 baity		12		1
 barbaric		12		3
 bastard	!isImmediatelyPrecededByANegation	12:10		3
@@ -110,13 +112,17 @@ cheat	!isImmediatelyPrecededByANegation	12:10	x	2
 cheated	!isImmediatelyPrecededByANegation	12:10		2
 cheating	!isImmediatelyPrecededByANegation	12:10		2
 cheerless		12		2
+churns out		12
 classless	!isImmediatelyPrecededByANegation	12:10		3
 cliche	!isImmediatelyPrecededByANegation+++isPrecededByStrongWord	if (A && B) {12} else {10}		2
 clown	!isImmediatelyPrecededByANegation	12:10		3
+clueless	!isImmediatelyPrecededByANegation	12:10		3
+cluelessness		12:10		3
 clumsy	!isImmediatelyPrecededByANegation	12:10		3
 clunky	!isImmediatelyPrecededByANegation	12:10		2
 clusterfuck		12		3
 clusterfucks		12		3
+cold hearted	!isImmediatelyPrecededByANegation	12:10		2
 complaining	!isImmediatelyPrecededByANegation	12:10		2
 complaint	!isImmediatelyPrecededByANegation	12:10		1
 complaints	!isImmediatelyPrecededByANegation	12:10		2
@@ -137,6 +143,7 @@ cretin	!isImmediatelyPrecededByANegation	12:10		3
 crime	isPrecededBySpecificTerm///it's a|its a|it is a	12:10		3
 cross	isPrecededBySpecificTerm///im|i am+++isFollowedBySpecificTerm///about|that	if (A && B) {12} else {10}		3
 cruel	!isImmediatelyPrecededByANegation	12:10		3
+crummy	!isImmediatelyPrecededByANegation	12:10		3
 crushed	!isImmediatelyPrecededByANegation	12:10		3
 cry	!isImmediatelyPrecededByANegation	12:10	x	3
 crying	!isImmediatelyPrecededByANegation	12:10		3
@@ -184,6 +191,7 @@ dire		12		3
 disappointment	!isImmediatelyPrecededByANegation+++isPrecededByStrongWord	if (A && B) {12} else {10}		2
 disappointed	!isImmediatelyPrecededByANegation	12:10		2
 disappointing	!isImmediatelyPrecededByANegation	12:10		2
+disappointingly	!isImmediatelyPrecededByANegation	12:10		2
 disaster	!isImmediatelyPrecededByANegation+++!isImmediatelyFollowedBySpecificTerm///recovery	if (A && B) {12} else {10}		2
 discouraged	!isImmediatelyPrecededByANegation	12:10		2
 disenchanted	!isImmediatelyPrecededByANegation	12:10		2
@@ -260,6 +268,7 @@ ever	isPrecededBySpecificTerm///never	12:10	x	1
 exasperating		12		3
 excrement		12		2
 execrate		12		3
+exhausting	!isImmediatelyPrecededByANegation	12:10		2
 expensive	!isImmediatelyPrecededByANegation	12:10		1
 experienced issues	!isImmediatelyPrecededByANegation	12:10		2
 experiencing issues	!isImmediatelyPrecededByANegation	12:10		2
@@ -275,6 +284,7 @@ failure		12		2
 fake		12	x	2
 fainthearted	!isImmediatelyPrecededByANegation	12:10		2
 famished		12		3
+far fetched	isPrecededByStrongWord	12		2
 faulty	!isImmediatelyPrecededByANegation	12:10		2
 fed up		12		3
 feeble		12		2
@@ -316,6 +326,7 @@ fuming		12		3
 funeral	!isImmediatelyPrecededByANegation	12:10	x	2
 funniest		12		3
 furious		12		3
+gabbiest		12	x	2
 gah		12	x	2
 galling		12		3
 garbage		12		2
@@ -339,6 +350,7 @@ grossly		12		3
 grotesque		12		3
 grr		12	x	2
 grim		12		2
+grisly		12		2
 gruesome		12		3
 grumpy	!isImmediatelyPrecededByANegation	12:10		2
 gtfo		12		3
@@ -406,6 +418,7 @@ i have to		12		1
 i miss my		12		2
 i need to		12		1
 i wish i		12		1
+idiocy	!isImmediatelyPrecededByANegation	12:10		3
 idiot	!isImmediatelyPrecededByANegation	12:10		3
 idiots	!isImmediatelyPrecededByANegation	12:10		3
 if only		12		1
@@ -414,10 +427,12 @@ immature		12		2
 in hell		12		3
 in the hell		12		2
 inappropriate	!isImmediatelyPrecededByANegation	12:10		2
+inauthentic	!isImmediatelyPrecededByANegation	12:10		2
 incompatible	!isImmediatelyPrecededByANegation	12:10		2
 incompetent	!isImmediatelyPrecededByANegation	12:10		2
 incompetents		12		2
 inept	!isImmediatelyPrecededByANegation	12:10		3
+inert	isPrecededByStrongWord	12:10		2
 inexcusable		12		3
 infuriated		12		3
 infuriating		12		3
@@ -427,6 +442,7 @@ inhuman		12		3
 inhumane		12		3
 insensitive	!isImmediatelyPrecededByANegation	12:10		3
 insidious		12		3
+insipid	!isImmediatelyPrecededByANegation	12:10		1
 insubstantial		12:10		3
 interminable		12		3
 interrupted	!isImmediatelyPrecededByANegation	12:10		1
@@ -457,8 +473,10 @@ lame		12	x	3
 laughable		12		3
 layoff	!isImmediatelyPrecededByANegation	12:10		1
 layoffs	!isImmediatelyPrecededByANegation	12:10		1
+laziest	!isImmediatelyPrecededByANegation	12:10		1
 lazy	!isImmediatelyFollowedByATimeIndication	12:10	1
 left wing		12		1
+let down		12		1
 liar		12		2
 like	isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///is|are	if(A && B){12} else if (A == 'false' && B){11} else {10}	x	2
 loathe		12		3
@@ -476,23 +494,29 @@ loses	!isImmediatelyPrecededByANegation	12:10		1
 loss		12	x	1
 lousy		12		2
 low	isPrecededByStrongWord	12	x	2
+ludicrous	!isImmediatelyPrecededByANegation	12:10		1
 mad	!isImmediatelyPrecededByANegation+++!isFollowedBySpecificTerm///max	if(A && B){12} else{10}		2
 maddening	+++!isFollowedByAPositiveOpinion	12:10		3
-made up	IsPrecededByStrongWord	12:10	3
+made up	idiotsPrecededByStrongWord	12:10	3
 make sense	isImmediatelyPrecededByANegation	12:11	3
-mediocre	isImmediatelyPrecededByANegation	12:11	3
+mature	isImmediatelyPrecededByANegation	12:10	3
+mean spirited	!isImmediatelyPrecededByANegation	12:10	3
+mediocre	!isImmediatelyPrecededByANegation	12:10	3
 mess	!isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///go to the|went to the|watched the|watch the|attend the|attended the	if (A && B) {12} else {10}	x	2
 mess up	!isImmediatelyPrecededByANegation	12:10		2
 messed	!isImmediatelyPrecededByANegation	12:10		2
 messed up	!isImmediatelyPrecededByANegation	12:10		2
+messy	!isImmediatelyPrecededByANegation	12:10		2
 messing up		12		2
 messing with	!isImmediatelyPrecededByANegation	12:10		2
 middle finger		12		3
 midterms		12		1
 migraine	!isImmediatelyPrecededByANegation	12:10		1
+mired in	!isImmediatelyPrecededByANegation	12:10		1
 miserable	!isImmediatelyPrecededByANegation	12:10		2
 misogynistic		12		2
 misogyny		12		2
+misplaced	isPrecededByStrongWord	12:10		2
 miss	!isImmediatelyPrecededByANegation	12:10	x	2
 missed	!isImmediatelyPrecededByANegation	12:10		2
 misses		12		2
@@ -528,6 +552,8 @@ needs hugs	!isImmediatelyPrecededByANegation	12:10		1
 neglect	!isImmediatelyPrecededByANegation	12:10		2
 neglected	!isImmediatelyPrecededByANegation	12:10		2
 never	!isFollowedBySpecificTerm///get tired+++isAllCaps	if(A && B){12} else {10}	x	1
+never fail to	isImmediatelyFollowedByNegativePriorAssociation	12:10	
+never fails to	isImmediatelyFollowedByNegativePriorAssociation	12:10	
 never again		12		2
 never buy		12		2
 nigga	!isFollowedByAPositiveOpinion+++!isPrecededByPositive	if (A && B) {12} else {10}		3
@@ -566,15 +592,18 @@ oops		12	x	1
 ouch		12	x	1
 out	isPrecededBySpecificTerm///stressed|stresses	12:10	x	2
 outraged	!isImmediatelyPrecededByANegation	12:10		3
+outragious	!isImmediatelyPrecededByANegation	12:10		3
 overrated	!isImmediatelyPrecededByANegation	12:10		2
 overwrought	!isImmediatelyPrecededByANegation	12:10		2
 owe	!isImmediatelyFollowedBySpecificTerm///you	12:10	x	1
 pain		12	x	2
 painful	!isImmediatelyPrecededByANegation	12:10		2
+painfully	!isImmediatelyPrecededByANegation	12:10		2
 paining	!isImmediatelyPrecededByANegation	12:10		2
 paltry		12		3
 panic		12		2
-paper-thin		12
+paper thin		12
+passably	!isImmediatelyFollowedByAPositiveOpinion	12:10	x	1
 passed the buck	!isImmediatelyPrecededByANegation	12:10		2
 passing the buck	!isImmediatelyPrecededByANegation	12:10		2
 pathetic		12		3
@@ -597,6 +626,8 @@ pornographic		12		1
 prat		12		2
 pray 4		12		2
 pray for		12		2
+pretentious	!isImmediatelyPrecededByANegation	12:10		2
+pretentiously	!isImmediatelyPrecededByANegation	12:10		2
 problem	!isPrecededBySpecificTerm///solve|solving|solve my|solving my|tackling+++!isImmediatelyFollowedBySpecificTerm///solving|solver+++!isImmediatelyPrecededByANegation+++isPrecededByStrongWord	if(A && B && C && D) {12} else {10}		2
 problems	!isPrecededBySpecificTerm///solve|solving|solve my|solving my|tackling+++!isImmediatelyFollowedBySpecificTerm///solving|solver+++!isImmediatelyPrecededByANegation	if(A && B && C){12} else{10}		2
 probs		12		1
@@ -626,6 +657,8 @@ revolting		12		3
 rid of		12		2
 ridiculous		12		2
 right wing		12		2
+ring hollow		12		2
+rings hollow		12		2
 rip		12	x	2
 risky		12		2
 rubbish		12		3
@@ -719,6 +752,11 @@ spews		12		3
 spineless		12		3
 starving	!isImmediatelyFollowedBySpecificTerm///for	12:10		3
 stern		12		2
+stifle		12		2
+stifles		12		2
+stifled		12		2
+stirred up		12
+stirring up		12
 stomachache	!isImmediatelyPrecededByANegation	12:10		2
 stop	isAllCaps	12	x	3
 strange		12		1
@@ -746,6 +784,7 @@ swollen	!isImmediatelyPrecededByANegation	12:10		2
 tacky	!isImmediatelyPrecededByANegation	12:10		2
 taken forever		12		1
 takes forever		12		1
+tearjerker		12		1
 tedious		12		1
 terrible	!isImmediatelyPrecededByANegation	12:10		2
 terrifying		12		3
@@ -768,10 +807,12 @@ too late	!isImmediatelyPrecededByANegation	12:10		1
 too many	!isFollowedByAPositiveOpinion	12:10		1
 too much	!isFollowedByAPositiveOpinion	12:10		1
 too often	!isFollowedByAPositiveOpinion	12:10		1
+too	isImmediatelyFollowedByNegativePriorAssociation	12:10
 toothache	!isImmediatelyPrecededByANegation	12:10		1
 toxic	!isImmediatelyPrecededByANegation	12:10		3
 toxicity		12		1
 tragedy	!isImmediatelyPrecededByANegation	12:10		3
+treacly	!isImmediatelyPrecededByANegation	12:10		3
 tromped	!isImmediatelyPrecededByANegation	12:10		2
 trouble	!isImmediatelyPrecededByANegation	12:10		2
 tummyache	!isImmediatelyPrecededByANegation	12:10		2
@@ -784,6 +825,7 @@ ugly		12		2
 uh oh		12		1
 unacceptable	!isImmediatelyPrecededByANegation	12:10		3
 uncaring	!isImmediatelyPrecededByANegation	12:10		2
+uncompelling	!isImmediatelyPrecededByANegation	12:10		2
 uncool	!isImmediatelyPrecededByANegation	12:10		2
 undermine	!isImmediatelyPrecededByANegation	12:10		1
 undermines	!isImmediatelyPrecededByANegation	12:10		1
@@ -796,6 +838,7 @@ unfortunetly	!isImmediatelyPrecededByANegation	12:10		1
 ungodly	!isImmediatelyPrecededByANegation	12:10		3
 unhappy	!isImmediatelyPrecededByANegation	12:10		2
 unhealthy 	!isImmediatelyPrecededByANegation	12:10		2
+unimaginative 	!isImmediatelyPrecededByANegation	12:10		2
 unloved	!isImmediatelyPrecededByANegation	12:10		2
 unsatisfying	!isImmediatelyPrecededByANegation	12:10		1
 unsolved		12		1
@@ -812,6 +855,7 @@ vexed	!isImmediatelyPrecededByANegation	12:10		2
 vexing		12		2
 vomit		12		3
 want to go	!isPrecededBySpecificTerm///do you	12:10		1
+warmed over	!isPrecededBySpecificTerm///cool|cooled|climate|earth|dish|period|era	12:10		1
 waste my time	!isImmediatelyPrecededByANegation	12:10		2
 waste of my time	!isImmediatelyPrecededByANegation	12:10		2
 waste our time	!isImmediatelyPrecededByANegation	12:10		2
@@ -829,6 +873,7 @@ whore		12		3
 whores		12		3
 wish i	isImmediatelyFollowedBySpecificTerm///had|hadn|did|didn|would|wouldn	12:10		1
 wish	isImmediatelyFollowedBySpecificTerm///he|they|she|we|people	12:10		1
+wishy-washy	!isImmediatelyPrecededByANegation	12:10	x	2
 be buying		12		2
 won t be buying		12		2
 won t buy		12		2

@@ -54,6 +54,8 @@ public class LoaderOfLexiconsAndConditionalExpressions {
     private Set<String> setNegations;
     private Set<String> setTimeTokens;
     private Set<String> setSubjective;
+    private Set<String> setPositivePriorAssociations;
+    private Set<String> setNegativePriorAssociations;
     private Set<String> setHashTags;
     private Set<String> setModerators;
     private Set<String> setStrong;
@@ -94,6 +96,8 @@ public class LoaderOfLexiconsAndConditionalExpressions {
         setTimeTokens = new HashSet();
         setFalsePositiveOpinions = new HashSet();
         setIronicallyPositive = new HashSet();
+        setPositivePriorAssociations = new HashSet();
+        setNegativePriorAssociations = new HashSet();
         setModerators = new HashSet();
         setStrong = new HashSet();
         setSubjective = new HashSet();
@@ -205,6 +209,19 @@ public class LoaderOfLexiconsAndConditionalExpressions {
                             setTimeTokens.add(term);
                             continue;
                         }
+
+                        //words with positive prior associations
+                        if (map == 18) {
+                            setPositivePriorAssociations.add(term);
+                            continue;
+                        }
+
+                        //words with negative prior associations
+                        if (map == 19) {
+                            setNegativePriorAssociations.add(term);
+                            continue;
+                        }
+
                         //set of terms which look like opinions but are false postives
                         if (map == 14) {
                             setFalsePositiveOpinions.add(term);
@@ -408,4 +425,14 @@ public class LoaderOfLexiconsAndConditionalExpressions {
     public Set<String> getSetSubjective() {
         return multilingualLexicons.get(lang).getSetSubjective();
     }
+
+    public Set<String> getSetPositivePriorAssociations() {
+        return setPositivePriorAssociations;
+    }
+
+    public Set<String> getSetNegativePriorAssociations() {
+        return setNegativePriorAssociations;
+    }
+    
+    
 }
