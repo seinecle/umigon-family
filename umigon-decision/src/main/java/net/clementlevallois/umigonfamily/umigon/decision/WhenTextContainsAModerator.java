@@ -35,14 +35,25 @@ public class WhenTextContainsAModerator {
         for (NGram ngram : ngrams) {
             String ngramAsString = ngram.getCleanedNgram().toLowerCase();
             if (moderators.contains(ngramAsString)) {
-                moderator = ngram; 
+                moderator = ngram;
                 String moderatorAsString = ngram.getCleanedAndStrippedNgram().toLowerCase();
                 // because "if" is a moderator, but "as if" and "even if" is not one.
-                if (moderatorAsString.equals("if ") && (precedingNGramAsString.equals("as") || precedingNGramAsString.equals("even"))){
+                if (moderatorAsString.equals("if ") && (precedingNGramAsString.equals("as") || precedingNGramAsString.equals("even"))) {
                     moderator = null;
                 }
             }
             precedingNGramAsString = ngramAsString;
+        }
+        if (moderator != null) {
+            for (NGram ngram : ngrams) {
+                if (ngram.getIndexCardinal() > moderator.getIndexCardinal()) {
+                    String ngramAsString = ngram.getCleanedNgram().toLowerCase();
+                    if (ngramAsString.contains("as well") || ngramAsString.contains("too") || ngramAsString.contains("aussi") || ngramAsString.contains("tambien")) {
+                        moderator = null;
+                        break;
+                    }
+                }
+            }
         }
         if (moderator == null) {
             return document;
