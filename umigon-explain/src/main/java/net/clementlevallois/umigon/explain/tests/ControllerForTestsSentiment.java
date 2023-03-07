@@ -49,6 +49,15 @@ public class ControllerForTestsSentiment {
         ClassifierSentimentOneDocument classifierOneDocumentES = new ClassifierSentimentOneDocument(semanticsES);
 
         docEN = new Document();
+        docEN.setText("Doesn’t take like pistachio to me (not saying it’s bad)");
+        resultEN = classifierOneDocumentEN.call(docEN);
+        System.out.println("test: " + docEN.getText());
+        System.out.println("result: " + UmigonExplain.getSentimentPlainText(resultEN, "fr"));
+        markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultEN, "fr");
+        System.out.println("semantic markers found: " + markers);
+        System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultEN, "fr"));        
+
+        docEN = new Document();
         docEN.setText("It is awful");
         resultEN = classifierOneDocumentEN.call(docEN);
         System.out.println("test: " + docEN.getText());
@@ -66,6 +75,9 @@ public class ControllerForTestsSentiment {
         System.out.println("semantic markers found: " + markers);
         System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultEN, "fr"));        
 
+        // this get classified incorrectly because the negation
+        // is very much in front
+        // TO REVIEW
         docEN = new Document();
         docEN.setText("I don't think #Macron is very smart");
         resultEN = classifierOneDocumentEN.call(docEN);
@@ -197,6 +209,7 @@ public class ControllerForTestsSentiment {
         System.out.println("expected: positive tone");
         System.out.println("-----------");
         
+        docEN = new Document();
         docEN.setText("nocode is not horrible");
         resultEN = classifierOneDocumentEN.call(docEN);
         System.out.println("test: " + docEN.getText());
@@ -370,14 +383,6 @@ public class ControllerForTestsSentiment {
         System.out.println("decisions made: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultFR, "fr"));
         System.out.println("expected: positive tone");
         System.out.println("-----------");
-
-
-        
-//        ClassifierSentimentOneWordInADocument oneWordInADocument = new ClassifierSentimentOneWordInADocument(semanticsEN);
-//        String resultString = oneWordInADocument.call("horrible", "nocode is not horrible :-)");
-//        System.out.println("test one word \"horrible\" in: nocode is not horrible :-)");
-//        System.out.println("result: " + resultString);
-//        System.out.println("expected: neutral tone");
     }
 
 }
