@@ -54,7 +54,7 @@ atrocious		12		3
 awful	!isImmediatelyFollowedBySpecificTerm///lot	12:10		3
 awkward	!isImmediatelyPrecededByANegation	12:10		1
 back to work		12		1
-bad	!isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///want|wanna|would+++!isFollowedBySpecificTerm///ass|asses|asss	if (A && B && C) {12} else {11}	x	2
+bad	!isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///want|wanna|would+++!isFollowedBySpecificTerm///ass|asses|asss	if (A && B && C) {12} else if (A && (B == 'false' || C == 'false')) {11} else {10} x	2
 badly	!isImmediatelyPrecededByANegation	12:10		2
 baffles		12		3
 baffled		12		3
@@ -478,7 +478,6 @@ lazy	!isImmediatelyFollowedByATimeIndication	12:10	1
 left wing		12		1
 let down		12		1
 liar		12		2
-like	isImmediatelyPrecededByANegation+++!isPrecededBySpecificTerm///is|are	if(A && B){12} else if (A == 'false' && B){11} else {10}	x	2
 loathe		12		3
 loathsome		12		3
 lobbies		12		1
@@ -635,6 +634,7 @@ profanity		12		3
 prohibitive		12		2
 puerile		12		1
 puke		12		3
+quit	isAllCaps+++isFirstTermOfText	if (A || B) {12} else {10}  	x	3
 rabid		12		3
 rabidly		12		3
 racist		12		2
@@ -737,9 +737,11 @@ smfh		12		2
 smh		12		2
 snarl		12		1
 so behind	!isImmediatelyPrecededByANegation	12:10		1
+so much for	isFirstTermOfText	12:10		1
 soapy		12
 sob		12	x	1
 sod		12	x	2
+sordid	!isImmediatelyPrecededByANegation	11:12	2
 sore		12	x	2
 sores		12	x	2
 sorrow		12		1
@@ -758,7 +760,7 @@ stifled		12		2
 stirred up		12
 stirring up		12
 stomachache	!isImmediatelyPrecededByANegation	12:10		2
-stop	isAllCaps	12	x	3
+stop	isAllCaps+++isFirstTermOfText+++IsImmediatelyFollowedBySpecificTerm///what	if ((A || B) && C == 'false') {12} else if (C) {11} else {10}  	x	3
 strange		12		1
 stuck	!isImmediatelyPrecededByANegation	12:10		1
 stuffy	!isImmediatelyPrecededByANegation	12:10		1
@@ -790,6 +792,7 @@ terrible	!isImmediatelyPrecededByANegation	12:10		2
 terrifying		12		3
 terrifyingly		12		3
 that s it		12		1
+the only	                                 isImmediatelyPrecededByANegation+++isInSegmentEndingInExclamation+++!isPrecededBySubjectiveTerm	if (A && B && C) {12} else {10}
 thin	isImmediatelyFollowedBySpecificTerm///margin|air|layer|slice|ground|ice|floor|evidence+++!isImmediatelyPrecededBySpecificTerm///running|too|paper|stretched|stretch|little|patience|wafer	if (A || B) {12} else {10}	2	2
 this close		12		1
 thisclose		12		1

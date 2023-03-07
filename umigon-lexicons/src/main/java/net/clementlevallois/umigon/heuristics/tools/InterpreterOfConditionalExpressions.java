@@ -25,13 +25,12 @@ public class InterpreterOfConditionalExpressions {
     public static void main(String args[]) {
 //        String rule = "if (A && B) {11} else if (A == 'false') {12} else {10}";
 //        String rule = "if (A && (B || C)) {11} else {10}";
-        String rule = "if (A && B) {11} else if (A && B == 'false') {11} else {12}";
+        String rule = "if (A && B && C) {12} else if (A && (B == 'false' || C == 'false')) {11} else {10}";
 
         Map<String, Boolean> c = new HashMap();
         c.put("A", false);
-        c.put("B", false);
+        c.put("B", true);
         c.put("C", true);
-        c.put("D", true);
         String output = "";
         try {
             output = ((Integer) MVEL.eval(rule, c)).toString();
