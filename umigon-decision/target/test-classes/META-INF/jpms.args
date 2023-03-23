@@ -1,0 +1,4 @@
+--patch-module
+net.clementlevallois.umigon.decision=_
+--add-reads
+net.clementlevallois.umigon.decision=ALL-UNNAMED

@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     
     <properties>
-        <revision>0.214</revision>
+        <revision>0.215</revision>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -182,12 +182,47 @@
             </plugins>
         </pluginManagement>
     </build>
-    
     <profiles>
         <profile>
             <id>parent</id>
             <build>
                 <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.11.0</version>
+                        <configuration>
+                            <source>11</source>
+                            <target>11</target>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </plugin>                    
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadoc</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-source</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-jar-plugin</artifactId>
@@ -234,64 +269,18 @@
                             <encoding>UTF-8</encoding>
                         </configuration>
                     </plugin>
-                    <!--                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-site-plugin</artifactId>
-                        <version>3.3</version>
-                        <configuration>
-                            <reportPlugins>
-                                 Here you can also configure more report plugins 
-                                 for your site, such as maven-project-info-reports-plugin 
-                            </reportPlugins>
-                        </configuration>
-                    </plugin>-->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <configuration>
-                            <show>private</show>
-                            <nohelp>true</nohelp>
-                            <detectLinks>false</detectLinks>
-                            <detectOfflineLinks>true</detectOfflineLinks>   
-                            <quiet>false</quiet>
-                            <doclint>none</doclint>
                             <source>11</source>
                         </configuration>
                         <executions>
                             <execution> 
                                 <id>attach-javadocs</id>
-                                <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals> 
-                            </execution>
-                            <!--                            <execution>
-                                <id>aggregate</id>
-                                <goals>
-                                    <goal>aggregate</goal>
-                                </goals>
-                                <configuration>
-                                     Specific configuration for the aggregate report 
-                                    <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
-                                </configuration>
-                            </execution>-->
-                            <!--Aggregate Javadoc, attached in gephi-app--> 
-                            <execution>
-                                <id>aggregate</id>
-                                <phase>site</phase>
-                                <inherited>false</inherited>
-                                <goals>
-                                    <goal>aggregate-jar</goal>
-                                </goals>
-                                <configuration>
-                                    <show>public</show>
-                                    <doctitle>Umigon Family ${project.version} API Index</doctitle>
-                                    <subpackages>net.clementlevallois.functions.umigon-model</subpackages>
-                                    <nohelp>true</nohelp>
-                                    <detectLinks>false</detectLinks>
-                                    <detectOfflineLinks>true</detectOfflineLinks>
-                                    <sourcepath>src/main/java;modules/umigon-core/src/main/java;modules/umigon-tokenizer/src/main/java;modules/umigon-ngram-ops/src/main/java;modules/umigon-explain/src/main/java;modules/umigon-lexicons/src/main/java;modules/umigon-model/src/main/java;modules/umigon-decision/src/main/java;modules/umigon-lemmatizer-lightweight/src/main/java;modules/umigon-stopwords/src/main/java;</sourcepath>
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
@@ -303,33 +292,11 @@
                             <execution>
                                 <id>attach-source</id>
                                 <goals>
-                                    <goal>jar-no-fork</goal>
+                                    <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- Assembler to produce final sources artifact -->
-                    <!--                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>source-assembly</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <configuration>
-                                    <tarLongFileMode>gnu</tarLongFileMode>
-                                    <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
-                                    <finalName>${project.name}-${project.version}</finalName>
-                                    <descriptors>
-                                        <descriptor>src/assemble/sources.xml</descriptor>
-                                    </descriptors>
-                                    <attach>false</attach>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>-->
                     <plugin>
                         <groupId>org.jreleaser</groupId>
                         <artifactId>jreleaser-maven-plugin</artifactId>

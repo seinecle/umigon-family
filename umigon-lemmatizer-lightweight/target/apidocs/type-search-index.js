@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"net.clementlevallois.lemmatizerlightweight","l":"Lemmatizer"}];updateSearchResults();
