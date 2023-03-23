@@ -28,7 +28,7 @@ public class UmigonTokenizer {
 
     public static void main(String[] args) throws IOException {
 
-        String text = "a surprisingly good-natured throwback to the '80s heyday of the body-switching genre .";
+        String text = "provides a fine-grained analysis";
 //        String text = "I love chocolate";
 //        String text = "I can't *wait*  to see this performance! 𝄠\nI will l@@@ve it :-) 😀😀😀 😀 :((( ";
 //        String text = "I love chocolate :-), really (esp5ecially with coffee!)";
@@ -51,6 +51,9 @@ public class UmigonTokenizer {
         PatternOfInterestChecker poiChecker = new PatternOfInterestChecker();
         poiChecker.loadPatternsOfInterest();
         List<TextFragment> textFragments = new ArrayList();
+        if (languageSpecificLexicon == null){
+            languageSpecificLexicon = new HashSet();
+        }
 
         boolean textFragmentStarted = false;
         boolean isCurrCodePointWhiteSpace = false;

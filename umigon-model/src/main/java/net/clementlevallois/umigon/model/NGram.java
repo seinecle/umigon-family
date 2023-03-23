@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author:  Levallois
  */
 package net.clementlevallois.umigon.model;
 
@@ -54,5 +54,7 @@ public class NGram extends TextFragment implements Serializable {
         }
         return sb.toString().trim();
     }
+    
+    
     
 }

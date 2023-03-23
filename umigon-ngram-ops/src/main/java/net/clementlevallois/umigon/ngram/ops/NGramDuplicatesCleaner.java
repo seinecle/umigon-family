@@ -4,8 +4,6 @@ package net.clementlevallois.umigon.ngram.ops;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
@@ -38,7 +36,7 @@ public class NGramDuplicatesCleaner {
         stopWords = new HashSet();
     }
 
-    public Map<String, Integer> removeDuplicates(Map<String,Integer> mapNGrams, int maxGrams, boolean removeSingleTerms) {
+    public Map<String, Integer> removeDuplicates(Map<String, Integer> mapNGrams, int maxGrams, boolean removeSingleTerms) {
 
         // this factor determines to what extent, if "European Union" is frequently used, then "Union" alone should not be removed from relevant ngrams
         // the higher the factor, the harder it is for "Union" to remain.
@@ -58,6 +56,7 @@ public class NGramDuplicatesCleaner {
         // why? because we assume these terms are of null interest
         while (itFreqList.hasNext()) {
             entry = itFreqList.next();
+            String term = entry.getKey();
             if (entry.getValue() == 1 && removeSingleTerms) {
                 itFreqList.remove();
             }
@@ -89,14 +88,14 @@ public class NGramDuplicatesCleaner {
                         if (stopWords.contains(term2)) {
                             wordsToBeRemoved.add(term2);
                         }
-                        
+
                         Integer countTerm1 = mapNGrams.get(term1);
                         Integer countTerm2 = mapNGrams.get(term2);
 
-                        if (countTerm1!=null && countTerm1 < entry.getValue() * factorRemovingIrrelevantUnigrams) {
+                        if (countTerm1 != null && countTerm1 < entry.getValue() * factorRemovingIrrelevantUnigrams) {
                             wordsToBeRemoved.add(term1.trim());
                         }
-                        if (countTerm2!=null && countTerm2  < entry.getValue() * factorRemovingIrrelevantUnigrams) {
+                        if (countTerm2 != null && countTerm2 < entry.getValue() * factorRemovingIrrelevantUnigrams) {
                             wordsToBeRemoved.add(term2.trim());
                         }
 
@@ -134,7 +133,6 @@ public class NGramDuplicatesCleaner {
             boolean toRemain;
             entry = itFreqList.next();
             currWord = entry.getKey();
-
             toRemain = wordsToBeRemoved.add(currWord);
 
             if (toRemain & !stopWords.contains(currWord)) {

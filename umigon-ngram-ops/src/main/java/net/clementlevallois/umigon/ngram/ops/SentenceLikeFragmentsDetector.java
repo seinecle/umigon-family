@@ -23,7 +23,7 @@ import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
 public class SentenceLikeFragmentsDetector {
 
     public static void main(String args[]) throws IOException {
-        String example = "I did not know. Thank you.";
+        String example = "Because of this dual effect, firms are likely to underestimate the returns on service intervention if measured using only voices. Furthermore, we find an “error-correction” effect in certain situations, where customers compliment or complain when others voice the opposite opinions. Finally, we characterize the distinct voicing tendencies in different relationship states";
 //        String example = "I love chocolate, because it is so sweet and delicious. Really (I am honest!)";
 //        String example = "Je vais super bien :-), vraiment vous êtes des champions (même toi!)";
         Set<String> languageSpecificLexicon = new HashSet();
@@ -87,7 +87,7 @@ public class SentenceLikeFragmentsDetector {
 //                    if (s.equals(",")) {
 //                        System.out.println("stop");
 //                    }
-                    if (s.contains(".") || s.contains(",") || s.contains("(") || s.contains(")") || s.contains("\"") || s.contains("«") || s.contains("»") || s.contains("“") || s.contains("”") || s.contains("„")) {
+                    if (s.contains(".") || s.contains(",") || s.contains("(") || s.contains(")") || s.contains("\"") || s.contains("«") || s.contains("»") || s.contains("“") || s.contains("”") || s.contains("„") || s.contains("•")) {
                         sentenceLike.getNgrams().addAll(listOfNGrams);
                         sentenceLike.setIndexOrdinal(listOfSentenceLikeFragments.size());
                         listOfSentenceLikeFragments.add(sentenceLike);

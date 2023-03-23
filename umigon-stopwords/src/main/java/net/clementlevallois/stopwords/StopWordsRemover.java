@@ -41,7 +41,10 @@ public final class StopWordsRemover {
         fieldSpecificTerms.add("twitter");
         StopWordsRemover rem = new StopWordsRemover(3, "en");
         rem.addFieldSpecificStopWords(fieldSpecificTerms);
-        rem.shouldItBeRemoved("government data and");
+        Set<String> scientificStopwordsInEnglish = Stopwords.getScientificStopwordsInEnglish();
+        rem.addFieldSpecificStopWords(scientificStopwordsInEnglish);
+        boolean shouldItBeRemoved = rem.shouldItBeRemoved("of textual");
+        System.out.println(shouldItBeRemoved);
     }
 
     public StopWordsRemover(int minWordLength, String lang) {

@@ -13,6 +13,9 @@ acceptance
 accepted
 accepting
 access
+accessed
+accessing
+accessible
 accessibility
 accommodate
 accommodation
@@ -110,6 +113,7 @@ alpha
 alter
 altered
 alternative
+alternatives
 altogether
 ambiguous
 among
@@ -139,6 +143,9 @@ anti
 anticipate
 anticipated
 apparent
+appeal
+appeals
+appealing
 appendix
 application
 applicable
@@ -219,6 +226,7 @@ attributing
 augment
 augmentation
 author
+authors
 authority
 automatically
 availability
@@ -262,7 +270,6 @@ big
 bilateral
 billion
 blackwell
-blog
 bond
 borrowed
 boundary
@@ -284,6 +291,7 @@ but
 bv
 calculation
 calibration
+called
 can
 capable
 capacity
@@ -330,6 +338,7 @@ characterise
 characterised
 characterising
 characteristic
+characteristics
 characterize
 characterized
 characterizes
@@ -360,6 +369,7 @@ classified
 classify
 clause
 close
+closely
 closer
 closing
 coarse
@@ -379,6 +389,9 @@ collaborative
 collapse
 colleague
 collect
+collects
+collected
+collecting
 collection
 colloque
 colorful
@@ -386,6 +399,7 @@ column
 combin
 combination
 combine
+combines
 combined
 combining
 commence
@@ -409,6 +423,7 @@ compare
 compared
 comparing
 comparison
+comparisons
 compatible
 compel
 compelling
@@ -438,6 +453,8 @@ comprehensibility
 comprehensible
 comprehension
 comprehensively
+comprise
+comprises
 compromis
 compromised
 compromising
@@ -454,6 +471,7 @@ concentration
 concept
 concepts
 conceptual
+conceptualized
 conceptually
 conceptualization
 conceptualize
@@ -472,6 +490,9 @@ condition
 conditional
 conditioning
 conduct
+conducts
+conducted
+conducting
 conference
 confine
 confirm
@@ -509,18 +530,21 @@ consistently
 consists
 constant
 constitute
+constitutes
 constitutional
 constrain
 constrained
 constraining
 constraint
 construct
+constructs
 construction
 consultation
 contact
 contemporary
 content
 context
+contexts
 contextual
 contingency
 contingent
@@ -590,6 +614,9 @@ covere
 covered
 covering
 create
+creates
+created
+creating
 credit
 criteria
 criterion
@@ -600,6 +627,7 @@ critically
 cross
 crucial
 cue
+cues
 cumulative
 current
 currently
@@ -618,6 +646,7 @@ deceptive
 deciphering
 deciphered
 decline
+decreases
 decrease
 decreased
 dedicated
@@ -644,6 +673,7 @@ delivery
 delta
 demanding
 demonstrate
+demonstrates
 demonstrated
 demonstrating
 demonstration
@@ -666,8 +696,12 @@ deploying
 depression
 depth
 derive
+derives
+derived
+deriving
 describ
 describe
+describes
 described
 describing
 description
@@ -680,6 +714,7 @@ designing
 desirability
 despite
 detail
+details
 detaile
 detailed
 detect
@@ -713,6 +748,7 @@ dialoguing
 differ
 differed
 difference
+differences
 different
 differential
 differentially
@@ -723,12 +759,17 @@ differently
 differing
 difficult
 difficulty
+diffusion
 dimension
 dimensional
 dimensions
 diminished
 diminishing
 direct
+directed
+directing
+direction
+directions
 disadvantage
 disadvantaged
 disadvantaging
@@ -764,6 +805,10 @@ displaye
 displayed
 displaying
 disposal
+disseminate
+disseminated
+disseminatting
+disseminatt
 dissociable
 dissociated
 distinct
@@ -797,6 +842,7 @@ drastic
 draw
 drawing
 drawn
+driven
 driver
 dual
 duration
@@ -827,6 +873,7 @@ elaborating
 elaboration
 elective
 element
+elements
 elicit
 elicited
 elicits
@@ -857,16 +904,17 @@ empirically
 employ
 employe
 employed
-enabl
 enable
+enables
+enabling
 encod
 encode
 encoded
 encompass
 encompasse
 encounter
-encourag
 encourage
+encourages
 encouraging
 encouraged
 encountered
@@ -912,6 +960,7 @@ equivalent
 era
 erroneous
 error
+errors
 especially
 essay
 essential
@@ -923,6 +972,7 @@ established
 establishing
 estate
 estimate
+estimates
 estimated
 estimation
 et al
@@ -943,10 +993,12 @@ evoking
 evolve
 evolved
 evolving
+evolution
 exam
 examin
 examination
 examine
+examines
 examined
 examining
 exceed
@@ -960,6 +1012,7 @@ exceeding
 excellent
 exception
 excessive
+exchange
 exclude
 excluded
 excluding
@@ -984,6 +1037,7 @@ expected
 expensive
 experienced
 experiment
+experiments
 experimental
 experimentally
 experimented
@@ -992,6 +1046,7 @@ explain
 explained
 explaining
 explaination
+explanation
 explicate
 explicated
 explicates
@@ -1023,6 +1078,8 @@ extension
 extensive
 external
 extract
+extracte
+extracted
 extraction
 face
 faced
@@ -1062,6 +1119,7 @@ final
 find
 finding
 findings
+fine
 finite
 firstly
 fit
@@ -1140,6 +1198,9 @@ gain
 gamma
 gap
 gather
+gathers
+gathered
+gathering
 general
 generally
 generality
@@ -1151,9 +1212,11 @@ generalized
 generalizing
 generate
 generated
+generates
 generating
 generation
 generic
+gist
 global
 globally
 goal
@@ -1161,6 +1224,7 @@ good
 grade
 gradual
 gradually
+grained
 grand
 granted
 granular
@@ -1172,6 +1236,8 @@ ground
 group
 groupe
 grow
+growing
+growth
 guarantee
 guest
 guidance
@@ -1186,6 +1252,7 @@ handle
 handl
 handbook
 hands-on
+hard
 harness
 have
 heate
@@ -1211,8 +1278,10 @@ hinder
 histogram
 homogenous
 homologous
+hope
 hour
 how
+huge
 hurdle
 hybrid
 hyper
@@ -1231,16 +1300,19 @@ identification
 identified
 identify
 identifying
+idiosyncratic
 ie
 ignor
 ignore
 ii
 iii
 illustrate
+illustrates
 illustrated
 illustrative
 imbalance
 impact
+impacts
 impair
 impaired
 impairing
@@ -1264,6 +1336,7 @@ impose
 impossible
 impressive
 improve
+improves
 improved
 improvement
 improving
@@ -1411,6 +1484,7 @@ isolating
 issue
 issues
 item
+items
 iterated
 jel
 joint
@@ -1440,6 +1514,8 @@ lastly
 latency
 latent
 layer
+leading
+leads
 learn
 learned
 learning
@@ -1463,12 +1539,16 @@ leveraging
 levy
 liberal
 licence
+lies
 life
+light
 likelihood
 likely
 likewise
 limit
+limits
 limitation
+limitations
 linear
 link
 linkage
@@ -1517,6 +1597,8 @@ manipulate
 manipulated
 manipulating
 manipulation
+manner
+manners
 manual
 mappe
 mapped
@@ -1646,6 +1728,10 @@ notion
 notwithstanding
 novel
 novelty
+nuance
+nuances
+nuanced
+nuancing
 null
 number
 numerical
@@ -1665,6 +1751,7 @@ obtained
 obvious
 occupational
 occur
+occurs
 occurred
 occurrence
 occurring
@@ -1672,6 +1759,7 @@ odd
 offer
 offere
 offset
+on the fly
 ongoing
 onset
 operate
@@ -1683,6 +1771,7 @@ optimal
 optimize
 optimum
 option
+options
 optional
 order
 ordering
@@ -1696,9 +1785,11 @@ outcome
 outcomes
 outlin
 outline
+outlines
 outlining
 outlined
 outperform
+outperforms
 outperforme
 outperformed
 outperforming
@@ -1747,13 +1838,16 @@ pattern
 peak
 penetrance
 perceive
+perceives
 percent
 percentage
 percepted
 percepting
 perception
 perform
+performs
 performe
+performed
 performance
 performed
 performing
@@ -1801,6 +1895,7 @@ post
 posterior
 potential
 potentially
+power
 powerful
 practical
 practicality
@@ -1830,9 +1925,12 @@ preparation
 prepare
 prepared
 prerequisite
+presence
+presences
 present
 presentation
 presented
+presents
 presenting
 press
 prestigious
@@ -1843,6 +1941,7 @@ prevaled
 prevalence
 prevalent
 prevaling
+prevailing
 previous
 previously
 primarily
@@ -1862,6 +1961,7 @@ probe
 probed
 probing
 problem
+problems
 proceed
 proceeding
 proceedings
@@ -1873,6 +1973,9 @@ processed
 processes
 processing
 produce
+produces
+produced
+producing
 productive
 professional
 professor
@@ -1888,12 +1991,16 @@ promise
 promising
 promote
 prone
+pronounced
 proof
 proper
 properly
+property
+properties
 proportion
 proposal
 propose
+proposes
 proposed
 proposition
 propositions
@@ -1970,6 +2077,7 @@ realize
 realized
 realizing
 reason
+reasons
 receive
 recent
 recently
@@ -1996,6 +2104,7 @@ refining
 reflect
 reflected
 reflecting
+reflects
 regarded
 regarding
 regardless
@@ -2012,6 +2121,7 @@ relate
 related
 relating
 relation
+relations
 relational
 relationship
 relative
@@ -2064,9 +2174,11 @@ researched
 researcher
 researchers
 researching
+reserved
 resident
 resolve
 resource
+respective
 respectively
 respond
 responded
@@ -2089,7 +2201,8 @@ retrieved
 retrieve
 retrospective
 reveal
-reveale
+revealing
+reveals
 revealed
 reverse
 review
@@ -2151,6 +2264,7 @@ seeking
 seemingly
 segment
 select
+selecte
 selected
 selecting
 selection
@@ -2169,6 +2283,7 @@ separately
 series
 serv
 serve
+serves
 served
 serving
 session
@@ -2184,6 +2299,9 @@ shared
 sharing
 shed
 shift
+shifted
+shifts
+shifting
 short term
 shortcoming
 shortcomings
@@ -2218,6 +2336,8 @@ situating
 situation
 situations
 size
+sizes
+sizing
 sized
 small
 smaller
@@ -2267,6 +2387,7 @@ stability
 stake
 standard
 standardized
+standing
 start
 starting
 static
@@ -2286,6 +2407,8 @@ straightforward
 strategic
 strategical
 strategy
+strength
+strengths
 strengthen
 strip
 stress
@@ -2302,9 +2425,11 @@ student
 studied
 studies
 study
+studying
 style
 sub
 submit
+submitt
 submitting
 submitted
 subgroup
@@ -2333,6 +2458,8 @@ suggested
 suggesting
 suggestion
 suggestive
+suit
+suited
 suitable
 sum
 summarise
@@ -2344,6 +2471,7 @@ superior
 supersede
 superseded
 supplement
+supplemental
 supplementing
 supplementary
 support
@@ -2368,6 +2496,8 @@ tackl
 tackle
 tackled
 take
+tailor
+tailored
 tangible
 tape
 target
@@ -2415,8 +2545,10 @@ those
 three
 throughout
 thus
+ties
 tim
 time
+times
 timely
 timing
 tion
@@ -2435,6 +2567,7 @@ traditionally
 trained
 training
 trait
+traits
 transaction
 transfer
 transform
@@ -2515,7 +2648,10 @@ utilisation
 utilise
 utility
 utilization
+utilizing
 utilize
+utilized
+utilizes
 utiliz
 vagueness
 val
@@ -2531,6 +2667,7 @@ variables
 variance
 variant
 variation
+variational
 varied
 varies
 variety
@@ -2546,6 +2683,7 @@ versity
 versus
 via
 view
+views
 violation
 virtually
 visible
@@ -2553,7 +2691,14 @@ vision
 visual
 vital
 volume
+volumes
 voluntary
+watch
+watches
+watched
+watching
+way
+ways
 weakness
 weaknesse
 weighted

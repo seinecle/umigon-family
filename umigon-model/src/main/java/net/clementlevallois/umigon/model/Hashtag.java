@@ -1,5 +1,5 @@
 /*
- * author: Clément Levallois
+ * author: Clement Levallois
  */
 package net.clementlevallois.umigon.model;
 

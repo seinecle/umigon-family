@@ -3,13 +3,17 @@
  */
 package net.clementlevallois.umigon.model;
 
+import java.io.Serializable;
+import java.util.Objects;
 import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEnum;
 
 /**
  *
  * @author LEVALLOIS
  */
-public abstract class TextFragment implements Comparable<TextFragment> {
+public abstract class TextFragment implements Serializable
+//        implements Comparable<TextFragment> 
+{
 
     private int indexCardinal;
     private int indexOrdinal;
@@ -19,6 +23,7 @@ public abstract class TextFragment implements Comparable<TextFragment> {
     private TypeOfTextFragmentEnum typeOfTextFragmentEnum;
 
     private String originalForm = "";
+    private String originalFormLemmatized = "";
 
     public String getOriginalForm() {
         return originalForm;
@@ -79,15 +84,52 @@ public abstract class TextFragment implements Comparable<TextFragment> {
     public void setIndexOrdinalInSentence(int indexOrdinalInSentence) {
         this.indexOrdinalInSentence = indexOrdinalInSentence;
     }
-    
-    
-    @Override
-    public int compareTo(TextFragment tf) {
-        if (this.indexCardinal == tf.indexCardinal && this.originalForm.equals(tf.originalForm)){
-            return 0;
-        }
-        else {
-            return - 1;
-        }
+
+    public String getOriginalFormLemmatized() {
+        return originalFormLemmatized;
     }
+
+    public void setOriginalFormLemmatized(String originalFormLemmatized) {
+        this.originalFormLemmatized = originalFormLemmatized;
+    }
+    
+    
+        
+    
+    
+    
+//    @Override
+//    public int compareTo(TextFragment tf) {
+//        if (this.indexCardinal == tf.indexCardinal && this.originalForm.equals(tf.originalForm)){
+//            return 0;
+//        }
+//        else {
+//            return - 1;
+//        }
+//    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.originalForm);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TextFragment other = (TextFragment) obj;
+        return Objects.equals(this.originalForm, other.originalForm);
+    }
+
+    
+    
 }

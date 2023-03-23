@@ -27,7 +27,7 @@ public class NGramFinderBisForTextFragments {
     public static void main(String[] args) throws IOException {
 //        String example = "This sentence is hard)";
 //        String example = "I love it, really (I am serious)";
-        String example = "This app is amazing";
+        String example = "provides a fine-grained analysis";
         Set<String> languageSpecificLexicon = new HashSet();
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(example, languageSpecificLexicon);
         List<SentenceLike> listOfSentenceLike = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
@@ -36,9 +36,9 @@ public class NGramFinderBisForTextFragments {
             System.out.println("sentence like fragment #" + countSentenceLikeFragments++);
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);
             for (TextFragment textFragment : generateNgramsUpto) {
-                if (textFragment.getOriginalForm().equals("amazing")){
-                    System.out.println("stop");
-                }
+//                if (textFragment.getOriginalForm().equals("amazing")){
+//                    System.out.println("stop");
+//                }
                 if (textFragment.getTypeOfTextFragmentEnum() == null) {
                     System.out.println("stop null fragment type");
                 }
