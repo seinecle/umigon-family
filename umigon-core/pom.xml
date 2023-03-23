@@ -27,6 +27,10 @@
             <version>${revision}</version>
         </dependency>
         <dependency>
+            <groupId>net.clementlevallois.utils</groupId>
+            <artifactId>utils-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-ngram-ops</artifactId>
             <version>${revision}</version>

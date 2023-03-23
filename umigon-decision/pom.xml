@@ -13,7 +13,6 @@
     <properties>
         <exec.mainClass>net.clementlevallois.umigonfamily.umigon.decision.UmigonDecision</exec.mainClass>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>

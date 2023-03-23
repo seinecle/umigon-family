@@ -12,12 +12,12 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-core</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>jakarta.json</groupId>
