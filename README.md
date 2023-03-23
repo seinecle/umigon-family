@@ -6,7 +6,7 @@ A family of modules for essential NLP tasks and sentiment analysis, done well.
 - each module should serve a function in a stand-alone fashion
 
 ## Release
-release v0.201 is in the works
+release v0.202 is in the works
 
 
 ## Docs
