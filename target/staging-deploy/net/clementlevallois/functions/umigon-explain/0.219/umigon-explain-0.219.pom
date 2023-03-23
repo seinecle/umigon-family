@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.clementlevallois.functions</groupId>
+        <artifactId>umigon-family</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>umigon-explain</artifactId>
+    <version>${revision}</version>
+    <dependencies>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-model</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-core</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json</groupId>
+            <artifactId>jakarta.json-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.parsson</groupId>
+            <artifactId>parsson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.json.bind</groupId>
+            <artifactId>jakarta.json.bind-api</artifactId>
+        </dependency>
+    </dependencies>
+    <properties>
+        <exec.mainClass>net.clementlevallois.umigonfamily.umigon.explain.UmigonExplain</exec.mainClass>
+    </properties>
+</project>

@@ -1,4 +1,4 @@
-increment the version in parent pom
+increment the version to 1.3 (example) in parent pom
 comment out all child modules in parent pom
 run parent pom with mvn -Pparent
 increment version in readme
@@ -9,24 +9,25 @@ in git CLI do:
 
 git add *
 git commit -m "deploying update to umigon family"
-git tag v0.217 -a -m "217 tag for first release with annotation"
+git tag v1.3 -a -m "1.3 tag for first release"
 git push
-git push origin v0.217
+git push origin v1.3
 
 normally it should publish the parent pom directly!
 
 Then:
+WAIT 15 MINUTES
 - uncomment the child modules in the parent pom
+- update the version of the revision to 0.219 in the pom parent and the readme
 - run parent pom with mvn -Prelease
-- delete the tag of the version *on Github*
-- delete the tag of the version *locally* with git tag -d v0.2017
+- DELETE the parent pom folder in the stage-deploy folder
 
 in git CLI:
 git add *
 git commit -m "deploying update to umigon family"
-git tag v0.217 -a -m "217 tag for first release with annotation"
+git tag v0.219 -a -m "219 tag for first release"
 git push
-git push origin v0.217
+git push origin v0.219
 
 
 
