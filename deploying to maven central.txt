@@ -6,5 +6,8 @@ increment version in readme
 make sure that there is only umigon-family in target/stage-deploy
 
 in git CLI do:
+
 git add *
 git commit -m "deploying update to umigon family"
+git tag v0.217 -a -m "217 tag for first release with annotation"
+
