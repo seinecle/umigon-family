@@ -24,7 +24,8 @@ Then:
 in git CLI:
 git add *
 git commit -m "deploying update to umigon family"
-git tag v0.217 -a -m "217 tag for first release with annotation"git push
+git tag v0.217 -a -m "217 tag for first release with annotation"
+git push
 git push origin v0.217
 
 
