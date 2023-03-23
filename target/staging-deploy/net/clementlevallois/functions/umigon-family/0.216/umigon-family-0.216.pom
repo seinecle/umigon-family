@@ -49,7 +49,7 @@
 
 
     <modules>
-        <module>umigon-core</module>
+<!--        <module>umigon-core</module>
         <module>umigon-tokenizer</module>
         <module>umigon-ngram-ops</module>
         <module>umigon-explain</module>
@@ -57,7 +57,7 @@
         <module>umigon-model</module>
         <module>umigon-decision</module>
         <module>umigon-lemmatizer-lightweight</module>
-        <module>umigon-stopwords</module>
+        <module>umigon-stopwords</module>-->
     </modules>
     <dependencyManagement>
         <dependencies>

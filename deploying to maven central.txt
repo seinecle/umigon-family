@@ -1,0 +1,10 @@
+increment the version in parent pom
+comment out all child modules in parent pom
+run parent pom with mvn -Pparent
+increment version in readme
+
+make sure that there is only umigon-family in target/stage-deploy
+
+in git CLI do:
+git add *
+git commit -m "deploying update to umigon family"
