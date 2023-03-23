@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"net.clementlevallois.umigon.decision","l":"net.clementlevallois.umigonfamily.umigon.decision"}];updateSearchResults();

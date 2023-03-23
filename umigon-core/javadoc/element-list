@@ -1,0 +1,6 @@
+module:net.clementlevallois.umigon.core
+net.clementlevallois.umigon.classifier.controller
+net.clementlevallois.umigon.classifier.delight
+net.clementlevallois.umigon.classifier.organic
+net.clementlevallois.umigon.classifier.resources
+net.clementlevallois.umigon.classifier.sentiment

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"net.clementlevallois.umigon.explain","l":"net.clementlevallois.umigon.explain.controller"},{"m":"net.clementlevallois.umigon.explain","l":"net.clementlevallois.umigon.explain.parameters"}];updateSearchResults();

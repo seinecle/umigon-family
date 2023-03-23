@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"net.clementlevallois.umigon.heuristics","l":"net.clementlevallois.umigon.heuristics.booleanconditions"},{"m":"net.clementlevallois.umigon.heuristics","l":"net.clementlevallois.umigon.heuristics.tools"}];updateSearchResults();

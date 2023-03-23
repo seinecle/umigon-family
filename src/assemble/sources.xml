@@ -1,0 +1,23 @@
+<assembly>
+    <id>sources</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>${basedir}</directory>
+            <outputDirectory></outputDirectory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+            <excludes>
+                <exclude>**/target/**</exclude>
+                <exclude>.git/**</exclude>
+                <exclude>**/*.log</exclude>
+                <exclude>**/*.asc</exclude>
+                <exclude>**/*.ks</exclude>
+                <exclude>**/*.pfx</exclude>
+                <exclude>**/.DS_Store</exclude>
+                <exclude>.github/**</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+</assembly>

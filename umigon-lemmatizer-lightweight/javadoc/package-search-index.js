@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"LemmatizerLightweight","l":"net.clementlevallois.lemmatizerlightweight"}];updateSearchResults();
