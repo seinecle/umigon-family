@@ -31,19 +31,19 @@ LemmatizerLightweight='C:/Users/levallois/open/nocode-app-functions/umigon-famil
 'umigon-lemmatizer-lightweight 0.218 API'
 net.clementlevallois.lemmatizerlightweight
 'C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-lemmatizer-lightweight/src/main/java/module-info.java'
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\allclasses-index.html = 1679612329029
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\allpackages-index.html = 1679612329042
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\element-list = 1679612328889
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\help-doc.html = 1679612329139
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\index-all.html = 1679612329102
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\index.html = 1679612329115
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\jquery-ui.overrides.css = 1679612329304
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\member-search-index.js = 1679612329076
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\module-search-index.js = 1679612329055
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\overview-tree.html = 1679612329007
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\package-search-index.js = 1679612329063
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\script.js = 1679612329162
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\search.js = 1679612329176
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\stylesheet.css = 1679612329151
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\tag-search-index.js = 1679612329085
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\type-search-index.js = 1679612329069
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\allclasses-index.html = 1679612789846
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\allpackages-index.html = 1679612789856
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\element-list = 1679612789730
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\help-doc.html = 1679612789920
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\index-all.html = 1679612789901
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\index.html = 1679612789909
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\jquery-ui.overrides.css = 1679612790064
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\member-search-index.js = 1679612789879
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\module-search-index.js = 1679612789863
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\overview-tree.html = 1679612789825
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\package-search-index.js = 1679612789869
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\script.js = 1679612789945
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\search.js = 1679612789959
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\stylesheet.css = 1679612789935
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\tag-search-index.js = 1679612789886
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-lemmatizer-lightweight\target\apidocs\type-search-index.js = 1679612789874
