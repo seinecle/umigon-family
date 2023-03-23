@@ -10,4 +10,21 @@ in git CLI do:
 git add *
 git commit -m "deploying update to umigon family"
 git tag v0.217 -a -m "217 tag for first release with annotation"
+git push
+git push origin v0.217
+
+normally it should publish the parent pom directly!
+
+Then:
+- uncomment the child modules in the parent pom
+- run parent pom with mvn -Prelease
+- delete the tag of the version on Github
+
+in git CLI:
+git add *
+git commit -m "deploying update to umigon family"
+git push
+git push origin v0.217
+
+
 
