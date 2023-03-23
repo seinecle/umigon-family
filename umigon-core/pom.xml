@@ -4,14 +4,13 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>1.0</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>umigon-core</artifactId>
-    <version>1.0</version>
-
+    <version>${revision}</version>
     <packaging>jar</packaging>
-    
+        
     <dependencies>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
@@ -25,32 +24,32 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-decision</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-ngram-ops</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-tokenizer</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-lexicons</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-lemmatizer-lightweight</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>

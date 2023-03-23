@@ -4,11 +4,10 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>1.0</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>umigon-stopwords</artifactId>
-    <version>1.0</version>
-
+    <version>${revision}</version>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>

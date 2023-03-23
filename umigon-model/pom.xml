@@ -4,10 +4,10 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>1.0</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>umigon-model</artifactId>
-    <version>1.0</version>
+    <version>${revision}</version>
     <packaging>jar</packaging>
 
     <properties>

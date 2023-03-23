@@ -4,10 +4,10 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>1.0</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>umigon-explain</artifactId>
-    <version>1.0</version>
+    <version>${revision}</version>
     <dependencies>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
@@ -29,8 +29,8 @@
         </dependency>
         <dependency>
             <groupId>jakarta.json.bind</groupId>
-                <artifactId>jakarta.json.bind-api</artifactId>
-            </dependency>
+            <artifactId>jakarta.json.bind-api</artifactId>
+        </dependency>
     </dependencies>
     <properties>
         <exec.mainClass>net.clementlevallois.umigonfamily.umigon.explain.UmigonExplain</exec.mainClass>

@@ -4,10 +4,10 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>1.0</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>umigon-tokenizer</artifactId>
-    <version>1.0</version>
+    <version>${revision}</version>
 
     <properties>
         <exec.mainClass>net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer</exec.mainClass>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-            <version>1.0</version>
+            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.utils</groupId>
