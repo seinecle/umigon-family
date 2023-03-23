@@ -18,12 +18,13 @@ normally it should publish the parent pom directly!
 Then:
 - uncomment the child modules in the parent pom
 - run parent pom with mvn -Prelease
-- delete the tag of the version on Github
+- delete the tag of the version *on Github*
+- delete the tag of the version *locally* with git tag -d v0.2017
 
 in git CLI:
 git add *
 git commit -m "deploying update to umigon family"
-git push
+git tag v0.217 -a -m "217 tag for first release with annotation"git push
 git push origin v0.217
 
 
