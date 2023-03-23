@@ -5,6 +5,10 @@ A family of modules for essential NLP tasks and sentiment analysis, done well.
 - the least dependencies possible
 - each module should serve a function in a stand-alone fashion
 
+## Release
+release v0.201 is in the works
+
+
 ## Docs
 - see the [umigon-docs](https://github.com/seinecle/umigon-family/tree/main/umigon-docs) module for an overview
 - or check the readme in each module 
