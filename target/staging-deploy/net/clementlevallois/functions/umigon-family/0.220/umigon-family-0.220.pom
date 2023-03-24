@@ -56,12 +56,20 @@
         <module>umigon-decision</module>
         <module>umigon-lemmatizer-lightweight</module>
         <module>umigon-stopwords</module>
-        <module>umigon-model</module>
-        <module>umigon-tokenizer</module>
     </modules>
     
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-tokenizer</artifactId>
+                <version>0.10</version>
+            </dependency>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-model</artifactId>
+                <version>0.10</version>
+            </dependency>
             <dependency>
                 <groupId>com.vdurmont</groupId>
                 <artifactId>emoji-java</artifactId>

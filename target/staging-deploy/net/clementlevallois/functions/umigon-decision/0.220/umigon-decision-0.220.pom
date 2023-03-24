@@ -21,7 +21,6 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>

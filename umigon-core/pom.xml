@@ -39,12 +39,10 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-tokenizer</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
