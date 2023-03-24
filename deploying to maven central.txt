@@ -20,7 +20,6 @@ WAIT 15 MINUTES
 - uncomment the child modules in the parent pom
 - update the version of the revision to 0.219 in the pom parent and the readme
 - run parent pom with mvn -Prelease
-- DELETE the parent pom folder in the stage-deploy folder
 
 in git CLI:
 git add *

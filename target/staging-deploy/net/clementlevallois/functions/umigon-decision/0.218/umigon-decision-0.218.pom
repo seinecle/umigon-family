@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>0.218</version>
+        <version>${revision}</version>
     </parent>
 
     <artifactId>umigon-decision</artifactId>
@@ -16,43 +16,11 @@
         <exec.mainClass>net.clementlevallois.umigonfamily.umigon.decision.UmigonDecision</exec.mainClass>
     </properties>
 
-    <description>a collection of tools for essential operations on unstructured text</description>
-    <url>https://github.com/seinecle/umigon-family</url>
-    <inceptionYear>2021</inceptionYear>
-    
-    <!-- Licenses -->
-    <licenses>
-        <license>
-            <name>Creative Commons Attribution 4.0 International Public License</name>
-            <url>https://creativecommons.org/licenses/by/4.0/legalcode</url>
-            <comments>CDDL License 1.0</comments>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <!-- SCM -->
-    <scm>
-        <connection>scm:git:git@github.com:seinecle/umigon-family.git</connection>
-        <developerConnection>scm:git:git@github.com:seinecle/umigon-family.git</developerConnection>
-        <url>https://github.com/seinecle/umigon-family</url>
-    </scm>
-    
-    <!-- Developers -->
-    <developers>
-        <developer>
-            <id>seinecle</id>
-            <name>Clement Levallois</name>
-            <email>clementlevallois@protonmail.com</email>
-        </developer>
-    </developers>
-
-
 
     <dependencies>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model</artifactId>
-        <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>
