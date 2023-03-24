@@ -56,8 +56,8 @@
         <module>umigon-decision</module>
         <module>umigon-lemmatizer-lightweight</module>
         <module>umigon-stopwords</module>
-        <module>umigon-tokenizer</module>
         <module>umigon-model</module>
+        <module>umigon-tokenizer</module>
     </modules>
     
     <dependencyManagement>
