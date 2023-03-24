@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>net.clementlevallois.functions</groupId>
+        <artifactId>umigon-family</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>umigon-core</artifactId>
+    <version>${revision}</version>
+    <packaging>jar</packaging>
+    
+       
+    <dependencies>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-stopwords</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vdurmont</groupId>
+            <artifactId>emoji-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-decision</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.utils</groupId>
+            <artifactId>utils-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-ngram-ops</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-tokenizer</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-model</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-lexicons</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-lemmatizer-lightweight</artifactId>
+            <version>${revision}</version>
+        </dependency>
+    </dependencies>
+</project>

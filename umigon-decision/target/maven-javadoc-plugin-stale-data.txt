@@ -2,7 +2,7 @@
 @packages
 @argfile
 --module-path
-'C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/target/umigon-decision-0.219.jar;C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-model/target/umigon-model-0.219.jar'
+'C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/target/umigon-decision-0.220.jar;C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-model/target/umigon-model-0.220.jar'
 --patch-module
 net.clementlevallois.umigon.decision='C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/src/main/java;C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/target/generated-sources/annotations'
 -encoding
@@ -22,7 +22,7 @@ net.clementlevallois.umigon.decision='C:/Users/levallois/open/nocode-app-functio
 -docencoding
 'UTF-8'
 -doctitle
-'umigon-decision 0.219 API'
+'umigon-decision 0.220 API'
 -linkoffline
 'https://docs.oracle.com/en/java/javase/11/docs/api' 'C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/target/javadoc-bundle-options'
 -linkoffline
@@ -30,22 +30,22 @@ net.clementlevallois.umigon.decision='C:/Users/levallois/open/nocode-app-functio
 -use
 -version
 -windowtitle
-'umigon-decision 0.219 API'
+'umigon-decision 0.220 API'
 net.clementlevallois.umigonfamily.umigon.decision
 'C:/Users/levallois/open/nocode-app-functions/umigon-family/umigon-decision/src/main/java/module-info.java'
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\allclasses-index.html = 1679664213946
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\allpackages-index.html = 1679664213961
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\element-list = 1679664213711
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\help-doc.html = 1679664214055
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\index-all.html = 1679664214031
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\index.html = 1679664214045
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\jquery-ui.overrides.css = 1679664214187
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\member-search-index.js = 1679664213994
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\module-search-index.js = 1679664213974
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\overview-tree.html = 1679664213890
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\package-search-index.js = 1679664213981
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\script.js = 1679664214076
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\search.js = 1679664214084
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\stylesheet.css = 1679664214068
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\tag-search-index.js = 1679664214002
-C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\type-search-index.js = 1679664213987
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\allclasses-index.html = 1679664671737
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\allpackages-index.html = 1679664671747
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\element-list = 1679664671535
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\help-doc.html = 1679664671826
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\index-all.html = 1679664671797
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\index.html = 1679664671809
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\jquery-ui.overrides.css = 1679664671960
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\member-search-index.js = 1679664671772
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\module-search-index.js = 1679664671756
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\overview-tree.html = 1679664671715
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\package-search-index.js = 1679664671761
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\script.js = 1679664671844
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\search.js = 1679664671853
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\stylesheet.css = 1679664671837
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\tag-search-index.js = 1679664671779
+C:\Users\levallois\open\nocode-app-functions\umigon-family\umigon-decision\target\apidocs\type-search-index.js = 1679664671766
