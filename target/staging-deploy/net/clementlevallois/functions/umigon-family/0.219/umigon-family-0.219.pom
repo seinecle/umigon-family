@@ -59,6 +59,7 @@
         <module>umigon-model</module>
         <module>umigon-tokenizer</module>
     </modules>
+    
     <dependencyManagement>
         <dependencies>
             <dependency>
