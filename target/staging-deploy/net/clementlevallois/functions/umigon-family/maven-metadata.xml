@@ -3,11 +3,11 @@
   <groupId>net.clementlevallois.functions</groupId>
   <artifactId>umigon-family</artifactId>
   <versioning>
-    <release>0.218</release>
+    <release>0.219</release>
     <versions>
       <version>0.219</version>
       <version>0.218</version>
     </versions>
-    <lastUpdated>20230324120034</lastUpdated>
+    <lastUpdated>20230324122947</lastUpdated>
   </versioning>
 </metadata>

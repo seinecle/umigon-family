@@ -5,11 +5,11 @@
 
     <groupId>net.clementlevallois.functions</groupId>
     <artifactId>umigon-family</artifactId>
-    <version>0.219</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
     
     <properties>
-        <revision>0.218</revision>
+        <revision>0.219</revision>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,14 +50,14 @@
 
     <modules>
         <module>umigon-core</module>
-        <module>umigon-tokenizer</module>
         <module>umigon-ngram-ops</module>
         <module>umigon-explain</module>
         <module>umigon-lexicons</module>
-        <module>umigon-model</module>
         <module>umigon-decision</module>
         <module>umigon-lemmatizer-lightweight</module>
         <module>umigon-stopwords</module>
+        <module>umigon-model</module>
+        <module>umigon-tokenizer</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -330,6 +330,9 @@
                                 </signing>
                                 <deploy>
                                     <maven>
+                                        <pomchecker>
+                                            <version>1.9.0</version>
+                                        </pomchecker>
                                         <nexus2>
                                             <maven-central>
                                                 <active>ALWAYS</active>
