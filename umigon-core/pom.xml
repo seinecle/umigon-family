@@ -4,11 +4,11 @@
     <parent>
         <groupId>net.clementlevallois.functions</groupId>
         <artifactId>umigon-family</artifactId>
-        <version>${revision}</version>
+        <version>1.0</version>
     </parent>
 
     <artifactId>umigon-core</artifactId>
-    <version>${revision}</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     
        
@@ -16,16 +16,11 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-stopwords</artifactId>
-            <version>${revision}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.vdurmont</groupId>
-            <artifactId>emoji-java</artifactId>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-decision</artifactId>
-            <version>${revision}</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.utils</groupId>
@@ -34,7 +29,6 @@
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-ngram-ops</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
@@ -46,13 +40,15 @@
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-model-classification</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-lexicons</artifactId>
-            <version>${revision}</version>
         </dependency>
         <dependency>
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-lemmatizer-lightweight</artifactId>
-            <version>${revision}</version>
         </dependency>
     </dependencies>
 </project>

@@ -5,6 +5,11 @@ package net.clementlevallois.umigon.explain.controller;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,9 +18,9 @@ import java.util.ResourceBundle;
 import java.util.Set;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
 
 /**
@@ -24,20 +29,38 @@ import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
  */
 public class UmigonExplain {
 
-    private static ResourceBundle localeBundle;
-    private static final String PATHLOCALE = "net.clementlevallois.umigon.explain.resources.i18n.text";
+    private static String PATHLOCALE = "net/clementlevallois/i18n/text";
 
     public static void main(String[] args) {
+        ResourceBundle localeBundle = getLocaleBundle("en");
+        System.out.println("language: " + localeBundle.getLocale().toLanguageTag());
     }
 
     public static ResourceBundle getLocaleBundle(String languageTag) {
-        ResourceBundle bundle;
+        ResourceBundle rb = null;
         try {
-            bundle = ResourceBundle.getBundle(PATHLOCALE, Locale.forLanguageTag(languageTag));
-        } catch (Exception e) {
-            bundle = ResourceBundle.getBundle(PATHLOCALE, Locale.forLanguageTag("en"));
+            if (System.getProperty("os.name").toLowerCase().contains("win")) {
+                PATHLOCALE = "C:\\Users\\levallois\\open\\nocode-app-functions\\umigon-static-files\\net\\clementlevallois\\umigon\\explanation\\i18n";
+            } else {
+                PATHLOCALE = "/home/waouh/nocodeapp-web/umigon-static-files/net/clementlevallois/umigon/explanation/i18n";
+            }
+            File file = new File(PATHLOCALE);
+            URL[] urls = {file.toURI().toURL()};
+            URLClassLoader loader = new URLClassLoader(urls);
+            rb = ResourceBundle.getBundle("text", Locale.forLanguageTag(languageTag), loader);
+            if (rb == null) {
+                rb = ResourceBundle.getBundle("text", Locale.forLanguageTag("en"), loader);
+            }
+            loader.close();
+            return rb;
+        } catch (MalformedURLException ex) {
+            System.out.println("error in retrieving bundle");
+            System.out.println(ex.getMessage());
+        } catch (IOException ex) {
+            System.out.println("could not close the class loader");
+            System.out.println(ex.getMessage());
         }
-        return bundle;
+        return rb;
     }
 
     public static String getSentimentPlainText(Document doc, String locale) {
@@ -50,6 +73,16 @@ public class UmigonExplain {
         }
     }
 
+    public static String getOrganicPlainText(Document doc, String locale) {
+        if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61).isEmpty()) {
+            return UmigonExplain.getLocaleBundle(locale).getString("organic.iscorporate");
+        } else if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611).isEmpty()) {
+            return UmigonExplain.getLocaleBundle(locale).getString("organic.iscorporate");
+        } else {
+            return UmigonExplain.getLocaleBundle(locale).getString("organic.isneutral");
+        }
+    }
+
     public static Document enrichDocWithPlainTextSentimentResults(Document doc, String locale) {
         if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._11).isEmpty()) {
             doc.setCategoryLocalizedPlainText(UmigonExplain.getLocaleBundle(locale).getString("sentiment.ispositive"));
@@ -59,6 +92,20 @@ public class UmigonExplain {
             doc.setCategoryCode("_12");
         } else {
             doc.setCategoryLocalizedPlainText(UmigonExplain.getLocaleBundle(locale).getString("sentiment.isneutral"));
+            doc.setCategoryCode("_10");
+        }
+        return doc;
+    }
+
+    public static Document enrichDocWithPlainTextOrganicResults(Document doc, String locale) {
+        if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61).isEmpty()) {
+            doc.setCategoryLocalizedPlainText(UmigonExplain.getLocaleBundle(locale).getString("organic.iscorporate"));
+            doc.setCategoryCode("_61");
+        } else if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611).isEmpty()) {
+            doc.setCategoryLocalizedPlainText(UmigonExplain.getLocaleBundle(locale).getString("organic.iscorporate"));
+            doc.setCategoryCode("_611");
+        } else {
+            doc.setCategoryLocalizedPlainText(UmigonExplain.getLocaleBundle(locale).getString("organic.isneutral"));
             doc.setCategoryCode("_10");
         }
         return doc;
@@ -77,12 +124,40 @@ public class UmigonExplain {
         }
     }
 
+    public static JsonObjectBuilder getOrganicJsonObject(Document doc, String locale) {
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
+        JsonObjectBuilder job = Json.createObjectBuilder();
+
+        if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61).isEmpty()) {
+            return job.add("organic", bundle.getString("organic.iscorporate"));
+        } else if (!doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611).isEmpty()) {
+            return job.add("organic", bundle.getString("organic.iscorporate"));
+        } else {
+            return job.add("organic", bundle.getString("organic.isneutral"));
+        }
+    }
+
     public static String getSentimentPlainText(CategoryEnum categoryEnum, String locale) {
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
         switch (categoryEnum) {
-            case _11 : return  bundle.getString("sentiment.ispositive");
-            case _12 : return  bundle.getString("sentiment.isnegative");
-            default : return  bundle.getString("sentiment.isneutral");
+            case _11:
+                return bundle.getString("sentiment.ispositive");
+            case _12:
+                return bundle.getString("sentiment.isnegative");
+            default:
+                return bundle.getString("sentiment.isneutral");
+        }
+    }
+
+    public static String getOrganicPlainText(CategoryEnum categoryEnum, String locale) {
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
+        switch (categoryEnum) {
+            case _61:
+                return bundle.getString("organic.iscorporate");
+            case _611:
+                return bundle.getString("organic.iscorporate");
+            default:
+                return bundle.getString("organic.isneutral");
         }
     }
 
@@ -90,16 +165,32 @@ public class UmigonExplain {
         JsonObjectBuilder job = Json.createObjectBuilder();
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
         switch (categoryEnum) {
-            case _11 : return  job.add("sentiment", bundle.getString("sentiment.ispositive"));
-            case _12 : return  job.add("sentiment", bundle.getString("sentiment.isnegative"));
-            default : return  job.add("sentiment", bundle.getString("sentiment.isneutral"));
+            case _11:
+                return job.add("sentiment", bundle.getString("sentiment.ispositive"));
+            case _12:
+                return job.add("sentiment", bundle.getString("sentiment.isnegative"));
+            default:
+                return job.add("sentiment", bundle.getString("sentiment.isneutral"));
+        }
+    }
+
+    public static JsonObjectBuilder getOrganicJsonObject(CategoryEnum categoryEnum, String locale) {
+        JsonObjectBuilder job = Json.createObjectBuilder();
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(locale);
+        switch (categoryEnum) {
+            case _61:
+                return job.add("organic", bundle.getString("organic.iscorporate"));
+            case _611:
+                return job.add("organic", bundle.getString("organic.iscorporate"));
+            default:
+                return job.add("sentiment", bundle.getString("organic.isneutral"));
         }
     }
 
     public static String getExplanationsOfDecisionsPlainText(Document doc, String languageTag) {
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
         StringBuilder sb = new StringBuilder();
-        List<Decision> decisions = doc.getSentimentDecisions();
+        List<Decision> decisions = doc.getDecisions();
         if (decisions == null || decisions.isEmpty()) {
             return bundle.getString("decision.no_decision_made") + ".";
         }
@@ -123,7 +214,7 @@ public class UmigonExplain {
     public static String getExplanationsOfDecisionsHtml(Document doc, String languageTag, HtmlSettings htmlSettings) {
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
         StringBuilder sb = new StringBuilder();
-        List<Decision> decisions = doc.getSentimentDecisions();
+        List<Decision> decisions = doc.getDecisions();
         if (decisions == null || decisions.isEmpty()) {
             return sb.append("<p>")
                     .append(bundle.getString("decision.no_decision_made"))
@@ -159,7 +250,7 @@ public class UmigonExplain {
 
     public static JsonObjectBuilder getExplanationsOfDecisionsJsonObject(Document doc, String languageTag) {
         JsonObjectBuilder job = Json.createObjectBuilder();
-        List<Decision> decisions = doc.getSentimentDecisions();
+        List<Decision> decisions = doc.getDecisions();
         if (decisions == null || decisions.isEmpty()) {
             return job;
         }
@@ -176,7 +267,7 @@ public class UmigonExplain {
         StringBuilder sb = new StringBuilder();
         sb.append("text: ").append(doc.getText());
         sb.append("\n").append("\n");
-        for (Decision decision : doc.getSentimentDecisions()) {
+        for (Decision decision : doc.getDecisions()) {
             if (decision.getDecisionType().equals(Decision.DecisionType.ADD)) {
                 for (ResultOneHeuristics oneHeuristics : decision.getListOfHeuristicsImpacted()) {
                     doc.addOneHeuristicsResult(oneHeuristics);
@@ -187,7 +278,7 @@ public class UmigonExplain {
         Set<ResultOneHeuristics> allHeuristicsResultsForNegative = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._12);
         List<ResultOneHeuristics> resultsHeuristics = new ArrayList();
         List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
-        for (Decision decision : doc.getSentimentDecisions()) {
+        for (Decision decision : doc.getDecisions()) {
             deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
         }
         if (!allHeuristicsResultsForPositive.isEmpty()) {
@@ -198,6 +289,37 @@ public class UmigonExplain {
             resultsHeuristics.addAll(allHeuristicsResultsForNegative);
         } else {
             sb.append(bundle.getString("sentiment.isneutral"));
+            resultsHeuristics.addAll(doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._10));
+        }
+        resultsHeuristics.addAll(deletedHeuristicsFollowingDecisions);
+        sb.append(ExaminingAllResultsHeuristics.goThroughAllResultsHeuristicsPlainText(resultsHeuristics, languageTag));
+        return sb.toString();
+    }
+
+    public static String getExplanationOfHeuristicOrganicResultsPlainText(Document doc, String languageTag) {
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
+        StringBuilder sb = new StringBuilder();
+        sb.append("text: ").append(doc.getText());
+        sb.append("\n").append("\n");
+        for (Decision decision : doc.getDecisions()) {
+            if (decision.getDecisionType().equals(Decision.DecisionType.ADD)) {
+                for (ResultOneHeuristics oneHeuristics : decision.getListOfHeuristicsImpacted()) {
+                    doc.addOneHeuristicsResult(oneHeuristics);
+                }
+            }
+        }
+        Set<ResultOneHeuristics> allHeuristicsResultsForOrganic = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61);
+        allHeuristicsResultsForOrganic.addAll(doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611));
+        List<ResultOneHeuristics> resultsHeuristics = new ArrayList();
+        List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
+        for (Decision decision : doc.getDecisions()) {
+            deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
+        }
+        if (!allHeuristicsResultsForOrganic.isEmpty()) {
+            sb.append(bundle.getString("organic.iscorporate"));
+            resultsHeuristics.addAll(allHeuristicsResultsForOrganic);
+        } else {
+            sb.append(bundle.getString("organic.isneutral"));
             resultsHeuristics.addAll(doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._10));
         }
         resultsHeuristics.addAll(deletedHeuristicsFollowingDecisions);
@@ -245,7 +367,7 @@ public class UmigonExplain {
         Set<ResultOneHeuristics> allHeuristicsResultsForNegative = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._12);
         Collection<ResultOneHeuristics> resultsHeuristics = new ArrayList();
         List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
-        for (Decision decision : doc.getSentimentDecisions()) {
+        for (Decision decision : doc.getDecisions()) {
             deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
         }
         sb.append("<p>");
@@ -281,15 +403,83 @@ public class UmigonExplain {
         return sb.toString();
     }
 
+    public static String getExplanationOfHeuristicOrganicResultsHtml(Document doc, String languageTag, HtmlSettings htmlSettings, Boolean withoutContactAndTextTitle) {
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
+        StringBuilder sb = new StringBuilder();
+        sb.append("<!DOCTYPE html>");
+        sb.append("\n");
+        sb.append("<html>");
+        sb.append("\n");
+        sb.append("<head>");
+        sb.append("\n");
+        String cssToAddToHead = HtmlHighlighter.generateCssStyles(doc);
+        sb.append(cssToAddToHead);
+        sb.append("</head>");
+        sb.append("\n");
+        sb.append("<body>");
+        sb.append("\n");
+        if (!withoutContactAndTextTitle) {
+            sb.append("<p>");
+            sb.append(bundle.getString("message.contact"));
+            sb.append("</p>");
+            sb.append("\n");
+            sb.append("<br/>");
+            sb.append("\n");
+            sb.append("<br/>");
+            sb.append("\n");
+            sb.append("<p><strong>").append(bundle.getString("message.text")).append(":</strong></p>");
+            sb.append("\n");
+            sb.append("<br/>");
+            sb.append("\n");
+        }
+        sb.append("<p>");
+        String underlinedOriginalSentence = HtmlHighlighter.underline(doc);
+        sb.append(underlinedOriginalSentence);
+        sb.append("</p>");
+        sb.append("\n");
+        sb.append("<br/>");
+        sb.append("\n");
+        Set<ResultOneHeuristics> allHeuristicsResultsForOrganic = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61);
+        allHeuristicsResultsForOrganic.addAll(doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611));
+        Collection<ResultOneHeuristics> resultsHeuristics = new ArrayList();
+        List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
+        for (Decision decision : doc.getDecisions()) {
+            deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
+        }
+        sb.append("<p>");
+        sb.append("\n");
+        if (!allHeuristicsResultsForOrganic.isEmpty()) {
+            sb.append("<span style=\"color:")
+                    .append(htmlSettings.getPositiveTermColor())
+                    .append("\">");
+            sb.append(bundle.getString("organic.iscorporate"));
+            sb.append("</span>");
+            resultsHeuristics.addAll(allHeuristicsResultsForOrganic);
+        } else {
+            sb.append(bundle.getString("organic.isneutral"));
+            resultsHeuristics = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._10);
+        }
+        resultsHeuristics.addAll(deletedHeuristicsFollowingDecisions);
+        String explanationsHeuristics = ExaminingAllResultsHeuristics.goThroughAllResultsHeuristicsHtml(resultsHeuristics, languageTag, new HtmlSettings());
+        sb.append(explanationsHeuristics);
+        sb.append("</p>");
+        String explanationsOfDecisionsHtml = getExplanationsOfDecisionsHtml(doc, languageTag, htmlSettings);
+        sb.append(explanationsOfDecisionsHtml);
+        sb.append("</body>");
+        sb.append("\n");
+        sb.append("</html>");
+        sb.append("\n");
+        return sb.toString();
+    }
+
     public static JsonObjectBuilder getExplanationOfHeuristicResultsJson(Document doc, String languageTag) {
         ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
         JsonObjectBuilder job = Json.createObjectBuilder();
         job.add("text", doc.getText());
-        job.add("text", doc.getText());
         Set<ResultOneHeuristics> allHeuristicsResultsForPositive = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._11);
         Set<ResultOneHeuristics> allHeuristicsResultsForNegative = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._12);
         List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
-        for (Decision decision : doc.getSentimentDecisions()) {
+        for (Decision decision : doc.getDecisions()) {
             deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
         }
         Collection<ResultOneHeuristics> resultsHeuristics = new ArrayList();
@@ -301,6 +491,32 @@ public class UmigonExplain {
             resultsHeuristics.addAll(allHeuristicsResultsForNegative);
         } else {
             job.add("sentiment", bundle.getString("sentiment.isneutral"));
+            resultsHeuristics = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._10);
+        }
+        resultsHeuristics.addAll(deletedHeuristicsFollowingDecisions);
+        job.add("explanation heuristics", ExaminingAllResultsHeuristics.goThroughAllResultsHeuristicsJsonObject(resultsHeuristics, languageTag));
+        return job;
+    }
+
+    public static JsonObjectBuilder getExplanationOfHeuristicOrganicResultsJson(Document doc, String languageTag) {
+        ResourceBundle bundle = UmigonExplain.getLocaleBundle(languageTag);
+        JsonObjectBuilder job = Json.createObjectBuilder();
+        job.add("text", doc.getText());
+
+        // 61 and 61 are categories for commercial / sponsored speak
+        Set<ResultOneHeuristics> allHeuristicsResultsForCommercial = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._61);
+        allHeuristicsResultsForCommercial.addAll(doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._611));
+
+        List<ResultOneHeuristics> deletedHeuristicsFollowingDecisions = new ArrayList();
+        for (Decision decision : doc.getDecisions()) {
+            deletedHeuristicsFollowingDecisions.addAll(decision.getListOfHeuristicsImpacted());
+        }
+        Collection<ResultOneHeuristics> resultsHeuristics = new ArrayList();
+        if (!allHeuristicsResultsForCommercial.isEmpty()) {
+            job.add("organic", bundle.getString("organic.iscorporate"));
+            resultsHeuristics.addAll(allHeuristicsResultsForCommercial);
+        } else {
+            job.add("organic", bundle.getString("organic.isneutral"));
             resultsHeuristics = doc.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._10);
         }
         resultsHeuristics.addAll(deletedHeuristicsFollowingDecisions);

@@ -4,22 +4,22 @@
  */
 package net.clementlevallois.umigon.classifier.sentiment;
 
-//import Admin.Parameters;
 import java.io.IOException;
 import java.util.ArrayList;
-import net.clementlevallois.umigon.model.TermWithConditionalExpressions;
+import net.clementlevallois.umigon.model.classification.TermWithConditionalExpressions;
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
 import net.clementlevallois.umigon.heuristics.tools.TermLevelHeuristicsVerifier;
-import net.clementlevallois.umigon.model.BooleanCondition;
+import net.clementlevallois.umigon.model.classification.BooleanCondition;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
@@ -27,7 +27,7 @@ import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.heuristics.tools.PunctuationValenceVerifier;
 import net.clementlevallois.umigon.model.Punctuation;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.Text;
@@ -65,19 +65,69 @@ public class ClassifierSentimentOneDocument {
 
         text.setOriginalForm(document.getText());
 
-//        if (document.getText().contains("tendance")) {
-//            System.out.println("stop tendance in text");
-//        }
         document.setLanguage(semantics.getLang());
 
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(document.getText(), semantics.getLexiconsAndTheirConditionalExpressions().getLexiconsWithoutTheirConditionalExpressions());
         List<NGram> ngrams = new ArrayList();
         List<SentenceLike> sentenceLikeFragments = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
+
+        Map<String, String> enclosingPunctuationSigns = Map.of("«", "»", "“", "”", "‘", "’", "'", "'", "[", "]", "(", ")");
+
+        int indexSentenceLikeTextFragment = 0;
+        List<Integer> indexOpeningOfClosingSentenceFragment = new ArrayList();
+        List<Integer> indexClosingOfClosingSentenceFragment = new ArrayList();
+        boolean potentialEnclosingFound = false;
+        String endClosingSignFound = null;
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
+//            System.out.println("sentence like fragment: " + sentenceLikeFragment.toString());
+            int sizeSentenceLike = sentenceLikeFragment.getTextFragments().size();
+            if (sizeSentenceLike > 0) {
+                String lastFragment = sentenceLikeFragment.getTextFragments().get(sizeSentenceLike - 1).getOriginalForm();
+                if (lastFragment.length() < 2) {
+                    if (!potentialEnclosingFound && enclosingPunctuationSigns.containsKey(lastFragment)) {
+                        endClosingSignFound = enclosingPunctuationSigns.get(lastFragment);
+                        potentialEnclosingFound = true;
+                        indexOpeningOfClosingSentenceFragment.add(sentenceLikeFragment.getIndexOrdinal());
+                        continue;
+                    }
+                    if (potentialEnclosingFound && endClosingSignFound != null && lastFragment.equals(endClosingSignFound)) {
+                        indexClosingOfClosingSentenceFragment.add(sentenceLikeFragment.getIndexOrdinal());
+                        potentialEnclosingFound = false;
+                    }
+                }
+                indexSentenceLikeTextFragment++;
+            }
+        }
+        
+        int smallestSizeOfTwo = Math.min(indexOpeningOfClosingSentenceFragment.size(), indexClosingOfClosingSentenceFragment.size());
+
+        // list of text fragments to ignore for sentiment analysis because they are enclosed in quotation signs or parentheses:
+        Set<Integer> indicesOfTextFragmentToIgnoreForAnalysis = new HashSet();
+        Set<Integer> indicesOfSentenceLikeFragmentToIgnoreForAnalysis = new HashSet();
+
+        if (!indexOpeningOfClosingSentenceFragment.isEmpty() && !indexClosingOfClosingSentenceFragment.isEmpty()) {
+            for (int j = 0; j < smallestSizeOfTwo; j++) {
+                for (int i = (indexOpeningOfClosingSentenceFragment.get(j) + 1); i <= indexClosingOfClosingSentenceFragment.get(j); i++) {
+                    SentenceLike sentenceLikeFragment = sentenceLikeFragments.get(i);
+                    indicesOfSentenceLikeFragmentToIgnoreForAnalysis.add(i);
+                    for (TextFragment tf : sentenceLikeFragment.getTextFragments()) {
+                        indicesOfTextFragmentToIgnoreForAnalysis.add(tf.getIndexCardinal());
+                    }
+                }
+            }
+        }
+
+        for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
+            // this step will lead to ignoring the possible traces of sentiment in this sentence fragment
+            // because it is enclosed in some forms of quotations or parenthesis
+            if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
+                continue;
+            }
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);
             ngrams.addAll(generateNgramsUpto);
             sentenceLikeFragment.setNgrams(generateNgramsUpto);
         }
+
         document.setAllTextFragments(allTextFragments);
         document.setNgrams(ngrams);
 
@@ -92,10 +142,9 @@ public class ClassifierSentimentOneDocument {
                 textFragmentsThatAreHashTag.add(hashtag.toNgram());
             }
             nextTextFragmentIsHashtag = textFragment.getOriginalForm().equals("#");
-
         }
 
-        List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.check(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
+        List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.checkSentiment(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
         resultsHeuristics.addAll(runningHashTagOps);
         alreadyExaminedNGramInPositive.addAll(textFragmentsThatAreHashTag);
         alreadyExaminedNGramInNegative.addAll(textFragmentsThatAreHashTag);
@@ -136,6 +185,14 @@ public class ClassifierSentimentOneDocument {
 
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
 
+            if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
+                ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._10, null);
+                BooleanCondition bc = new BooleanCondition();
+                bc.setConditionName("isASentenceLikeFragmentEnclosedInQuotationsOrParentheses");
+                resultOneHeuristics.getBooleanConditions().add(bc);
+                resultsHeuristics.add(resultOneHeuristics);
+                continue;
+            }
             for (NGram ngram : sentenceLikeFragment.getNgrams()) {
 
                 // skipping the ngram if it is a stopword, EXCEPT if this is a sentiment related stopword
@@ -222,6 +279,8 @@ public class ClassifierSentimentOneDocument {
             resultOneHeuristics.getBooleanConditions().add(bc);
             resultsHeuristics.add(resultOneHeuristics);
         }
+
+        sentimentDecisionMaker.doCheckQuestionMark();
 
         sentimentDecisionMaker.doCheckOnModerators();
 

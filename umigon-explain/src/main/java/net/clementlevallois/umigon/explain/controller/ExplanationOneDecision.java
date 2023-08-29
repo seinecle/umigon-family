@@ -6,18 +6,18 @@ package net.clementlevallois.umigon.explain.controller;
 
 import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
-import net.clementlevallois.umigon.model.Decision;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.NEGATION_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.NEGATION_THEN_POSITIVE_TERM_THEN_NEGATIVE_TERM;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.NEGATIVE_TERM_THEN_MODERATOR;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.NEGATIVE_TERM_THEN_NEGATION_THEN_POSITIVE_TERM;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.POSITIVE_TERM_THEN_MODERATOR;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.TWO_NEGATIVE_TERMS_THEN_MODERATOR;
-import static net.clementlevallois.umigon.model.Decision.DecisionMotive.TWO_POSITIVE_TERMS_THEN_MODERATOR;
+import net.clementlevallois.umigon.model.classification.Decision;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.NEGATION_THEN_NEGATIVE_TERM_THEN_POSITIVE_TERM;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.NEGATION_THEN_POSITIVE_TERM_THEN_NEGATIVE_TERM;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.NEGATIVE_TERM_THEN_MODERATOR;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.NEGATIVE_TERM_THEN_NEGATION_THEN_POSITIVE_TERM;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.POSITIVE_TERM_THEN_MODERATOR;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.TWO_NEGATIVE_TERMS_THEN_MODERATOR;
+import static net.clementlevallois.umigon.model.classification.Decision.DecisionMotive.TWO_POSITIVE_TERMS_THEN_MODERATOR;
 import static net.clementlevallois.umigon.explain.controller.UmigonExplain.getSentimentPlainText;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 
 /**
  *
@@ -164,7 +164,7 @@ public class ExplanationOneDecision {
                     .append("<span style=\"color:");
             if (!decision.getListOfHeuristicsImpacted().isEmpty() && decision.getListOfHeuristicsImpacted().get(0).getCategoryEnum().equals(CategoryEnum._11)) {
                 sb.append(htmlSettings.getNegativeTermColor());
-            } else if (!decision.getListOfHeuristicsImpacted().isEmpty() && decision.getListOfHeuristicsImpacted().get(0).getCategoryEnum().equals(CategoryEnum._12)) {
+            } else if (!decision.getListOfHeuristicsImpacted().isEmpty() && (decision.getListOfHeuristicsImpacted().get(0).getCategoryEnum().equals(CategoryEnum._12) | decision.getListOfHeuristicsImpacted().get(0).getCategoryEnum().equals(CategoryEnum._61)| decision.getListOfHeuristicsImpacted().get(0).getCategoryEnum().equals(CategoryEnum._611))) {
                 sb.append(htmlSettings.getPositiveTermColor());
             } else {
                 sb.append(htmlSettings.getModeratorTermColor());

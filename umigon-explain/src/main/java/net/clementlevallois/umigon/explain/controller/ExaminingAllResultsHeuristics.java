@@ -7,7 +7,7 @@ package net.clementlevallois.umigon.explain.controller;
 import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
 import java.util.Collection;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
 
 /**

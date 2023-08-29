@@ -8,10 +8,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import net.clementlevallois.umigon.model.Category;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
 import net.clementlevallois.umigon.model.NGram;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 
 /**
  *
@@ -87,7 +87,7 @@ public class WhenTextContainsPositiveNegativeAndNegation {
             decision.setDecisionType(Decision.DecisionType.REMOVE);
             decision.setOtherHeuristicsInvolvedInDecision(targetNegativeHeuristics);
             decision.setTextFragmentInvolvedInDecision(negation);
-            document.getSentimentDecisions().add(decision);
+            document.getDecisions().add(decision);
         } else if ((indexPos > indexCardinalLastNegation & indexNeg < indexCardinalLastNegation)) {
             document.getResultsOfHeuristics().remove(targetNegativeHeuristics);
             decision = new Decision();
@@ -97,7 +97,7 @@ public class WhenTextContainsPositiveNegativeAndNegation {
             decision.setDecisionType(Decision.DecisionType.REMOVE);
             decision.setOtherHeuristicsInvolvedInDecision(targetPositiveHeuristics);
             decision.setTextFragmentInvolvedInDecision(negation);
-            document.getSentimentDecisions().add(decision);
+            document.getDecisions().add(decision);
         }
         if ((indexCardinalLastNegation < indexPos & indexCardinalLastNegation < indexNeg & indexPos < indexNeg)) {
             document.getResultsOfHeuristics().remove(targetPositiveHeuristics);
@@ -109,7 +109,7 @@ public class WhenTextContainsPositiveNegativeAndNegation {
             decision.setDecisionType(Decision.DecisionType.REMOVE);
             decision.setOtherHeuristicsInvolvedInDecision(targetNegativeHeuristics);
             decision.setTextFragmentInvolvedInDecision(negation);
-            document.getSentimentDecisions().add(decision);
+            document.getDecisions().add(decision);
         } else if ((indexCardinalLastNegation < indexPos & indexCardinalLastNegation < indexNeg & indexNeg < indexPos)) {
             document.getResultsOfHeuristics().remove(targetPositiveHeuristics);
             document.getResultsOfHeuristics().remove(targetNegativeHeuristics);
@@ -120,7 +120,7 @@ public class WhenTextContainsPositiveNegativeAndNegation {
             decision.setDecisionType(Decision.DecisionType.REMOVE);
             decision.setOtherHeuristicsInvolvedInDecision(targetPositiveHeuristics);
             decision.setTextFragmentInvolvedInDecision(negation);
-            document.getSentimentDecisions().add(decision);
+            document.getDecisions().add(decision);
         }
         return document;
     }

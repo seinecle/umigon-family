@@ -7,12 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
 import net.clementlevallois.umigon.model.Hashtag;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.TextFragment;
 
@@ -26,7 +26,7 @@ public class HtmlHighlighter {
         StringBuilder sb = new StringBuilder();
 
         List<ResultOneHeuristics> resultsOfHeuristicsIncludingRemovedOnes = new ArrayList(doc.getResultsOfHeuristics());
-        List<Decision> sentimentDecisions = doc.getSentimentDecisions();
+        List<Decision> sentimentDecisions = doc.getDecisions();
         for (Decision decision : sentimentDecisions) {
             for (ResultOneHeuristics oneHeuristics : decision.getListOfHeuristicsImpacted()) {
                 resultsOfHeuristicsIncludingRemovedOnes.add(oneHeuristics);
@@ -40,6 +40,9 @@ public class HtmlHighlighter {
             for (ResultOneHeuristics resultOneHeuristics : resultsOfHeuristicsIncludingRemovedOnes) {
                 TextFragment textFragmentInvestigated = resultOneHeuristics.getTextFragmentInvestigated();
                 Category.CategoryEnum categoryEnum = resultOneHeuristics.getCategoryEnum();
+                if (categoryEnum == null){
+                    continue;
+                }
                 if (tf instanceof Term && textFragmentInvestigated instanceof NGram) {
                     NGram ngram = (NGram) textFragmentInvestigated;
                     for (Term term : ngram.getTerms()) {
@@ -48,7 +51,7 @@ public class HtmlHighlighter {
                                 tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"001\">");
                                 tfStringBuilder.append("</span>");
                             }
-                            if (categoryEnum.equals(CategoryEnum._12)) {
+                            if (categoryEnum.equals(CategoryEnum._12) | categoryEnum.equals(CategoryEnum._61)  | categoryEnum.equals(CategoryEnum._611)) {
                                 tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"002\">");
                                 tfStringBuilder.append("</span>");
                             }
@@ -62,7 +65,7 @@ public class HtmlHighlighter {
                             tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"001\">");
                             tfStringBuilder.append("</span>");
                         }
-                        if (categoryEnum.equals(CategoryEnum._12)) {
+                        if (categoryEnum.equals(CategoryEnum._12) | categoryEnum.equals(CategoryEnum._61)  | categoryEnum.equals(CategoryEnum._611)) {
                             tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"002\">");
                             tfStringBuilder.append("</span>");
                         }
@@ -75,7 +78,7 @@ public class HtmlHighlighter {
                             tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"001\">");
                             tfStringBuilder.append("</span>");
                         }
-                        if (categoryEnum.equals(CategoryEnum._12)) {
+                        if (categoryEnum.equals(CategoryEnum._12) | categoryEnum.equals(CategoryEnum._61)  | categoryEnum.equals(CategoryEnum._611)) {
                             tfStringBuilder.insert(0, "<span class=\"user\" data-uid=\"002\">");
                             tfStringBuilder.append("</span>");
                         }

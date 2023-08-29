@@ -7,10 +7,10 @@ package net.clementlevallois.umigon.classifier.delight;
 //import Admin.Parameters;
 import java.io.IOException;
 import java.util.ArrayList;
-import net.clementlevallois.umigon.model.TermWithConditionalExpressions;
+import net.clementlevallois.umigon.model.classification.TermWithConditionalExpressions;
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toList;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
 import net.clementlevallois.umigon.heuristics.tools.TermLevelHeuristicsVerifier;
-import net.clementlevallois.umigon.model.BooleanCondition;
+import net.clementlevallois.umigon.model.classification.BooleanCondition;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
@@ -26,7 +26,7 @@ import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.Text;
@@ -94,7 +94,7 @@ public class ClassifierDelightOneDocument {
             }
         }
 
-        List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.check(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
+        List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.checkSentiment(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
         resultsHeuristics.addAll(runningHashTagOps);
         alreadyExaminedNGramInPositive.addAll(textFragmentsThatAreHashTag);
 

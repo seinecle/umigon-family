@@ -4,7 +4,7 @@
 package net.clementlevallois.umigonfamily.umigon.decision;
 
 import java.util.Set;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 
 /**
  *
@@ -22,6 +22,11 @@ public class SentimentDecisionMaker {
         this.negations = negations;
         this.moderators = moderators;
         this.markersOfIrony = markersOfIrony;
+    }
+
+    public void doCheckQuestionMark() {
+        QuestionMarkAtTheEnd check = new QuestionMarkAtTheEnd(document);
+        document = check.checkIt();
     }
 
     public void doCheckOnNegations() {

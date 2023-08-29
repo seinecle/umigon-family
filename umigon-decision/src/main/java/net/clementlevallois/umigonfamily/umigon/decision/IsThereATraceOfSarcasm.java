@@ -5,13 +5,12 @@ package net.clementlevallois.umigonfamily.umigon.decision;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import net.clementlevallois.umigon.model.Category;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
 import net.clementlevallois.umigon.model.NGram;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.TextFragment;
 
 /**
@@ -41,7 +40,7 @@ public class IsThereATraceOfSarcasm {
                     decision.getListOfHeuristicsImpacted().addAll(indicesNeg);
                     decision.setDecisionType(Decision.DecisionType.REMOVE);
                     decision.setTextFragmentInvolvedInDecision(ngram);
-                    document.getSentimentDecisions().add(decision);
+                    document.getDecisions().add(decision);
                     document.getResultsOfHeuristics().removeAll(document.getResultsOfHeuristics());
                 }
             }
@@ -69,7 +68,7 @@ public class IsThereATraceOfSarcasm {
                             heuristics.add(oneNeg);
                             decision.setListOfHeuristicsImpacted(heuristics);
                             decision.setTextFragmentInvolvedInDecision(previous);
-                            document.getSentimentDecisions().add(decision);
+                            document.getDecisions().add(decision);
                         }
                     } else {
                         previous = tf;

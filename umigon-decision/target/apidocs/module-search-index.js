@@ -1,1 +1,0 @@
-moduleSearchIndex = [{"l":"net.clementlevallois.umigon.decision"}];updateSearchResults();

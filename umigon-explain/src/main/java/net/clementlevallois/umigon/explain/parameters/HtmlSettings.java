@@ -26,6 +26,10 @@ public class HtmlSettings {
                 return positiveTermColor;
             case _111:
                 return positiveTermColor;
+            case _611:
+                return negativeTermColor;
+            case _61:
+                return negativeTermColor;
             case _12:
                 return negativeTermColor;
             default:

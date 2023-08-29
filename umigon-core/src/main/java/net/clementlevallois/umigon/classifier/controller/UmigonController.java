@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.classifier.sentiment.ClassifierSentimentOneDocument;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 
 /**
  *
@@ -31,7 +31,7 @@ public class UmigonController {
     public static void main(String args[]) throws URISyntaxException, Exception {
         Document document = new UmigonController().runSingleLine("rappelez vous que si agnes buzin au lieu de mettre des mots dans les aéroports pendant 1 mois avait pris des mesures on serait pas passé de 0% de bridage à 100% en 3j mais on aurait �t� � 50% depuis 15 jours. bien + vivable #macron20h #covid19france #castaner #confinementtotal", "fr");
         System.out.println("language du texte: " + document.getLanguage());
-        System.out.println("sentiment du texte: " + document.getExplanationSentimentHtml());
+        System.out.println("sentiment du texte: " + document.getExplanationHtml());
 
     }
 
@@ -111,7 +111,7 @@ public class UmigonController {
             Document document = new Document(stringToBeProcessed);
             return document;
         }
-            Document document = new Document(stringToBeProcessed);
+        Document document = new Document(stringToBeProcessed);
         if (lang.equals("fr")) {
             document = machineFR.call(document);
             return document;
@@ -156,11 +156,8 @@ public class UmigonController {
     public Semantics getSemanticsEN() {
         return semanticsEN;
     }
-    
+
     public Semantics getSemanticsES() {
         return semanticsES;
     }
-    
-    
-
 }

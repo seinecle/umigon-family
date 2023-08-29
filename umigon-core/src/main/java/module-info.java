@@ -5,8 +5,8 @@ module net.clementlevallois.umigon.core {
     requires net.clementlevallois.umigon.decision;
     requires net.clementlevallois.umigon.tokenizer;
     requires transitive net.clementlevallois.umigon.model;
+    requires transitive net.clementlevallois.umigon.model.classification;
     requires net.clementlevallois.umigon.heuristics;
-    requires emoji.java;
     
     exports net.clementlevallois.umigon.classifier.controller;
     exports net.clementlevallois.umigon.classifier.sentiment;

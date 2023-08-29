@@ -8,9 +8,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import net.clementlevallois.umigon.model.Category;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 
 /**
  *
@@ -45,7 +45,7 @@ public class FinalDecisionMaker {
                     heuristics.add(nextHeuristics);
                     decision.setListOfHeuristicsImpacted(heuristics);
                     decision.setOtherHeuristicsInvolvedInDecision(firstNegHeuristics);
-                    document.getSentimentDecisions().add(decision);
+                    document.getDecisions().add(decision);
                 }
             }
         }

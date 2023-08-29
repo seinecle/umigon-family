@@ -5,4 +5,5 @@ net\clementlevallois\umigonfamily\umigon\decision\FinalDecisionMaker.class
 module-info.class
 net\clementlevallois\umigonfamily\umigon\decision\WhenTextContainsAModerator.class
 net\clementlevallois\umigonfamily\umigon\decision\WhenTextContainsPositiveNegativeAndNegation.class
+net\clementlevallois\umigonfamily\umigon\decision\QuestionMarkAtTheEnd.class
 net\clementlevallois\umigonfamily\umigon\decision\SentimentDecisionMaker.class

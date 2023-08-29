@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import net.clementlevallois.umigon.classifier.delight.ClassifierDelightOneDocument;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 
 /**
  *

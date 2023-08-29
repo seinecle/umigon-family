@@ -8,10 +8,11 @@ import jakarta.json.JsonObjectBuilder;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-import net.clementlevallois.umigon.model.BooleanCondition;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.BooleanCondition;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEnum;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
+import net.clementlevallois.umigon.model.classification.BooleanCondition.BooleanConditionEnum;
 
 /**
  *
@@ -25,9 +26,14 @@ public class ExplanationOneHeuristics {
         // because we don't care to know about conditions led to no category
         Collection<BooleanCondition> nonEmptyBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
-//        if (resultOneHeuristics.getCategoryEnum().equals(Category.CategoryEnum._10)) {
-//            return sb.toString();
-//        }
+        if (resultOneHeuristics.getTextFragmentInvestigated() == null) {
+            if (!resultOneHeuristics.getBooleanConditions().isEmpty() && resultOneHeuristics.getBooleanConditions().get(0).getBooleanConditionEnum().equals(BooleanConditionEnum.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses)) {
+                sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("condition.name.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses"));
+                sb.append("\n");
+            }
+            return sb.toString();
+        }
+
         sb.append(getTokenWasMatched(resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum(), languageTag));
         sb.append(": \"");
 
@@ -58,6 +64,15 @@ public class ExplanationOneHeuristics {
         // because we don't care to know about conditions that needed to NOT be fulfilled
         Collection<BooleanCondition> nonFlippedBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
+        if (resultOneHeuristics.getTextFragmentInvestigated() == null) {
+            if (!resultOneHeuristics.getBooleanConditions().isEmpty() && resultOneHeuristics.getBooleanConditions().get(0).getBooleanConditionEnum().equals(BooleanConditionEnum.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses)) {
+                sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("condition.name.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses"));
+                sb.append("<br/>");
+            }
+            return sb.toString();
+        }
+        
+        
         TypeOfTextFragmentEnum ttf = resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum();
 
         String tokenWasMatched = getTokenWasMatched(ttf, languageTag);
@@ -102,9 +117,12 @@ public class ExplanationOneHeuristics {
         // because we don't care to know about conditions that needed to NOT be fulfilled
         Collection<BooleanCondition> nonFlippedBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
-//        if (resultOneHeuristics.getCategoryEnum().equals(Category.CategoryEnum._10)) {
-//            return job;
-//        }
+        if (resultOneHeuristics.getTextFragmentInvestigated() == null) {
+            if (!resultOneHeuristics.getBooleanConditions().isEmpty() && resultOneHeuristics.getBooleanConditions().get(0).getBooleanConditionEnum().equals(BooleanConditionEnum.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses)) {
+                job.add("parentheses are ignored",UmigonExplain.getLocaleBundle(languageTag).getString("condition.name.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses"));
+            }
+            return job;
+        }
         job.add("type of token matched", resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum().toString());
 
         job.add("token matched", resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm());

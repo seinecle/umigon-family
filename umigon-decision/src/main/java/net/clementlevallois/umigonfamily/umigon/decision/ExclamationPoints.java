@@ -6,13 +6,11 @@ package net.clementlevallois.umigonfamily.umigon.decision;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import net.clementlevallois.umigon.model.BooleanCondition;
-import static net.clementlevallois.umigon.model.BooleanCondition.BooleanConditionEnum.isHashtagStart;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
-import net.clementlevallois.umigon.model.Decision;
-import net.clementlevallois.umigon.model.Document;
-import net.clementlevallois.umigon.model.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.classification.Decision;
+import net.clementlevallois.umigon.model.classification.Document;
+import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.TextFragment;
 
 /**
@@ -76,7 +74,7 @@ public class ExclamationPoints {
                 heuristics.add(oneHeuristics);
                 heuristics.add(secondHeuristics);
                 decision.setListOfHeuristicsImpacted(heuristics);
-                document.getSentimentDecisions().add(decision);
+                document.getDecisions().add(decision);
                 document.getResultsOfHeuristics().addAll(heuristics);
                 
             }
@@ -95,7 +93,7 @@ public class ExclamationPoints {
                 heuristics.add(oneHeuristics);
                 heuristics.add(secondHeuristics);
                 decision.setListOfHeuristicsImpacted(heuristics);
-                document.getSentimentDecisions().add(decision);
+                document.getDecisions().add(decision);
                 document.getResultsOfHeuristics().addAll(heuristics);
             }
         }

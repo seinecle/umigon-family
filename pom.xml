@@ -5,11 +5,11 @@
 
     <groupId>net.clementlevallois.functions</groupId>
     <artifactId>umigon-family</artifactId>
-    <version>${revision}</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
     
     <properties>
-        <revision>0.220</revision>
+        <revision>1.0</revision>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,12 +50,8 @@
 
     <modules>
         <module>umigon-core</module>
-        <module>umigon-ngram-ops</module>
         <module>umigon-explain</module>
-        <module>umigon-lexicons</module>
         <module>umigon-decision</module>
-        <module>umigon-lemmatizer-lightweight</module>
-        <module>umigon-stopwords</module>
     </modules>
     
     <dependencyManagement>
@@ -63,23 +59,47 @@
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-tokenizer</artifactId>
-                <version>0.10</version>
+                <version>0.18</version>
+            </dependency>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-ngram-ops</artifactId>
+                <version>0.17</version>
             </dependency>
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-model</artifactId>
+                <version>0.14</version>
+            </dependency>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-model-classification</artifactId>
                 <version>0.10</version>
             </dependency>
             <dependency>
-                <groupId>com.vdurmont</groupId>
-                <artifactId>emoji-java</artifactId>
-                <version>5.1.1</version>
-                <type>jar</type>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-lemmatizer-lightweight</artifactId>
+                <version>0.12</version>
             </dependency>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-stopwords</artifactId>
+                <version>0.13</version>
+            </dependency>
+            <dependency>
+                <groupId>net.clementlevallois.functions</groupId>
+                <artifactId>umigon-lexicons</artifactId>
+                <version>0.14</version>
+            </dependency>
+            <dependency>
+                <groupId>net.fellbaum</groupId>
+                <artifactId>jemoji</artifactId>
+                <version>1.1.6</version>
+            </dependency>        
             <dependency>
                 <groupId>net.clementlevallois.utils</groupId>
                 <artifactId>utils-core</artifactId>
-                <version>0.11</version>
+                <version>0.13</version>
             </dependency>
             <dependency>
                 <groupId>jakarta.json</groupId>
@@ -103,31 +123,9 @@
                 <artifactId>yasson</artifactId>
                 <version>3.0.2</version>
             </dependency>
-            <dependency>
-                <groupId>org.junit.jupiter</groupId>
-                <artifactId>junit-jupiter-engine</artifactId>
-                <version>5.7.1</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.hamcrest</groupId>
-                <artifactId>hamcrest-core</artifactId>
-                <version>2.2</version>
-                <scope>test</scope>
-                <type>jar</type>
-            </dependency>
-            
         </dependencies>
     </dependencyManagement>
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </resource>
-        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -147,15 +145,6 @@
                             <id>compile</id>
                         </execution>
                     </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M8</version>
-                    <configuration>
-                        <disableXmlReport>true</disableXmlReport>
-                        <useFile>false</useFile>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>

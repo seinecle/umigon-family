@@ -7,7 +7,7 @@ import jakarta.json.Json;
 import jakarta.json.JsonObjectBuilder;
 import java.util.Locale;
 import java.util.Set;
-import net.clementlevallois.umigon.model.BooleanCondition;
+import net.clementlevallois.umigon.model.classification.BooleanCondition;
 import net.clementlevallois.umigon.model.NGram;
 
 /**
@@ -84,45 +84,4 @@ public class ExplanationOneBooleanCondition {
             return UmigonExplain.getLocaleBundle(languageTag).getString("condition.name.not." + condition.name());
         }
     }
-
-//    private static String getKeywordMatched(BooleanCondition.BooleanConditionEnum condition, String keyword) {
-//        switch (condition) {
-//            case isImmediatelyPrecededByANegation,                
-//        isImmediatelyFollowedByTimeIndication,
-//        isImmediatelyFollowedByANegation,
-//        isImmediatelyPrecededBySpecificTerm,
-//        isImmediatelyFollowedBySpecificTerm,
-//        isImmediatelyFollowedByAnOpinion,
-//        isPrecededBySubjectiveTerm,
-//        isFollowedByVerbPastTense,
-//        isFollowedByAPositiveOpinion,
-//        isImmediatelyPrecededByPositive,
-//        isImmediatelyPrecededByNegative,
-//        isImmediatelyFollowedByAPositiveOpinion,
-//        isImmediatelyFollowedByANegativeOpinion,
-//        isPrecededByOpinion,
-//        isPrecededByPositive,
-//        isPrecededBySpecificTerm,
-//        isFollowedBySpecificTerm,
-//        isInATextWithOneOfTheseSpecificTerms,
-//        isPrecededByStrongWord:
-//                return keyword;
-//
-//            case isFirstLetterCapitalized,
-//        isNegationInCaps,
-//        isHashtagStart,
-//        isHashtag,
-//        isInHashtag,
-//        isHashtagPositiveSentiment,
-//        isHashtagNegativeSentiment,
-//        isAllCaps,
-//        isQuestionMarkAtEndOfText,
-//        isFirstTermOfText:
-//                return "";
-//
-//            default:
-//                return "";
-//
-//        }
-//    }
 }

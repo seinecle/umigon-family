@@ -6,7 +6,7 @@
 package net.clementlevallois.umigon.classifier.delight;
 
 import net.clementlevallois.umigon.classifier.resources.Semantics;
-import net.clementlevallois.umigon.model.Document;
+import net.clementlevallois.umigon.model.classification.Document;
 
 /**
  *
@@ -25,7 +25,7 @@ public class ControllerForTestsDelight {
         Document doc = new Document();
         doc.setText("nocode is an awesome thing :)");
         Document result = oneWord.call(doc);
-        System.out.println("result: " + result.getExplanationSentimentHtml());
+        System.out.println("result: " + result.getExplanationHtml());
         System.out.println("expected result: " + "[positive tone, delight]");
     }
 
