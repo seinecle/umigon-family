@@ -1,2 +1,4 @@
-target/
 google-links/
+/umigon-tokenizer-old/target/
+/umigon-model/target/
+/target/
