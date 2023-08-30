@@ -1,4 +1,0 @@
---patch-module
-LemmatizerLightweight=_
---add-reads
-LemmatizerLightweight=ALL-UNNAMED
