@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.classifier.sentiment.ClassifierSentimentOneDocument;
@@ -51,7 +50,7 @@ public class GeneralTest {
 
         ClassLoader classLoader = getClass().getClassLoader();
 
-        System.out.println("test positif English texts:");
+        System.out.println("test positive English texts:");
         File fileWithExamples = new File(classLoader.getResource("en-pos.txt").getFile());
         List<String> lines = Files.readAllLines(fileWithExamples.toPath());
         for (String line : lines) {

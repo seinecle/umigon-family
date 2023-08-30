@@ -29,7 +29,7 @@ import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
  */
 public class UmigonExplain {
 
-    private static String PATHLOCALE = "net/clementlevallois/i18n/text";
+    private static String PATHLOCALE;
 
     public static void main(String[] args) {
         ResourceBundle localeBundle = getLocaleBundle("en");
@@ -40,9 +40,9 @@ public class UmigonExplain {
         ResourceBundle rb = null;
         try {
             if (System.getProperty("os.name").toLowerCase().contains("win")) {
-                PATHLOCALE = "C:\\Users\\levallois\\open\\nocode-app-functions\\umigon-static-files\\net\\clementlevallois\\umigon\\explanation\\i18n";
+                PATHLOCALE = "C:\\Users\\levallois\\open\\nocode-app-functions\\umigon-static-files\\src\\main\\resources\\net\\clementlevallois\\umigon\\explanation\\i18n";
             } else {
-                PATHLOCALE = "/home/waouh/nocodeapp-web/umigon-static-files/net/clementlevallois/umigon/explanation/i18n";
+                PATHLOCALE = "/home/waouh/nocodeapp-web/umigon-static-files/src/main/resources/net/clementlevallois/umigon/explanation/i18n";
             }
             File file = new File(PATHLOCALE);
             URL[] urls = {file.toURI().toURL()};
