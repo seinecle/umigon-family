@@ -254,7 +254,6 @@ public class ClassifierSentimentOneDocument {
                     resultsHeuristics.add(resultOneHeuristics);
                     alreadyExaminedNGramInNegative.add(ngram);
                 }
-
             }
         }
         // adding all the results of the heuristics to the Document object
