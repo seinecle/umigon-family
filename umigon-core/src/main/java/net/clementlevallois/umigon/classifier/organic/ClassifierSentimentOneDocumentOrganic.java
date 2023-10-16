@@ -58,7 +58,8 @@ public class ClassifierSentimentOneDocumentOrganic {
 
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(document.getText(), semantics.getLexiconsAndTheirConditionalExpressions().getLexiconsWithoutTheirConditionalExpressions());
         List<NGram> ngrams = new ArrayList();
-        List<SentenceLike> sentenceLikeFragments = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
+        SentenceLikeFragmentsDetector sentenceDetector = new SentenceLikeFragmentsDetector();
+        List<SentenceLike> sentenceLikeFragments = sentenceDetector.returnSentenceLikeFragments(allTextFragments);
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);
             ngrams.addAll(generateNgramsUpto);

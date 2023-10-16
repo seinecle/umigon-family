@@ -69,58 +69,30 @@ public class ClassifierSentimentOneDocument {
 
         List<TextFragment> allTextFragments = UmigonTokenizer.tokenize(document.getText(), semantics.getLexiconsAndTheirConditionalExpressions().getLexiconsWithoutTheirConditionalExpressions());
         List<NGram> ngrams = new ArrayList();
-        List<SentenceLike> sentenceLikeFragments = SentenceLikeFragmentsDetector.returnSentenceLikeFragments(allTextFragments);
+        SentenceLikeFragmentsDetector sentenceDetector = new SentenceLikeFragmentsDetector();
+        List<SentenceLike> sentenceLikeFragments = sentenceDetector.returnSentenceLikeFragments(allTextFragments);
 
-        Map<String, String> enclosingPunctuationSigns = Map.of("«", "»", "“", "”", "‘", "’", "'", "'", "[", "]", "(", ")");
+        Map<String, String> enclosingPunctuationSigns = Map.of("(", ")", "\"", "\"", "«", "»", "“", "”", "‘", "’", "'", "'", "„", "“", "[", "]", "<", ">");
 
-        int indexSentenceLikeTextFragment = 0;
-        List<Integer> indexOpeningOfClosingSentenceFragment = new ArrayList();
-        List<Integer> indexClosingOfClosingSentenceFragment = new ArrayList();
-        boolean potentialEnclosingFound = false;
-        String endClosingSignFound = null;
+        Set<Integer> indicesOfSentenceLikeFragmentToIgnoreForAnalysis = new HashSet();
+        int indiceSentenceLikeFragment = 0;
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
-//            System.out.println("sentence like fragment: " + sentenceLikeFragment.toString());
             int sizeSentenceLike = sentenceLikeFragment.getTextFragments().size();
             if (sizeSentenceLike > 0) {
+                String firstFragment = sentenceLikeFragment.getTextFragments().get(0).getOriginalForm();
                 String lastFragment = sentenceLikeFragment.getTextFragments().get(sizeSentenceLike - 1).getOriginalForm();
-                if (lastFragment.length() < 2) {
-                    if (!potentialEnclosingFound && enclosingPunctuationSigns.containsKey(lastFragment)) {
-                        endClosingSignFound = enclosingPunctuationSigns.get(lastFragment);
-                        potentialEnclosingFound = true;
-                        indexOpeningOfClosingSentenceFragment.add(sentenceLikeFragment.getIndexOrdinal());
-                        continue;
-                    }
-                    if (potentialEnclosingFound && endClosingSignFound != null && lastFragment.equals(endClosingSignFound)) {
-                        indexClosingOfClosingSentenceFragment.add(sentenceLikeFragment.getIndexOrdinal());
-                        potentialEnclosingFound = false;
-                    }
-                }
-                indexSentenceLikeTextFragment++;
-            }
-        }
-        
-        int smallestSizeOfTwo = Math.min(indexOpeningOfClosingSentenceFragment.size(), indexClosingOfClosingSentenceFragment.size());
-
-        // list of text fragments to ignore for sentiment analysis because they are enclosed in quotation signs or parentheses:
-        Set<Integer> indicesOfTextFragmentToIgnoreForAnalysis = new HashSet();
-        Set<Integer> indicesOfSentenceLikeFragmentToIgnoreForAnalysis = new HashSet();
-
-        if (!indexOpeningOfClosingSentenceFragment.isEmpty() && !indexClosingOfClosingSentenceFragment.isEmpty()) {
-            for (int j = 0; j < smallestSizeOfTwo; j++) {
-                for (int i = (indexOpeningOfClosingSentenceFragment.get(j) + 1); i <= indexClosingOfClosingSentenceFragment.get(j); i++) {
-                    SentenceLike sentenceLikeFragment = sentenceLikeFragments.get(i);
-                    indicesOfSentenceLikeFragmentToIgnoreForAnalysis.add(i);
-                    for (TextFragment tf : sentenceLikeFragment.getTextFragments()) {
-                        indicesOfTextFragmentToIgnoreForAnalysis.add(tf.getIndexCardinal());
-                    }
+                if (enclosingPunctuationSigns.containsKey(firstFragment) && enclosingPunctuationSigns.get(firstFragment).equals(lastFragment)) {
+                    indicesOfSentenceLikeFragmentToIgnoreForAnalysis.add(indiceSentenceLikeFragment);
                 }
             }
+            indiceSentenceLikeFragment++;
         }
 
+        indiceSentenceLikeFragment = 0;
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
             // this step will lead to ignoring the possible traces of sentiment in this sentence fragment
             // because it is enclosed in some forms of quotations or parenthesis
-            if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
+            if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(indiceSentenceLikeFragment++)) {
                 continue;
             }
             List<NGram> generateNgramsUpto = NGramFinderBisForTextFragments.generateNgramsUpto(sentenceLikeFragment.getNgrams(), 5);

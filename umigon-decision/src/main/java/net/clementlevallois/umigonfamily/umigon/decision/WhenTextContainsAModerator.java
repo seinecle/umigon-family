@@ -113,7 +113,7 @@ public class WhenTextContainsAModerator {
 
         for (ResultOneHeuristics entry : indexesNeg) {
             int indexLoop = entry.getTextFragmentInvestigated().getIndexCardinal();
-            if ((indexLoop < indexCardinalModerator)) {
+            if ((indexLoop > indexCardinalModerator)) {
                 document.getResultsOfHeuristics().remove(entry);
                 decision = new Decision();
                 decision.setDecisionMotive(Decision.DecisionMotive.NEGATIVE_TERM_THEN_MODERATOR);

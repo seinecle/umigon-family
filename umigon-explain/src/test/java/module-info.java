@@ -12,7 +12,7 @@ open module net.clementlevallois.umigon.explain.tests {
     requires com.fasterxml.jackson.annotation;
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
+        requires net.fellbaum.jemoji;
     requires mvel2;
-    requires jemoji;    
     requires junit;
 }

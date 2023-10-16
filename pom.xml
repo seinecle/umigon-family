@@ -59,12 +59,12 @@
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-tokenizer</artifactId>
-                <version>0.18</version>
+                <version>0.19</version>
             </dependency>
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-ngram-ops</artifactId>
-                <version>0.17</version>
+                <version>0.18</version>
             </dependency>
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
@@ -94,7 +94,7 @@
             <dependency>
                 <groupId>net.fellbaum</groupId>
                 <artifactId>jemoji</artifactId>
-                <version>1.1.6</version>
+                <version>1.2.0</version>
             </dependency>        
             <dependency>
                 <groupId>net.clementlevallois.utils</groupId>
