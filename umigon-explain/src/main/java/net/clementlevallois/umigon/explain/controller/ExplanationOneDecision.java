@@ -100,6 +100,20 @@ public class ExplanationOneDecision {
                 sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
                         .append(" \"").append(decision.getTextFragmentInvolvedInDecision().getOriginalForm()).append("\"");
                 break;
+            case MODERATOR_THEN_POSITIVE_TERM:
+                if (!sb.toString().endsWith(". ")) {
+                    sb.append(". ");
+                }
+                sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
+                        .append(" \"").append(decision.getTextFragmentInvolvedInDecision().getOriginalForm()).append("\"");
+                break;
+            case MODERATOR_THEN_NEGATIVE_TERM:
+                if (!sb.toString().endsWith(". ")) {
+                    sb.append(". ");
+                }
+                sb.append(UmigonExplain.getLocaleBundle(languageTag).getString("statement.the_moderator_is"))
+                        .append(" \"").append(decision.getTextFragmentInvolvedInDecision().getOriginalForm()).append("\"");
+                break;
             case TWO_POSITIVE_TERMS_THEN_MODERATOR:
                 if (!sb.toString().endsWith(". ")) {
                     sb.append(". ");
