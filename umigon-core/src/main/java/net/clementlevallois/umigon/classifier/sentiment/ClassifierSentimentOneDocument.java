@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
-import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
 import net.clementlevallois.umigon.heuristics.tools.TermLevelHeuristicsVerifier;
@@ -33,6 +32,7 @@ import net.clementlevallois.umigon.model.Term;
 import net.clementlevallois.umigon.model.Text;
 import net.clementlevallois.umigon.model.TextFragment;
 import net.clementlevallois.umigon.model.TypeOfTextFragment;
+import static net.clementlevallois.umigon.model.classification.BooleanCondition.BooleanConditionEnum.isASentenceLikeFragmentEnclosedInQuotationsOrParentheses;
 import net.clementlevallois.umigon.ngram.ops.SentenceLikeFragmentsDetector;
 import net.clementlevallois.umigon.ngram.ops.NGramFinderBisForTextFragments;
 import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
@@ -159,8 +159,13 @@ public class ClassifierSentimentOneDocument {
 
             if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
                 ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._10, null);
-                BooleanCondition bc = new BooleanCondition();
-                bc.setConditionName("isASentenceLikeFragmentEnclosedInQuotationsOrParentheses");
+                BooleanCondition bc = new BooleanCondition(isASentenceLikeFragmentEnclosedInQuotationsOrParentheses);
+                TextFragment tf = new Term();
+                tf.setIndexCardinal(sentenceLikeFragment.getIndexCardinal());
+                tf.setIndexOrdinal(sentenceLikeFragment.getIndexOrdinal());
+                tf.setOriginalForm(sentenceLikeFragment.toString());
+                bc.setTextFragmentMatched(tf);
+                bc.setTokenInvestigatedGetsMatched(Boolean.TRUE);
                 resultOneHeuristics.getBooleanConditions().add(bc);
                 resultsHeuristics.add(resultOneHeuristics);
                 continue;
@@ -242,16 +247,18 @@ public class ClassifierSentimentOneDocument {
 
         // Commenting the check on negations because it seems unuseful actually.
         //        sentimentDecisionMaker.doCheckOnNegations();
+
         // if the text is a question, classify it as neutral.
         // we might of course miss ironic intent, but questions are too hard to decipher
-        BooleanCondition bc = IsQuestionMarkAtEndOfText.check(allTextFragments);
-        if (bc.getTokenInvestigatedGetsMatched()) {
-            ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._40, bc.getTextFragmentMatched());
-            resultOneHeuristics.getBooleanConditions().add(bc);
-            resultsHeuristics.add(resultOneHeuristics);
-        }
-
-        sentimentDecisionMaker.doCheckQuestionMark();
+        // REMOVING THE CHECK ON QUESTION MARK BC MANY QUESTIONS ARE RHETORICAL OR IRONICAL WAYS TO CONVEY (OFTEN NEGATIVE) SENTIMENT
+//        BooleanCondition bc = IsQuestionMarkAtEndOfText.check(allTextFragments);
+//        if (bc.getTokenInvestigatedGetsMatched()) {
+//            ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._40, bc.getTextFragmentMatched());
+//            resultOneHeuristics.getBooleanConditions().add(bc);
+//            resultsHeuristics.add(resultOneHeuristics);
+//        }
+//
+//        sentimentDecisionMaker.doCheckQuestionMark();
 
         sentimentDecisionMaker.doCheckOnModerators();
 
