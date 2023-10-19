@@ -98,10 +98,10 @@ public class WhenTextContainsAModerator {
         indexCardinalModerator = moderator.getIndexCardinal();
         for (ResultOneHeuristics entry : indexesPos) {
             int indexLoop = entry.getTextFragmentInvestigated().getIndexCardinal();
-            if ((indexLoop < indexCardinalModerator)) {
+            if ((indexLoop > indexCardinalModerator)) {
                 document.getResultsOfHeuristics().remove(entry);
                 decision = new Decision();
-                decision.setDecisionMotive(Decision.DecisionMotive.POSITIVE_TERM_THEN_MODERATOR);
+                decision.setDecisionMotive(Decision.DecisionMotive.MODERATOR_THEN_POSITIVE_TERM);
                 List<ResultOneHeuristics> heuristics = new ArrayList();
                 heuristics.add(entry);
                 decision.setListOfHeuristicsImpacted(heuristics);
@@ -116,7 +116,7 @@ public class WhenTextContainsAModerator {
             if ((indexLoop > indexCardinalModerator)) {
                 document.getResultsOfHeuristics().remove(entry);
                 decision = new Decision();
-                decision.setDecisionMotive(Decision.DecisionMotive.NEGATIVE_TERM_THEN_MODERATOR);
+                decision.setDecisionMotive(Decision.DecisionMotive.MODERATOR_THEN_NEGATIVE_TERM);
                 List<ResultOneHeuristics> heuristics = new ArrayList();
                 heuristics.add(entry);
                 decision.setListOfHeuristicsImpacted(heuristics);
