@@ -6,14 +6,13 @@ package net.clementlevallois.umigon.classifier.sentiment;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import net.clementlevallois.umigon.model.classification.TermWithConditionalExpressions;
-import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
-
-import net.clementlevallois.umigon.model.classification.Document;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import net.clementlevallois.umigon.model.classification.TermWithConditionalExpressions;
+import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
+import net.clementlevallois.umigon.model.classification.Document;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
@@ -158,20 +157,19 @@ public class ClassifierSentimentOneDocument {
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
 
             if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
-                ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._10, null);
                 BooleanCondition bc = new BooleanCondition(isASentenceLikeFragmentEnclosedInQuotationsOrParentheses);
-                TextFragment tf = new Term();
+                Term tf = new Term();
                 tf.setIndexCardinal(sentenceLikeFragment.getIndexCardinal());
                 tf.setIndexOrdinal(sentenceLikeFragment.getIndexOrdinal());
                 tf.setOriginalForm(sentenceLikeFragment.toString());
                 bc.setTextFragmentMatched(tf);
                 bc.setTokenInvestigatedGetsMatched(Boolean.TRUE);
+                ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._10, tf);
                 resultOneHeuristics.getBooleanConditions().add(bc);
                 resultsHeuristics.add(resultOneHeuristics);
                 continue;
             }
             for (NGram ngram : sentenceLikeFragment.getNgrams()) {
-
                 // skipping the ngram if it is a stopword, EXCEPT if this is a sentiment related stopword
                 if (ngram.getCleanedNgram().isBlank() || semantics.getStopwordsWithoutSentimentRelevance().contains(ngram.getCleanedNgram().toLowerCase())) {
                     continue;
@@ -243,7 +241,7 @@ public class ClassifierSentimentOneDocument {
                 Adjucating the final sentiment based on the results of all the heuristics
             
          */
-        SentimentDecisionMaker sentimentDecisionMaker = new SentimentDecisionMaker(document, semantics.getSetNegations(), semantics.getSetModerators(), semantics.getSetIronicTerms());
+        SentimentDecisionMaker sentimentDecisionMaker = new SentimentDecisionMaker(document, lexiconsAndTheirConditionalExpressions);
 
         // Commenting the check on negations because it seems unuseful actually.
         //        sentimentDecisionMaker.doCheckOnNegations();

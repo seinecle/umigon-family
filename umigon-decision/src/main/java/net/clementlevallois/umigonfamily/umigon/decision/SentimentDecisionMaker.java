@@ -4,6 +4,7 @@
 package net.clementlevallois.umigonfamily.umigon.decision;
 
 import java.util.Set;
+import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 import net.clementlevallois.umigon.model.classification.Document;
 
 /**
@@ -13,15 +14,19 @@ import net.clementlevallois.umigon.model.classification.Document;
 public class SentimentDecisionMaker {
 
     Document document;
+    LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions;
     Set<String> negations;
-    Set<String> moderators;
+    Set<String> moderatorsBackward;
+    Set<String> moderatorsForward;
     Set<String> markersOfIrony;
 
-    public SentimentDecisionMaker(Document document, Set<String> negations, Set<String> moderators, Set<String> markersOfIrony) {
+    public SentimentDecisionMaker(Document document, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions) {
         this.document = document;
-        this.negations = negations;
-        this.moderators = moderators;
-        this.markersOfIrony = markersOfIrony;
+        this.lexiconsAndTheirConditionalExpressions = lexiconsAndTheirConditionalExpressions;
+        this.negations = lexiconsAndTheirConditionalExpressions.getSetNegations();
+        this.moderatorsBackward = lexiconsAndTheirConditionalExpressions.getSetModeratorsBackward();
+        this.moderatorsForward = lexiconsAndTheirConditionalExpressions.getSetModeratorsForward();
+        this.markersOfIrony = lexiconsAndTheirConditionalExpressions.getSetIronicallyPositive();
     }
 
     public void doCheckQuestionMark() {
@@ -35,8 +40,9 @@ public class SentimentDecisionMaker {
     }
 
     public void doCheckOnModerators() {
-        WhenTextContainsAModerator moderatorsCheck = new WhenTextContainsAModerator(document, moderators);
-        document = moderatorsCheck.containsAModerator();
+        WhenTextContainsAModerator moderatorsCheck = new WhenTextContainsAModerator(document, moderatorsForward, moderatorsBackward);
+        document = moderatorsCheck.containsAModeratorForward();
+        document = moderatorsCheck.containsAModeratorBackward();
     }
 
     public void doCheckOnSarcasm() {

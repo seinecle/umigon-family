@@ -176,7 +176,7 @@ public class ClassifierOrganicOneDocument {
                 Adjucating the final sentiment based on the results of all the heuristics
             
          */
-        SentimentDecisionMaker sentimentDecisionMaker = new SentimentDecisionMaker(document, semantics.getSetNegations(), semantics.getSetModerators(), semantics.getSetIronicTerms());
+        SentimentDecisionMaker sentimentDecisionMaker = new SentimentDecisionMaker(document, lexiconsAndTheirConditionalExpressions);
 
         sentimentDecisionMaker.doCheckOnNegations();
         // if the text is a question, classify it as neutral.

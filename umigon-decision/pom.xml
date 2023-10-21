@@ -21,5 +21,9 @@
             <groupId>net.clementlevallois.functions</groupId>
             <artifactId>umigon-model-classification</artifactId>
         </dependency>
+        <dependency>
+            <groupId>net.clementlevallois.functions</groupId>
+            <artifactId>umigon-lexicons</artifactId>
+        </dependency>
     </dependencies>
 </project>

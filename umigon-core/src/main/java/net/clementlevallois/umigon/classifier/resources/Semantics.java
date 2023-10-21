@@ -43,7 +43,7 @@ public class Semantics {
             lexiconsAndTheirConditionalExpressions.load();
             setIronicTerms = lexiconsAndTheirConditionalExpressions.getSetIronicallyPositive();
             setNegations = lexiconsAndTheirConditionalExpressions.getSetNegations();
-            setModerators = lexiconsAndTheirConditionalExpressions.getSetModerators();
+            setModerators = lexiconsAndTheirConditionalExpressions.getSetModeratorsForward();
             EmojisHeuristicsandResourcesLoader.load();
             PunctuationValenceVerifier.load();
             stopwordsWithoutSentimentRelevance = new HashSet();
