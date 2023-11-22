@@ -3,15 +3,10 @@
  */
 package net.clementlevallois.umigonfamily.umigon.decision;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import net.clementlevallois.umigon.model.Category;
-import net.clementlevallois.umigon.model.classification.Decision;
-import net.clementlevallois.umigon.model.classification.Document;
-import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
+import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.TextFragment;
-import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEnum;
 
 /**
  *
@@ -19,49 +14,47 @@ import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEn
  */
 public class QuestionMarkAtTheEnd {
 
-    private Document document;
+    private final SentenceLike sentence;
+    private Set<String> intenseWords;
+    private Set<String> subjectiveTerms;
 
-    public QuestionMarkAtTheEnd(Document document) {
-        this.document = document;
+    public QuestionMarkAtTheEnd(SentenceLike sentence, Set<String> intenseWords, Set<String> subjectiveTerms) {
+        this.sentence = sentence;
+        this.intenseWords = intenseWords;
+        this.subjectiveTerms = subjectiveTerms;
     }
 
-    public Document checkIt() {
-
+    public boolean skipSentimentEvaluation() {
         /*
         The idea is to classify sentences ending in question marks as neutral in sentiment
          */
-        List<TextFragment> allTextFragments = document.getAllTextFragments();
+        List<TextFragment> allTextFragments = sentence.getTextFragments();
         if (allTextFragments.size() < 3) {
-            return document;
+            return Boolean.FALSE;
         }
-        Set<ResultOneHeuristics> questionMarks = document.getAllHeuristicsResultsForOneCategory(Category.CategoryEnum._40);
-        if (!questionMarks.isEmpty()) {
-            ResultOneHeuristics heuristics = questionMarks.iterator().next();
-            int indexOrdinalQuestionMark = heuristics.getTextFragmentInvestigated().getIndexOrdinal();
-            if (indexOrdinalQuestionMark + 1 < allTextFragments.size()) {
-                TextFragment nextTF = allTextFragments.get(indexOrdinalQuestionMark + 1);
-                if (nextTF != null && nextTF.getTypeOfTextFragmentEnum().equals(TypeOfTextFragmentEnum.PUNCTUATION) && !nextTF.getOriginalForm().contains("?")) {
-                    // then the question mark is followed by other punctuation signs, like "!!!" for instance
-                    // no removal of existing heuristics should take place
-                    return document;
-                }
-            }
-            Decision decision = new Decision();
-            decision.setDecisionMotive(Decision.DecisionMotive.ENDING_IN_QUESTION_MARK);
-            decision.setDecisionType(Decision.DecisionType.REMOVE);
-            decision.setTextFragmentInvolvedInDecision(heuristics.getTextFragmentInvestigated());
-            List<ResultOneHeuristics> heuristicsToRemove = new ArrayList();
-            for (ResultOneHeuristics one : document.getResultsOfHeuristics()) {
-                if (!one.getCategoryEnum().equals(Category.CategoryEnum._40)) {
-                    heuristicsToRemove.add(one);
-                }
-            }
-            decision.setListOfHeuristicsImpacted(heuristicsToRemove);
-            document.getDecisions().add(decision);
-            document.getResultsOfHeuristics().removeAll(heuristicsToRemove);
+        if (!allTextFragments.get(allTextFragments.size() - 1).getOriginalForm().contains("?")) {
+            return Boolean.FALSE;
+        }
 
+        /**
+         * This check is for the following case:
+         *
+         * Why is he sad? -> NEUTRAL Why are you such a jerk? -> NEGATIVE
+         * partially because of the intensity term 'such a' Is the house
+         * beautiful? -> NEUTRAL How come the house is so beautiful? -> POSITIVE
+         * partially because of the intensity term 'so'
+         *
+         * So the rules applied here is: dismiss any sentiment in a question,
+         * except if there is a marker of intensity or a marker of subjectivity
+         *
+         */
+        for (TextFragment tf : allTextFragments) {
+            if (intenseWords.contains(tf.getOriginalForm().toLowerCase()) || subjectiveTerms.contains(tf.getOriginalForm().toLowerCase())) {
+                return Boolean.FALSE;
+            }
         }
-        return document;
+
+        return Boolean.TRUE;
     }
 
 }

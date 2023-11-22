@@ -7,10 +7,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsImmediatelyPrecededBySubjectiveTerm;
+import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.classification.Decision;
 import net.clementlevallois.umigon.model.classification.Document;
 import net.clementlevallois.umigon.model.NGram;
+import net.clementlevallois.umigon.model.classification.BooleanCondition;
 import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 
 /**
@@ -19,17 +22,17 @@ import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
  */
 public class WhenTextContainsAModerator {
 
-    Document document;
     Set<String> moderatorsForward;
     Set<String> moderatorsBackward;
+    LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions;
 
-    public WhenTextContainsAModerator(Document document, Set<String> moderatorsForward, Set<String> moderatorsBackward) {
-        this.document = document;
+    public WhenTextContainsAModerator(Set<String> moderatorsForward, Set<String> moderatorsBackward, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions) {
         this.moderatorsForward = moderatorsForward;
         this.moderatorsBackward = moderatorsBackward;
+        this.lexiconsAndTheirConditionalExpressions = lexiconsAndTheirConditionalExpressions;
     }
 
-    public Document containsAModeratorForward() {
+    public Document containsAModeratorForward(Document document) {
         List<NGram> ngrams = document.getNgrams();
         NGram moderator = null;
 
@@ -58,6 +61,26 @@ public class WhenTextContainsAModerator {
             }
         }
         if (moderator == null) {
+            return document;
+        }
+        
+        
+        /*
+        
+        The following check is the following:
+        
+        A. I don't think this is great
+        A. They don't think this is great
+        
+        -> "think" is a moderator. Should it cancel the positive sentiment effect of "great"?
+        -> A. the moderator is preceded by a subjective term, so the moderator has no cancellation effect on the sentiment
+        -> B. the moderator is NOT preceded by a subjective term, so the moderator should cancel the effect on the sentiment
+        
+        */
+        
+        boolean strippedText = false;
+        BooleanCondition checkOnSubjectiveTermBefore = IsImmediatelyPrecededBySubjectiveTerm.check(strippedText, document.getNgrams(), moderator, lexiconsAndTheirConditionalExpressions);
+        if (checkOnSubjectiveTermBefore.getTextFragmentMatched()!= null){
             return document;
         }
 
@@ -129,7 +152,8 @@ public class WhenTextContainsAModerator {
         }
         return document;
     }
-    public Document containsAModeratorBackward() {
+
+    public Document containsAModeratorBackward(Document document) {
         List<NGram> ngrams = document.getNgrams();
         NGram moderator = null;
 
@@ -150,6 +174,7 @@ public class WhenTextContainsAModerator {
             return document;
         }
         int indexCardinalModerator;
+        int indexSegmentLikeFragmentOfModerator;
         int index = Integer.MAX_VALUE;
         int indexNegFirst = Integer.MAX_VALUE;
         int indexPosLast = -1;
@@ -180,9 +205,13 @@ public class WhenTextContainsAModerator {
 
         Decision decision;
         indexCardinalModerator = moderator.getIndexCardinal();
+        indexSegmentLikeFragmentOfModerator = moderator.getSentenceLikeFragmentIndex();
+
         for (ResultOneHeuristics entry : indexesPos) {
-            int indexLoop = entry.getTextFragmentInvestigated().getIndexCardinal();
-            if ((indexLoop < indexCardinalModerator)) {
+            int indexOfPositiveTextFragment = entry.getTextFragmentInvestigated().getIndexCardinal();
+            int indexSegmentLikeFragmentOfPositiveTextFragment = entry.getTextFragmentInvestigated().getSentenceLikeFragmentIndex();
+            boolean isOpinionInSameOrPrecedingTextFragment = indexSegmentLikeFragmentOfPositiveTextFragment == indexSegmentLikeFragmentOfModerator | indexSegmentLikeFragmentOfPositiveTextFragment == (indexSegmentLikeFragmentOfModerator - 1);
+            if ((indexOfPositiveTextFragment < indexCardinalModerator) && isOpinionInSameOrPrecedingTextFragment) {
                 document.getResultsOfHeuristics().remove(entry);
                 decision = new Decision();
                 decision.setDecisionMotive(Decision.DecisionMotive.POSITIVE_TERM_THEN_MODERATOR);
@@ -196,8 +225,10 @@ public class WhenTextContainsAModerator {
         }
 
         for (ResultOneHeuristics entry : indexesNeg) {
-            int indexLoop = entry.getTextFragmentInvestigated().getIndexCardinal();
-            if ((indexLoop < indexCardinalModerator)) {
+            int indexOfNegativeTextFragment = entry.getTextFragmentInvestigated().getIndexCardinal();
+            int indexSegmentLikeFragmentOfNegativeTextFragment = entry.getTextFragmentInvestigated().getSentenceLikeFragmentIndex();
+            boolean isOpinionInSameOrPrecedingTextFragment = indexSegmentLikeFragmentOfNegativeTextFragment == indexSegmentLikeFragmentOfModerator | indexSegmentLikeFragmentOfNegativeTextFragment == (indexSegmentLikeFragmentOfModerator - 1);
+            if ((indexOfNegativeTextFragment < indexCardinalModerator) && isOpinionInSameOrPrecedingTextFragment) {
                 document.getResultsOfHeuristics().remove(entry);
                 decision = new Decision();
                 decision.setDecisionMotive(Decision.DecisionMotive.NEGATIVE_TERM_THEN_MODERATOR);

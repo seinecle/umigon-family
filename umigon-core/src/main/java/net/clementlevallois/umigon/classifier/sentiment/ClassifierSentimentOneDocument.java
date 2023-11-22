@@ -153,7 +153,6 @@ public class ClassifierSentimentOneDocument {
                 resultsHeuristics.add(resultOneHeuristics);
             }
         }
-
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
 
             if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
@@ -169,6 +168,13 @@ public class ClassifierSentimentOneDocument {
                 resultsHeuristics.add(resultOneHeuristics);
                 continue;
             }
+
+            SentimentDecisionMaker sentimentDecisionMakerOnSentenceLike = new SentimentDecisionMaker(sentenceLikeFragment, lexiconsAndTheirConditionalExpressions);
+            boolean skipSentimentEvaluation = sentimentDecisionMakerOnSentenceLike.skipSentimentEvaluation();
+            if (skipSentimentEvaluation) {
+                continue;
+            }
+
             for (NGram ngram : sentenceLikeFragment.getNgrams()) {
                 // skipping the ngram if it is a stopword, EXCEPT if this is a sentiment related stopword
                 if (ngram.getCleanedNgram().isBlank() || semantics.getStopwordsWithoutSentimentRelevance().contains(ngram.getCleanedNgram().toLowerCase())) {
@@ -187,7 +193,7 @@ public class ClassifierSentimentOneDocument {
                     continue;
                 }
 
-//            if (ngram.getCleanedAndStrippedNgram().equals("burnes")) {
+//            if (ngram.getCleanedAndStrippedNgram().equals("like")) {
 //                System.out.println("stop for word before checking positive heuristics");
 //            }
                 boolean stripped = false;
@@ -245,7 +251,6 @@ public class ClassifierSentimentOneDocument {
 
         // Commenting the check on negations because it seems unuseful actually.
         //        sentimentDecisionMaker.doCheckOnNegations();
-
         // if the text is a question, classify it as neutral.
         // we might of course miss ironic intent, but questions are too hard to decipher
         // REMOVING THE CHECK ON QUESTION MARK BC MANY QUESTIONS ARE RHETORICAL OR IRONICAL WAYS TO CONVEY (OFTEN NEGATIVE) SENTIMENT
@@ -257,7 +262,6 @@ public class ClassifierSentimentOneDocument {
 //        }
 //
 //        sentimentDecisionMaker.doCheckQuestionMark();
-
         sentimentDecisionMaker.doCheckOnModerators();
 
         sentimentDecisionMaker.doCheckOnSarcasm();

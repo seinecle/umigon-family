@@ -49,20 +49,8 @@ public class GeneralTest {
         ClassifierSentimentOneDocument classifierOneDocumentES = new ClassifierSentimentOneDocument(semanticsES);
 
         ClassLoader classLoader = getClass().getClassLoader();
-
-        System.out.println("test positive English texts:");
-        File fileWithExamples = new File(classLoader.getResource("en-pos.txt").getFile());
-        List<String> lines = Files.readAllLines(fileWithExamples.toPath());
-        for (String line : lines) {
-            document = new Document();
-            document.setText(line);
-            resultAnalysis = classifierOneDocumentEN.call(document);
-            markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultAnalysis, "fr");
-            System.out.println("full explanation: " + markers);
-            System.out.println("decisions: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultAnalysis, "fr"));
-            Assert.assertEquals("sentiment positif", UmigonExplain.getSentimentPlainText(resultAnalysis, "fr"));
-        }
-        System.out.println("------------ *********** ----------------");
+        File fileWithExamples;
+        List<String> lines;
 
         System.out.println("test negative English texts:");
         fileWithExamples = new File(classLoader.getResource("en-neg.txt").getFile());
@@ -89,6 +77,20 @@ public class GeneralTest {
             System.out.println("full explanation: " + markers);
             System.out.println("decisions: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultAnalysis, "fr"));
             Assert.assertEquals("sentiment neutre", UmigonExplain.getSentimentPlainText(resultAnalysis, "fr"));
+        }
+        System.out.println("------------ *********** ----------------");
+
+        System.out.println("test positive English texts:");
+        fileWithExamples = new File(classLoader.getResource("en-pos.txt").getFile());
+        lines = Files.readAllLines(fileWithExamples.toPath());
+        for (String line : lines) {
+            document = new Document();
+            document.setText(line);
+            resultAnalysis = classifierOneDocumentEN.call(document);
+            markers = UmigonExplain.getExplanationOfHeuristicResultsPlainText(resultAnalysis, "fr");
+            System.out.println("full explanation: " + markers);
+            System.out.println("decisions: " + UmigonExplain.getExplanationsOfDecisionsPlainText(resultAnalysis, "fr"));
+            Assert.assertEquals("sentiment positif", UmigonExplain.getSentimentPlainText(resultAnalysis, "fr"));
         }
         System.out.println("------------ *********** ----------------");
 

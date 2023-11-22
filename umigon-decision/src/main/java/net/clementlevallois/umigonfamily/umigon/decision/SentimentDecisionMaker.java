@@ -5,6 +5,7 @@ package net.clementlevallois.umigonfamily.umigon.decision;
 
 import java.util.Set;
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
+import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.classification.Document;
 
 /**
@@ -14,24 +15,35 @@ import net.clementlevallois.umigon.model.classification.Document;
 public class SentimentDecisionMaker {
 
     Document document;
-    LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions;
+    SentenceLike sentence;
     Set<String> negations;
     Set<String> moderatorsBackward;
     Set<String> moderatorsForward;
     Set<String> markersOfIrony;
+    Set<String> intenseWords;
+    Set<String> subjectiveTerms;
+    LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions;
 
     public SentimentDecisionMaker(Document document, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions) {
         this.document = document;
-        this.lexiconsAndTheirConditionalExpressions = lexiconsAndTheirConditionalExpressions;
         this.negations = lexiconsAndTheirConditionalExpressions.getSetNegations();
         this.moderatorsBackward = lexiconsAndTheirConditionalExpressions.getSetModeratorsBackward();
         this.moderatorsForward = lexiconsAndTheirConditionalExpressions.getSetModeratorsForward();
         this.markersOfIrony = lexiconsAndTheirConditionalExpressions.getSetIronicallyPositive();
+        this.intenseWords = lexiconsAndTheirConditionalExpressions.getSetStrong();
+        this.subjectiveTerms = lexiconsAndTheirConditionalExpressions.getSetSubjective();
+        this.lexiconsAndTheirConditionalExpressions = lexiconsAndTheirConditionalExpressions;
     }
 
-    public void doCheckQuestionMark() {
-        QuestionMarkAtTheEnd check = new QuestionMarkAtTheEnd(document);
-        document = check.checkIt();
+    public SentimentDecisionMaker(SentenceLike sentence, LoaderOfLexiconsAndConditionalExpressions lexiconsAndTheirConditionalExpressions) {
+        this.intenseWords = lexiconsAndTheirConditionalExpressions.getSetStrong();
+        this.subjectiveTerms = lexiconsAndTheirConditionalExpressions.getSetSubjective();
+        this.sentence = sentence;
+    }
+
+    public boolean skipSentimentEvaluation() {
+        QuestionMarkAtTheEnd check = new QuestionMarkAtTheEnd(sentence, intenseWords, subjectiveTerms);
+        return check.skipSentimentEvaluation();
     }
 
     public void doCheckOnNegations() {
@@ -40,9 +52,9 @@ public class SentimentDecisionMaker {
     }
 
     public void doCheckOnModerators() {
-        WhenTextContainsAModerator moderatorsCheck = new WhenTextContainsAModerator(document, moderatorsForward, moderatorsBackward);
-        document = moderatorsCheck.containsAModeratorForward();
-        document = moderatorsCheck.containsAModeratorBackward();
+        WhenTextContainsAModerator moderatorsCheck = new WhenTextContainsAModerator(moderatorsForward, moderatorsBackward, lexiconsAndTheirConditionalExpressions);
+        document = moderatorsCheck.containsAModeratorForward(document);
+        document = moderatorsCheck.containsAModeratorBackward(document);
     }
 
     public void doCheckOnSarcasm() {
