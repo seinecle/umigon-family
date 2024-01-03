@@ -12,7 +12,6 @@ import net.clementlevallois.umigon.model.classification.BooleanCondition;
 import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.TypeOfTextFragment.TypeOfTextFragmentEnum;
 import net.clementlevallois.umigon.explain.parameters.HtmlSettings;
-import net.clementlevallois.umigon.model.classification.BooleanCondition.BooleanConditionEnum;
 
 /**
  *
@@ -26,15 +25,21 @@ public class ExplanationOneHeuristics {
         // because we don't care to know about conditions led to no category
         Collection<BooleanCondition> nonEmptyBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
-        sb.append(getTokenWasMatched(resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum(), languageTag));
-        sb.append(": \"");
+        if (!resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm().isBlank()) {
+            sb.append(getTokenWasMatched(resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum(), languageTag));
+            sb.append(": \"");
 
-        sb.append(resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm());
+            sb.append(resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm());
+        }
         if (nonEmptyBooleanConditions.isEmpty()) {
             return sb.append("\". ").toString();
         } else {
-            sb.append("\", ");
-            sb.append(getAndANumberOfConditionsWereMatched(nonEmptyBooleanConditions.size(), languageTag));
+            if (!resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm().isBlank()) {
+                sb.append("\", ");
+                sb.append(getAndANumberOfConditionsWereMatched(nonEmptyBooleanConditions.size(), languageTag));
+            }else{
+                sb.append(getANumberOfConditionsWereMatched(nonEmptyBooleanConditions.size(), languageTag));
+            }
             sb.append(":\n");
         }
 
@@ -127,6 +132,19 @@ public class ExplanationOneHeuristics {
                 return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_three_conditions_were_met");
             default:
                 return UmigonExplain.getLocaleBundle(languageTag).getString("statement.and_these_conditions_were_met");
+        }
+    }
+
+    public static String getANumberOfConditionsWereMatched(int numberOfConditions, String languageTag) {
+        switch (numberOfConditions) {
+            case 1:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.one_condition_was_met");
+            case 2:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.two_conditions_were_met");
+            case 3:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.three_conditions_were_met");
+            default:
+                return UmigonExplain.getLocaleBundle(languageTag).getString("statement.these_conditions_were_met");
         }
     }
 

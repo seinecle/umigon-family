@@ -192,7 +192,7 @@ public class UmigonExplain {
         StringBuilder sb = new StringBuilder();
         List<Decision> decisions = doc.getDecisions();
         if (decisions == null || decisions.isEmpty()) {
-            return bundle.getString("decision.no_decision_made") + ".";
+            return "";
         }
         sb.append("\n");
         if (decisions.size() == 1) {
@@ -216,11 +216,7 @@ public class UmigonExplain {
         StringBuilder sb = new StringBuilder();
         List<Decision> decisions = doc.getDecisions();
         if (decisions == null || decisions.isEmpty()) {
-            return sb.append("<p>")
-                    .append(bundle.getString("decision.no_decision_made"))
-                    .append("</p>")
-                    .append("\n")
-                    .toString();
+            return "";
         }
         sb.append("<p>");
         if (decisions.size() == 1) {

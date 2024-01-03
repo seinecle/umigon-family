@@ -23,6 +23,7 @@ import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
+import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationAloneInLastSentenceFragment;
 import net.clementlevallois.umigon.heuristics.tools.PunctuationValenceVerifier;
 import net.clementlevallois.umigon.model.Punctuation;
 import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
@@ -153,8 +154,19 @@ public class ClassifierSentimentOneDocument {
                 resultsHeuristics.add(resultOneHeuristics);
             }
         }
+
+        // does the text ends with a single negation?
+        // as in: I really like my bank. Not!
+        BooleanCondition bcNegationInTheEnd = IsNegationAloneInLastSentenceFragment.check(document.getText(), lexiconsAndTheirConditionalExpressions.getSetNegations());
+        if (bcNegationInTheEnd.getTokenInvestigatedGetsMatched()) {
+            ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._12, bcNegationInTheEnd.getTextFragmentMatched());
+            resultOneHeuristics.getBooleanConditions().add(bcNegationInTheEnd);
+            resultsHeuristics.add(resultOneHeuristics);
+        }
+
         for (SentenceLike sentenceLikeFragment : sentenceLikeFragments) {
 
+            // skip the sentence like fragment if it is enclosed in parentheses or quotation marks
             if (indicesOfSentenceLikeFragmentToIgnoreForAnalysis.contains(sentenceLikeFragment.getIndexOrdinal())) {
                 BooleanCondition bc = new BooleanCondition(isASentenceLikeFragmentEnclosedInQuotationsOrParentheses);
                 Term tf = new Term();
@@ -169,6 +181,8 @@ public class ClassifierSentimentOneDocument {
                 continue;
             }
 
+            // skip the evaluation of the sentence like fragment if some conditions are met.
+            // only condition at the moment: skip the sentence like fragment if it ends with a question mark
             SentimentDecisionMaker sentimentDecisionMakerOnSentenceLike = new SentimentDecisionMaker(sentenceLikeFragment, lexiconsAndTheirConditionalExpressions);
             boolean skipSentimentEvaluation = sentimentDecisionMakerOnSentenceLike.skipSentimentEvaluation();
             if (skipSentimentEvaluation) {
