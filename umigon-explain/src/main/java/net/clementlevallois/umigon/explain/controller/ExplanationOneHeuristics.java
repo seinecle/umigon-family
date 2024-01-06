@@ -37,7 +37,7 @@ public class ExplanationOneHeuristics {
             if (!resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm().isBlank()) {
                 sb.append("\", ");
                 sb.append(getAndANumberOfConditionsWereMatched(nonEmptyBooleanConditions.size(), languageTag));
-            }else{
+            } else {
                 sb.append(getANumberOfConditionsWereMatched(nonEmptyBooleanConditions.size(), languageTag));
             }
             sb.append(":\n");
@@ -62,22 +62,27 @@ public class ExplanationOneHeuristics {
         Collection<BooleanCondition> nonFlippedBooleanConditions = booleanConditions.stream().filter(x -> !x.getBooleanConditionEnum().equals(BooleanCondition.BooleanConditionEnum.none)).collect(Collectors.toList());
 
         TypeOfTextFragmentEnum ttf = resultOneHeuristics.getTextFragmentInvestigated().getTypeOfTextFragmentEnum();
-
-        String tokenWasMatched = getTokenWasMatched(ttf, languageTag);
-        sb.append(tokenWasMatched);
-        sb.append(": ");
-        sb.append("\"");
-        sb.append("<span style=\"color:")
-                .append(htmlSettings.getTermColorBasedOnSentiment(resultOneHeuristics.getCategoryEnum()))
-                .append("\">");
-        sb.append(resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm());
-        sb.append("</span>");
-        sb.append("\"");
+        if (!resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm().isBlank()) {
+            String tokenWasMatched = getTokenWasMatched(ttf, languageTag);
+            sb.append(tokenWasMatched);
+            sb.append(": ");
+            sb.append("\"");
+            sb.append("<span style=\"color:")
+                    .append(htmlSettings.getTermColorBasedOnSentiment(resultOneHeuristics.getCategoryEnum()))
+                    .append("\">");
+            sb.append(resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm());
+            sb.append("</span>");
+            sb.append("\"");
+        }
         if (nonFlippedBooleanConditions.isEmpty()) {
             return sb.append(". ").toString();
         } else {
-            sb.append(", ");
-            sb.append(getAndANumberOfConditionsWereMatched(nonFlippedBooleanConditions.size(), languageTag));
+            if (!resultOneHeuristics.getTextFragmentInvestigated().getOriginalForm().isBlank()) {
+                sb.append(", ");
+                sb.append(getAndANumberOfConditionsWereMatched(nonFlippedBooleanConditions.size(), languageTag));
+            } else {
+                sb.append(getANumberOfConditionsWereMatched(nonFlippedBooleanConditions.size(), languageTag));
+            }
             sb.append(":");
             sb.append("<br/>");
             sb.append("\n");
