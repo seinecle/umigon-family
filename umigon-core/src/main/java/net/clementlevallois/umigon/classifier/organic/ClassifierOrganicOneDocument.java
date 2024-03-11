@@ -11,9 +11,7 @@ import net.clementlevallois.umigon.model.classification.TermWithConditionalExpre
 import net.clementlevallois.umigon.heuristics.tools.LoaderOfLexiconsAndConditionalExpressions;
 
 import net.clementlevallois.umigon.model.classification.Document;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import static java.util.stream.Collectors.toList;
 import net.clementlevallois.umigon.heuristics.tools.EmojisHeuristicsandResourcesLoader;
 import net.clementlevallois.umigon.heuristics.tools.HashtagLevelHeuristicsVerifier;
@@ -25,7 +23,6 @@ import net.clementlevallois.umigon.model.NGram;
 import net.clementlevallois.umigon.model.NonWord;
 import net.clementlevallois.umigon.classifier.resources.Semantics;
 import net.clementlevallois.umigon.heuristics.booleanconditions.IsNegationInAllCaps;
-import net.clementlevallois.umigon.heuristics.booleanconditions.IsQuestionMarkAtEndOfText;
 import net.clementlevallois.umigon.model.classification.ResultOneHeuristics;
 import net.clementlevallois.umigon.model.SentenceLike;
 import net.clementlevallois.umigon.model.Term;
@@ -35,7 +32,6 @@ import net.clementlevallois.umigon.model.TypeOfTextFragment;
 import net.clementlevallois.umigon.ngram.ops.SentenceLikeFragmentsDetector;
 import net.clementlevallois.umigon.ngram.ops.NGramFinderBisForTextFragments;
 import net.clementlevallois.umigon.tokenizer.controller.UmigonTokenizer;
-import net.clementlevallois.umigonfamily.umigon.decision.SentimentDecisionMaker;
 
 public class ClassifierOrganicOneDocument {
 
@@ -56,8 +52,6 @@ public class ClassifierOrganicOneDocument {
         }
 
         TermWithConditionalExpressions termAndItsConditionalExpressions;
-
-        Set<NGram> alreadyExaminedNGramInPositive = new HashSet();
 
         Text text = new Text();
 
@@ -97,7 +91,6 @@ public class ClassifierOrganicOneDocument {
 
         List<ResultOneHeuristics> runningHashTagOps = HashtagLevelHeuristicsVerifier.checkSentiment(lexiconsAndTheirConditionalExpressions, textFragmentsThatAreHashTag);
         resultsHeuristics.addAll(runningHashTagOps);
-        alreadyExaminedNGramInPositive.addAll(textFragmentsThatAreHashTag);
 
         // checking onomatopaes, texto speak and emoticons in ascii ("non words")
         for (TextFragment textFragment : ngrams) {
@@ -135,21 +128,9 @@ public class ClassifierOrganicOneDocument {
                 if (ngram.getCleanedNgram().isBlank() || semantics.getStopwordsWithoutSentimentRelevance().contains(ngram.getCleanedNgram().toLowerCase())) {
                     continue;
                 }
-
-                /*
             
-                ----- 3 -----
-            Checking if the ngram matches a heuristic for PROMOTED TERMS
-            
-            (mapH9 lists promoted terms and their rules)
-            
-                 */
-                if (alreadyExaminedNGramInPositive.contains(ngram)) {
-                    continue;
-                }
-
-//            if (ngram.getCleanedAndStrippedNgram().equals("burnes")) {
-//                System.out.println("stop for word before checking positive heuristics");
+//            if (ngram.getCleanedAndStrippedNgram().equals("stoked to")) {
+//                System.out.println("allo");
 //            }
                 boolean stripped = false;
                 termAndItsConditionalExpressions = lexiconsAndTheirConditionalExpressions.getMapH9().get(ngram.getCleanedNgram().toLowerCase());
@@ -161,7 +142,6 @@ public class ClassifierOrganicOneDocument {
                 if (termAndItsConditionalExpressions != null) {
                     ResultOneHeuristics resultOneHeuristics = TermLevelHeuristicsVerifier.checkHeuristicsOnOneNGram(ngram, sentenceLikeFragment, termAndItsConditionalExpressions, lexiconsAndTheirConditionalExpressions, stripped, semantics.getStopwordsWithoutSentimentRelevance());
                     resultsHeuristics.add(resultOneHeuristics);
-                    alreadyExaminedNGramInPositive.add(ngram);
                 }
 
             }
@@ -169,34 +149,7 @@ public class ClassifierOrganicOneDocument {
         // adding all the results of the heuristics to the Document object
         document.getResultsOfHeuristics().addAll(resultsHeuristics);
 
-        /*
-            
-                ----- 5 -----
-        
-                Adjucating the final sentiment based on the results of all the heuristics
-            
-         */
-        SentimentDecisionMaker sentimentDecisionMaker = new SentimentDecisionMaker(document, lexiconsAndTheirConditionalExpressions);
-
-        sentimentDecisionMaker.doCheckOnNegations();
-        // if the text is a question, classify it as neutral.
-        // we might of course miss ironic intent, but questions are too hard to decipher
-        BooleanCondition bc = IsQuestionMarkAtEndOfText.check(allTextFragments);
-        if (bc.getTokenInvestigatedGetsMatched()) {
-            ResultOneHeuristics resultOneHeuristics = new ResultOneHeuristics(CategoryEnum._40, bc.getTextFragmentMatched());
-            resultOneHeuristics.getBooleanConditions().add(bc);
-            resultsHeuristics.add(resultOneHeuristics);
-        }
-
-        sentimentDecisionMaker.doCheckOnModerators();
-
-        sentimentDecisionMaker.doCheckOnSarcasm();
-
-        sentimentDecisionMaker.doCheckOnWinnerTakesAll();
-
-        sentimentDecisionMaker.finalAdjudication();
-
-        return sentimentDecisionMaker.getDocument();
+        return document;
 
     }
 }
