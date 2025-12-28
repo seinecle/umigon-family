@@ -59,7 +59,7 @@
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-tokenizer</artifactId>
-                <version>0.21</version>
+                <version>0.22</version>
             </dependency>
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
@@ -79,7 +79,7 @@
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>
                 <artifactId>umigon-lemmatizer-lightweight</artifactId>
-                <version>0.12</version>
+                <version>0.13</version>
             </dependency>
             <dependency>
                 <groupId>net.clementlevallois.functions</groupId>

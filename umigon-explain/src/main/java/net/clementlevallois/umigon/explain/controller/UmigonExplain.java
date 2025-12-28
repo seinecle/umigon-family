@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.Optional;
 import net.clementlevallois.umigon.model.Category;
 import net.clementlevallois.umigon.model.Category.CategoryEnum;
 import net.clementlevallois.umigon.model.classification.Decision;
@@ -40,7 +41,12 @@ public class UmigonExplain {
         ResourceBundle rb = null;
         try {
             if (System.getProperty("os.name").toLowerCase().contains("win")) {
-                PATHLOCALE = "C:\\Users\\levallois\\open\\nocode-app-functions\\umigon-static-files\\src\\main\\resources\\net\\clementlevallois\\umigon\\explanation\\i18n";
+				String userName = Optional.ofNullable(System.getenv("USERNAME"))
+                                  .orElse("Unknown User");
+				if (userName.equals("clevallois")){
+					userName = userName + ".GOBELINS";				
+				}
+                PATHLOCALE = "C:\\Users\\" + userName + "\\open\\nocode-app-functions\\umigon-static-files\\src\\main\\resources\\net\\clementlevallois\\umigon\\explanation\\i18n";
             } else {
                 PATHLOCALE = "/home/waouh/nocodeapp-web/umigon-static-files/src/main/resources/net/clementlevallois/umigon/explanation/i18n";
             }
